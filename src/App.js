@@ -1,6 +1,11 @@
+import Icon from './components/Icon'
+
 const App = () => {
   return (
-    <h1>hi</h1>
+    <div>
+      <h1>hi</h1>
+      <Icon id="rotate"/>
+    </div>
   )
 }
 
