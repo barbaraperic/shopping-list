@@ -8,7 +8,7 @@ const icons = {
   cart: ShoppingCart
 };
 
-const NavIcon = ({ id, className }) => {
+export const NavIcon = ({ id, className }) => {
   const Component = icons[id]
 
   if (!Component) {
@@ -41,6 +41,3 @@ const Fiddle = styled.div`
   border-top-right-radius: 6px;
   border-bottom-right-radius:6px;
 `
-
-export default NavIcon;
-

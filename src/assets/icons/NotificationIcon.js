@@ -1,10 +1,11 @@
 import { ShoppingCart } from 'react-feather';
 import styled from 'styled-components'
 
-const NotificationIcon = ({ className }) => {
+export const NotificationIcon = () => {
   
   return (
-    <Wrapper className={className}>
+    <Wrapper>
+      <Notification>2</Notification>
       <ShoppingCart />
     </Wrapper>
   )
@@ -20,6 +21,16 @@ const Wrapper = styled.div`
   color: white;
   border-radius: 50%;
   margin-bottom: 34px;
+  position: relative;
 `
 
-export default NotificationIcon;
+const Notification = styled.span`
+  font-size: 12px;
+  color: white;
+  background-color: #EB5757;
+  border-radius: 4px;
+  padding: 6px;
+  position: absolute;
+  top: -8px;
+  right: -4px;
+`

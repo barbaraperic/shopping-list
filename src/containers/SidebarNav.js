@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import NavIcon from '../assets/NavIcon';
-import NotificationIcon from '../assets/NotificationIcon';
+import { NavIcon, NotificationIcon, logo } from '../assets';
 
 const SidebarNav = () => {
   return (
     <Wrapper>
-      <Logo />
+      <Logo>
+        <img src={logo}/>
+      </Logo>
       <IconWrapper>
         <NavIcon id="list"/>
         <Spacer />
