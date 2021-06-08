@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { NavIcon, NotificationIcon, logo } from '../assets';
+import { NavIcon, NotificationIcon } from '../assets';
+import logo from '../assets/logo.svg'
 
 const SidebarNav = () => {
   return (
     <Wrapper>
-      <Logo>
-        <img src={logo}/>
-      </Logo>
+      <LogoWrapper>
+        <Logo src={logo} alt="logo"/>
+      </LogoWrapper>
       <IconWrapper>
         <NavIcon id="list"/>
         <Spacer />
@@ -27,11 +28,17 @@ const Wrapper = styled.nav`
   width: 93px;
   display: flex;
   flex-direction: column;
-  
 `
 
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Logo = styled.img`
+  margin-top: 32px;
 `
 
 const IconWrapper = styled.div`
