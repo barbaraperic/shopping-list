@@ -1,10 +1,10 @@
-import Icon from './components/Icon'
+import Home from './pages/Home'
+import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <h1>hi</h1>
-      <Icon id="rotate"/>
+      <Home />
     </div>
   )
 }
