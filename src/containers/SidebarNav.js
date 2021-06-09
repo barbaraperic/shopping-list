@@ -49,7 +49,7 @@ const IconWrapper = styled.div`
 `
 
 const Spacer = styled.div`
-  height: 75px;
+  height: 45px;
 `
 
 const Notification = styled.div`
