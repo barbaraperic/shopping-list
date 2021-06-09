@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { NavIcon, NotificationIcon } from '../assets';
+import Tabs from './Tabs'
 import logo from '../assets/logo.svg'
 
 const SidebarNav = () => {
@@ -9,11 +10,7 @@ const SidebarNav = () => {
         <Logo src={logo} alt="logo"/>
       </LogoWrapper>
       <IconWrapper>
-        <NavIcon id="list"/>
-        <Spacer />
-        <NavIcon id="rotate"/>
-        <Spacer />
-        <NavIcon id="bar"/>
+        <Tabs />
       </IconWrapper>
       <Notification>
         <NotificationIcon />
@@ -46,10 +43,6 @@ const IconWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-const Spacer = styled.div`
-  height: 45px;
 `
 
 const Notification = styled.div`

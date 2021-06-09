@@ -30,6 +30,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 `
 
 const Fiddle = styled.div`
@@ -39,5 +40,5 @@ const Fiddle = styled.div`
   left: 0;
   background-color: #F9A109;
   border-top-right-radius: 6px;
-  border-bottom-right-radius:6px;
+  border-bottom-right-radius: 6px;
 `
