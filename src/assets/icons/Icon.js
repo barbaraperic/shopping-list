@@ -5,17 +5,25 @@ const icons = {
   search: Search
 }
 
-export const Icon = ({ id }) => {
+export const Icon = ({ id, size }) => {
   const Component = icons[id]
 
   if (!id) {
     throw new Error(`No ID for Icon component: ${id}`)
   }
   return (
-    <Wrapper>
-      <Component />
+    <Wrapper
+    
+      style={{
+        '--size': size + 'px',
+      }}
+    >
+      <Component size={size}/>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  width: var(--size);
+  height: var(--size);
+`

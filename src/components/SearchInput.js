@@ -18,15 +18,21 @@ const Input = styled.input`
   width: 275px;
   border-color: transparent transparent;
   box-shadow: 0 2px 12px hsla(0, 0%, 0%, 0.04);
+  padding-left: 60px;
+
+  &::placeholder {
+    font-size: 16px;
+    color: hsla(0, 0%, 74%, 1);
+  }
 `
 
 const SearchInput = () => {
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon id="search"/>
+        <Icon id="search" size={18}/>
       </IconWrapper>
-      <Input />
+      <Input placeholder="search item"/>
     </Wrapper>
   )
 }
