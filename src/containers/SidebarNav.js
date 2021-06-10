@@ -21,7 +21,7 @@ const SidebarNav = () => {
 
 const Wrapper = styled.nav`
   background-color: white;
-  height: 100%;
+  height: 100vh;
   width: 93px;
   display: flex;
   flex-direction: column;
