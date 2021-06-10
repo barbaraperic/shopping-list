@@ -1,11 +1,12 @@
-import { Search } from 'react-feather';
+import { Search, Plus } from 'react-feather';
 import styled from 'styled-components';
 
 const icons = {
-  search: Search
+  search: Search,
+  plus: Plus
 }
 
-export const Icon = ({ id, size }) => {
+export const Icon = ({ id, size, className }) => {
   const Component = icons[id]
 
   if (!id) {
@@ -13,12 +14,11 @@ export const Icon = ({ id, size }) => {
   }
   return (
     <Wrapper
-    
       style={{
         '--size': size + 'px',
       }}
     >
-      <Component size={size}/>
+      <Component size={size} className={className}/>
     </Wrapper>
   )
 }
