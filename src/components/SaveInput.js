@@ -4,7 +4,7 @@ import Button from '../components/Button'
 const SaveInput = () => {
   return (
     <Wrapper>
-      <Input />
+      <Input placeholder="Enter a name"/>
       <StyledButton variant="primary">Save</StyledButton>
     </Wrapper>
   )
@@ -19,6 +19,12 @@ const Input = styled.input`
   height: 52px;
   border-radius: 12px;
   border: 2px solid #F9A109;
+  padding-left: 18px;
+
+  &::placeholder {
+    color: hsla(0, 0%, 74%, 1);
+    font-size: 14px;
+  }
 `
 
 const StyledButton = styled(Button)`
