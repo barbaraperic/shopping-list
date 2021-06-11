@@ -8,8 +8,6 @@ const Button = ({ children, variant, className }) => {
     Component = SecondaryButton
   } else if (variant === 'warning') {
     Component = WarningButton
-  } else if (variant === 'select') {
-    Component = SelectButton
   } else {
     Component = GhostButton
   }
@@ -41,15 +39,6 @@ const WarningButton = styled(ButtonBase)`
 const GhostButton = styled(ButtonBase)`
   color: black;
   background-color: transparent;
-`
-
-const SelectButton = styled.button`
-  border: 1px solid hsla(38, 95%, 51%, 1);
-  border-radius: 24px;
-  background-color: transparent;
-  color: hsla(38, 95%, 51%, 1);
-  font-size: 12px;
-  padding: 10px 20px;
 `
 
 export default Button;

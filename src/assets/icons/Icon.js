@@ -1,9 +1,10 @@
-import { Search, Plus } from 'react-feather';
+import { Search, Plus, Minus } from 'react-feather';
 import styled from 'styled-components';
 
 const icons = {
   search: Search,
-  plus: Plus
+  plus: Plus,
+  minus: Minus
 }
 
 export const Icon = ({ id, size, className }) => {
