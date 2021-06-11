@@ -1,8 +1,11 @@
-import React from 'react';
+import Home from './pages/Home'
+import "./App.css";
 
 const App = () => {
   return (
-    <h1>hi</h1>
+    <div>
+      <Home />
+    </div>
   )
 }
 
