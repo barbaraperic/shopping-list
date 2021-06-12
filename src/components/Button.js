@@ -22,6 +22,7 @@ const ButtonBase = styled.button`
   color: white;
   border: none;
   font-size: 16px;
+  cursor: pointer;
 `
 
 const PrimaryButton = styled(ButtonBase)`

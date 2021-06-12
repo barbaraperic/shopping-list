@@ -23,12 +23,12 @@ const Wrapper = styled.div`
 `
 
 const Button = styled.button`
-  border: 1px solid hsla(38, 95%, 51%, 1);
+  border: 2px solid hsla(38, 95%, 51%, 1);
   border-radius: 24px;
   background-color: transparent;
   color: hsla(38, 95%, 51%, 1);
   font-size: 12px;
-  padding: 8px 16px;
+  padding: 6px 16px;
   margin: 3px 9px;
 `
 
@@ -45,6 +45,7 @@ const IconWrapper = styled.div`
 
 const StyledTrashIcon = styled(Icon)`
   color: white;
+  font-size: 2px;
 `
 
 const StyledIcon = styled(Icon)`
