@@ -28,6 +28,7 @@ const Wrapper = styled.div`
 const Text = styled.p`
   color: white;
   font-size: 16px;
+  line-height: 1.2;
 `
 
 const Icon = styled.img`
