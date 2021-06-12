@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   box-shadow: 0 2px 12px hsla(0,0%,0%,.05);
   padding: 15px 17px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-right: 20px;
   cursor: pointer;

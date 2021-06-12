@@ -3,7 +3,7 @@ import { NavIcon, NotificationIcon } from '../assets';
 import Tabs from './Tabs'
 import logo from '../assets/logo.svg'
 
-const SidebarNav = () => {
+const SidebarLeft = () => {
   return (
     <Wrapper>
       <LogoWrapper>
@@ -53,4 +53,4 @@ const Notification = styled.div`
  justify-content: flex-end;
 `
 
-export default SidebarNav
+export default SidebarLeft;

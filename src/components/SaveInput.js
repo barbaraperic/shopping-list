@@ -12,6 +12,12 @@ const SaveInput = () => {
 
 const Wrapper = styled.div`
   position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  padding: 30px;
 `
 
 const Input = styled.input`
