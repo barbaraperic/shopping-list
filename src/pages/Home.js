@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import AddItemCard from '../components/AddItemCard'
+import Main from '../containers/Main'
 
 const Home = () => {
   return (
     <Wrapper>
-      <AddItemCard />
+      <Main />
     </Wrapper>
   )
 }

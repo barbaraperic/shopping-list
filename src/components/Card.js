@@ -19,6 +19,8 @@ const Wrapper = styled.div`
   padding: 15px 17px;
   display: flex;
   justify-content: space-between;
+  margin-right: 20px;
+  cursor: pointer;
 `
 
 const Text = styled.p`
