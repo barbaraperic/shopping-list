@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../style/constants'
 
 const Button = ({ children, variant, className }) => {
   let Component;
@@ -26,15 +27,15 @@ const ButtonBase = styled.button`
 `
 
 const PrimaryButton = styled(ButtonBase)`
-  background-color: #F9A109;
+  background-color: ${COLORS.primary};
 `
 
 const SecondaryButton = styled(ButtonBase)`
-  background-color: #56CCF2;
+  background-color: ${COLORS.blue};
 `
 
 const WarningButton = styled(ButtonBase)`
-  background-color: hsla(0, 79%, 63%, 1);
+  background-color: ${COLORS.red};
 `
 
 const GhostButton = styled(ButtonBase)`

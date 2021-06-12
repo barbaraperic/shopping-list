@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import source from '../assets/illustrations/source.svg';
 import Button from '../components/Button';
+import { COLORS } from '../style/constants'
 
 const AddItemCard = () => {
   return (
@@ -17,7 +18,7 @@ const AddItemCard = () => {
 const Wrapper = styled.div`
   height: 130px;
   width: 308px;
-  background-color: hsla(340, 28%, 39%, 1);
+  background-color: ${COLORS.brown};
   border-radius: 24px;
   display: flex;
   position: relative;
