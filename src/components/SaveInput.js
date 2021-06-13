@@ -12,20 +12,16 @@ const SaveInput = () => {
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: white;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 100%; */
-  padding: 30px;
+  display: flex;
 `
 
 const Input = styled.input`
-  width: 227px;
+  min-width: 227px;
   height: 52px;
   border-radius: 12px;
   border: 2px solid #F9A109;
   padding-left: 18px;
+  outline-offset: 4px;
 
   &::placeholder {
     color: hsla(0, 0%, 74%, 1);
@@ -35,8 +31,8 @@ const Input = styled.input`
 
 const StyledButton = styled(Button)`
   position: absolute;
-  right: 49px;
-  top: 31px;
+  right: 0;
+  margin: auto 0;
 `
 
 export default SaveInput;

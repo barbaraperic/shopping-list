@@ -41,7 +41,9 @@ const SidebarRight = () => {
         </FoodSection>
       </Section>
     </Wrapper>
-    <SaveInput />
+    <SectionBottom>
+      <SaveInput />
+    </SectionBottom>
     </SidebarWrapper>
   )
 }
@@ -73,6 +75,14 @@ const Section = styled.div`
 const FoodSection = styled.div`
   overflow: scroll;
   max-height: 350px;
+`
+
+const SectionBottom = styled.section`
+  height: 130px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.h3`

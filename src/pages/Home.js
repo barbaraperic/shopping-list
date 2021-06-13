@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import Main from '../containers/Main'
 import SidebarLeft from '../containers/SidebarLeft'
 import SidebarRight from '../containers/SidebarRight'
+import SaveInput from '../components/SaveInput'
 
 const Home = () => {
   return (
     <Wrapper>
+      {/* <SaveInput /> */}
       <SidebarLeft />
       <StyledMain />
       <SidebarRight />
@@ -15,7 +17,6 @@ const Home = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  /* flex: 1; */
 `
 
 const StyledMain = styled(Main)`
