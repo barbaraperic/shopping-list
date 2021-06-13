@@ -19,7 +19,7 @@ const SidebarRight = () => {
           <Header>Fruit and vegetables</Header>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton>3 pcs</SelectButton>
+            <SelectButton id="edit">3 pcs</SelectButton>
           </TextWrapper>
           <TextWrapper>
             <p>Avocado</p>

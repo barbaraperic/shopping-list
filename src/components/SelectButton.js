@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 import { Icon } from '../assets'
  
-const SelectButton = ({ children }) => {
+const SelectButton = ({ children, id }) => {
   return (
-    <Wrapper>
-      <IconWrapper>
-        <StyledTrashIcon id="trash" size={14}/>
-      </IconWrapper>
-      <StyledIcon id="minus" size={14}/>
-      <Button>{children}</Button>
-      <StyledIcon id="plus" size={14}/>
-    </Wrapper>
+    <>
+      { id === "edit" 
+        ?
+      <Wrapper>
+        <IconWrapper>
+          <StyledTrashIcon id="trash" size={14}/>
+        </IconWrapper>
+        <StyledIcon id="minus" size={14}/>
+        <Button>{children}</Button>
+        <StyledIcon id="plus" size={14}/>
+      </Wrapper>
+        : <Button>{children}</Button>
+      }
+    </>
   )
 }
 
@@ -20,6 +26,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding-right: 9px;
+  margin: 0 8px;
 `
 
 const Button = styled.button`
@@ -30,6 +37,7 @@ const Button = styled.button`
   font-size: 12px;
   padding: 6px 16px;
   margin: 3px 9px;
+  cursor: pointer;
 `
 
 const IconWrapper = styled.div`

@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import source from '../assets/illustrations/source.svg';
 import Button from '../components/Button';
 import { COLORS } from '../style/constants'
 
 const AddItemCard = () => {
   return (
     <Wrapper>
-      <Icon src={source}/>
       <TextWrapper>
         <Text>Didn't find what you need?</Text>
         <StyledButton variant="ghost">Add item</StyledButton>
