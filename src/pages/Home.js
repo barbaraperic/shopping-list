@@ -6,8 +6,9 @@ import SidebarRight from '../containers/SidebarRight'
 const Home = () => {
   return (
     <Wrapper>
+      <SidebarLeft />
+      <StyledMain />
       <SidebarRight />
-      {/* <Main /> */}
     </Wrapper>
   )
 }
@@ -16,6 +17,10 @@ const Wrapper = styled.div`
   display: flex;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+`
+
+const StyledMain = styled(Main)`
+  flex: 1;
 `
 
 export default Home

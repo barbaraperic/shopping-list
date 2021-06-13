@@ -10,28 +10,30 @@ const SidebarRight = () => {
     <SidebarWrapper>
     <Wrapper>
       <AddItemCard />
-      <TextWrapper>
-        <Title>Shopping List</Title>
-        <Icon id="edit" size={16}/>
-      </TextWrapper>
-      <Header>Fruit and vegetables</Header>
-      <TextWrapper>
-        <p>Avocado</p>
-        <SelectButton>3 pcs</SelectButton>
-      </TextWrapper>
-      <TextWrapper>
-        <p>Avocado</p>
-        <SelectButton>3 pcs</SelectButton>
-      </TextWrapper>
-      <Header>Meat and fish</Header>
-      <TextWrapper>
-        <p>Avocado</p>
-        <SelectButton>3 pcs</SelectButton>
-      </TextWrapper>
-      <TextWrapper>
-        <p>Avocado</p>
-        <SelectButton>3 pcs</SelectButton>
-      </TextWrapper>
+      <Section>
+        <TextWrapper>
+          <Title>Shopping List</Title>
+          <Icon id="edit" size={16}/>
+        </TextWrapper>
+        <Header>Fruit and vegetables</Header>
+        <TextWrapper>
+          <p>Avocado</p>
+          <SelectButton>3 pcs</SelectButton>
+        </TextWrapper>
+        <TextWrapper>
+          <p>Avocado</p>
+          <SelectButton>3 pcs</SelectButton>
+        </TextWrapper>
+        <Header>Meat and fish</Header>
+        <TextWrapper>
+          <p>Avocado</p>
+          <SelectButton>3 pcs</SelectButton>
+        </TextWrapper>
+        <TextWrapper>
+          <p>Avocado</p>
+          <SelectButton>3 pcs</SelectButton>
+        </TextWrapper>
+      </Section>
     </Wrapper>
     <SaveInput />
     </SidebarWrapper>
@@ -52,6 +54,11 @@ const TextWrapper = styled.div`
   align-items: baseline;
   justify-content: space-between;
   margin-top: 40px;
+`
+
+const Section = styled.div`
+  overflow: scroll;
+  max-height: 450px;
 `
 
 const Title = styled.h3`

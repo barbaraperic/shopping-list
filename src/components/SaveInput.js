@@ -13,9 +13,9 @@ const SaveInput = () => {
 const Wrapper = styled.div`
   position: relative;
   background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   /* width: 100%; */
   padding: 30px;
 `
@@ -35,7 +35,8 @@ const Input = styled.input`
 
 const StyledButton = styled(Button)`
   position: absolute;
-  right: 0px;
+  right: 49px;
+  top: 31px;
 `
 
 export default SaveInput;

@@ -21,10 +21,14 @@ const SidebarLeft = () => {
 
 const Wrapper = styled.nav`
   background-color: white;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   width: 93px;
   display: flex;
   flex-direction: column;
+  position:absolute;
+  top:0;
+  bottom:0;
 `
 
 const LogoWrapper = styled.div`
