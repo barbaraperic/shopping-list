@@ -15,8 +15,7 @@ const Home = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  /* flex: 1; */
 `
 
 const StyledMain = styled(Main)`

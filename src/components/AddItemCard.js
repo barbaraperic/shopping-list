@@ -17,7 +17,6 @@ const AddItemCard = () => {
 
 const Wrapper = styled.div`
   height: 130px;
-  width: 308px;
   background-color: ${COLORS.brown};
   border-radius: 24px;
   display: flex;

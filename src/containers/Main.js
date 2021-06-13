@@ -9,9 +9,9 @@ const meatAndFish = ["Chicken", "Pork", "Salmon"]
 
 const beverages = ["Water", "Wine"]
 
-const Main = () => {
+const Main = ({ className }) => {
   return (
-    <MainWrapper>
+    <MainWrapper className={className}>
       <TopWrapper>
         <Title><span style={{ color: `${COLORS.primary}`}}>Shoppingfy</span> allows you to take your <br /> shopping list whenever you go</Title>
         <SearchInput />
@@ -31,6 +31,7 @@ const Main = () => {
 
 const MainWrapper = styled.main`
   margin-top: 40px;
+  padding: 0 30px;
 `
 
 const Wrapper = styled.div`
