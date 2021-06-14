@@ -1,5 +1,16 @@
 import styled from 'styled-components';
-import { Icon } from '../assets'
+import { Icon } from '../../assets'
+
+export const SearchInput = () => {
+  return (
+    <Wrapper>
+      <IconWrapper>
+        <Icon id="search" size={18}/>
+      </IconWrapper>
+      <Input placeholder="search item"/>
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,16 +36,3 @@ const Input = styled.input`
     color: hsla(0, 0%, 74%, 1);
   }
 `
-
-const SearchInput = () => {
-  return (
-    <Wrapper>
-      <IconWrapper>
-        <Icon id="search" size={18}/>
-      </IconWrapper>
-      <Input placeholder="search item"/>
-    </Wrapper>
-  )
-}
-
-export default SearchInput

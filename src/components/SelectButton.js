@@ -54,10 +54,12 @@ const IconWrapper = styled.div`
 const StyledTrashIcon = styled(Icon)`
   color: white;
   font-size: 2px;
+  cursor: pointer;
 `
 
 const StyledIcon = styled(Icon)`
   color: hsla(38, 95%, 51%, 1);
+  cursor: pointer;
 `
 
 export default SelectButton;

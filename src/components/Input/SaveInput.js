@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Button from '../components/Button'
+import Button from '../Button';
 
-const SaveInput = () => {
+export const SaveInput = () => {
   return (
     <Wrapper>
       <Input placeholder="Enter a name"/>
@@ -34,5 +34,3 @@ const StyledButton = styled(Button)`
   right: 0;
   margin: auto 0;
 `
-
-export default SaveInput;
