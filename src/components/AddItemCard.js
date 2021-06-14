@@ -18,29 +18,21 @@ const Wrapper = styled.div`
   background-color: ${COLORS.brown};
   border-radius: 24px;
   display: flex;
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `
 
 const Text = styled.p`
   color: white;
   font-size: 16px;
   line-height: 1.2;
-`
-
-const Icon = styled.img`
-  position: absolute;
-  left: 10px;
-  top: -20px;
-  z-index: 3;
+  text-align: center;
 `
 
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 180px;
 `
 
