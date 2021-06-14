@@ -3,18 +3,19 @@ import styled from 'styled-components';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
 // import SaveInput from '../components/SaveInput'
-import { TagInput } from '../components/Input/index';
+import { CategoryInput } from '../components/Input/index';
 
 const Home = () => {
   return (
     <Wrapper>
-      <TagInput />
+      <CategoryInput />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   display: flex;
+  margin: 50px;
 `
 
 // const StyledMain = styled(Main)`

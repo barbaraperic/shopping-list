@@ -1,4 +1,4 @@
-import { Search, Plus, Minus, Trash, Edit3 } from 'react-feather';
+import { Search, Plus, Minus, Trash, Edit3, X } from 'react-feather';
 import styled from 'styled-components';
 
 const icons = {
@@ -6,7 +6,8 @@ const icons = {
   plus: Plus,
   minus: Minus,
   trash: Trash,
-  edit: Edit3
+  edit: Edit3,
+  remove: X
 }
 
 export const Icon = ({ id, size, className }) => {
@@ -17,11 +18,12 @@ export const Icon = ({ id, size, className }) => {
   }
   return (
     <Wrapper
+      className={className}
       style={{
         '--size': size + 'px',
       }}
     >
-      <Component size={size} className={className}/>
+      <Component size={size} />
     </Wrapper>
   )
 }
