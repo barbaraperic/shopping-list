@@ -4,7 +4,7 @@ import Checkbox from '../../components/Input'
 const EditItemSidebar = () => {
   return (
     <Wrapper>
-
+      <Checkbox />
     </Wrapper>
   )
 }
