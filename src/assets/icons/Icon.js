@@ -10,7 +10,7 @@ const icons = {
   remove: X
 }
 
-export const Icon = ({ id, size, className }) => {
+export const Icon = ({ id, size, className, onClick }) => {
   const Component = icons[id]
 
   if (!id) {
@@ -22,6 +22,7 @@ export const Icon = ({ id, size, className }) => {
       style={{
         '--size': size + 'px',
       }}
+      onClick={onClick}
     >
       <Component size={size} />
     </Wrapper>

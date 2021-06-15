@@ -1,12 +1,8 @@
-
-import React from 'react';
 import styled from 'styled-components';
-
-// import { COLORS } from '../../constants';
 import { Icon } from '../../assets';
 import { getDisplayedValue } from './Select.helpers';
 
-const Select = ({ label, value, onChange, children }) => {
+const Select = ({ label, value, onChange, children, onClick }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
@@ -17,7 +13,7 @@ const Select = ({ label, value, onChange, children }) => {
       <PresentationalBit>
         {displayedValue}
         <IconWrapper>
-          <Icon id="remove" size={16} />
+          <Icon id="remove" size={16} onClick={onClick}/>
         </IconWrapper>
       </PresentationalBit>
     </Wrapper>
@@ -26,7 +22,7 @@ const Select = ({ label, value, onChange, children }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  width: max-content;
+  width: 309px;
 `;
 
 const NativeSelect = styled.select`

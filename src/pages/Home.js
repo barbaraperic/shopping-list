@@ -6,10 +6,10 @@ import styled from 'styled-components';
 // import SaveInput from '../components/SaveInput'
 import Select from '../components/Select';
 
-const options = ["water", "banana"]
+const options = ["Fruit and vegetables", "Meat and fish", "Beverages"]
 
 const Home = () => {
-  const [valueState, setValueState] = useState("water")
+  const [valueState, setValueState] = useState("Fruit and vegetables")
   return (
     <Wrapper>
       <Select label="Hello" value={valueState} onChange={(e) => setValueState(e.target.value)}>
