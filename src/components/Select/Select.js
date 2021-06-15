@@ -23,6 +23,7 @@ const Select = ({ label, value, onChange, children, onClick }) => {
 const Wrapper = styled.div`
   position: relative;
   width: 309px;
+  
 `;
 
 const NativeSelect = styled.select`

@@ -4,19 +4,13 @@ import styled from 'styled-components';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
 // import SaveInput from '../components/SaveInput'
-import Select from '../components/Select';
+import EditItemSidebar from '../containers/SidebarStats'
 
-const options = ["Fruit and vegetables", "Meat and fish", "Beverages"]
 
 const Home = () => {
-  const [valueState, setValueState] = useState("Fruit and vegetables")
   return (
     <Wrapper>
-      <Select label="Hello" value={valueState} onChange={(e) => setValueState(e.target.value)}>
-        {options.map(option => (
-          <option key={option}>{option}</option>
-          ))}
-      </Select>
+      <EditItemSidebar />
     </Wrapper>
   )
 }

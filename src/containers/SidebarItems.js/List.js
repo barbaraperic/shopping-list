@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { COLORS } from '../style/constants';
-import { Icon } from '../assets/index'
-import AddItemCard from '../components/AddItemCard'
+import { COLORS } from '../../style/constants';
+import { Icon } from '../../assets/index'
+import AddItemCard from '../../components/AddItemCard'
 import SaveInput from '../components/SaveInput'
-import SelectButton from '../components/SelectButton'
+import SelectButton from '../../components/SelectButton'
 
-const SidebarRight = () => {
+const SidebarList = () => {
   return (
     <SidebarWrapper>
     <Wrapper>
@@ -98,4 +98,4 @@ const Header = styled.h4`
   margin-bottom: 30px;
 `
 
-export default SidebarRight;
+export default SidebarList;

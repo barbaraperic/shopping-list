@@ -1,0 +1,25 @@
+import { useState } from 'react'
+import styled from 'styled-components';
+import Select from '../../components/Select';
+
+const options = ["Fruit and vegetables", "Meat and fish", "Beverages"]
+
+const AddItemSidebar = () => {
+  const [valueState, setValueState] = useState("Fruit and vegetables")
+  return (
+    <Wrapper>
+      <Select label="Hello" value={valueState} onChange={(e) => setValueState(e.target.value)}>
+        {options.map(option => (
+          <option key={option}>{option}</option>
+          ))}
+      </Select>
+    </Wrapper>
+  )
+}
+
+const Wrapper = styled.div`
+  display: flex;
+  margin: 50px;
+`
+
+export default AddItemSidebar
