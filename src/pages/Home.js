@@ -1,14 +1,22 @@
+import { useState } from 'react'
 import styled from 'styled-components';
 // import Main from '../containers/Main';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
 // import SaveInput from '../components/SaveInput'
-import { CategoryInput } from '../components/Input/index';
+import Select from '../components/Select';
+
+const options = ["water", "banana"]
 
 const Home = () => {
+  const [valueState, setValueState] = useState("water")
   return (
     <Wrapper>
-      <CategoryInput />
+      <Select label="Hello" value={valueState} onChange={(e) => setValueState(e.target.value)}>
+        {options.map(option => (
+          <option key={option}>{option}</option>
+          ))}
+      </Select>
     </Wrapper>
   )
 }
