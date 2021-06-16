@@ -13,7 +13,8 @@ const Checkbox = ({ className, checked, ...props}) => {
   )
 }
 
-const CheckboxContainer = styled.div``
+const CheckboxContainer = styled.div`
+`
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox'})`
   border: 0;
@@ -29,7 +30,6 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox'})`
 
 const StyledIcon = styled(Icon)`
   color: ${COLORS.primary};
-
 `
 
 const StyledCheckbox = styled.div`
@@ -40,11 +40,11 @@ const StyledCheckbox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 1px ${COLORS.gray};
+    box-shadow: 0 0 2pt 1pt ${COLORS.primary};
   }
-
 
   ${StyledIcon} {
     visibility: ${props => props.checked ? 'visible' : 'hidden'};
