@@ -4,24 +4,11 @@ import Checkbox from '../../components/Input'
 import Sidebar from '../Sidebar'
 import MutedText from '../../components/MutedText'
 import SelectButton from '../../components/SelectButton'
-
-const shoppingList = [
-  {
-    item: 'chicken',
-    quantity: '2 pcs',
-    id: 1
-  },
-  {
-    item: 'salmon',
-    quantity: '2 pcs',
-    id: 2
-  },
-  {
-    item: 'pork',
-    quantity: '1 pcs',
-    id: 3
-  }
-]
+import { 
+  shoppingListFruit, 
+  shoppingListProtein, 
+  shoppingListBeverages 
+} from '../../mock-api/shoppingList'
 
 const EditItemSidebar = () => {
   const [selectedCheckbox, setSelectedCheckbox] = useState([])
@@ -41,23 +28,60 @@ const EditItemSidebar = () => {
   
   return (
     <Sidebar>
-      <MutedText>Meat and Fish</MutedText>
-      {shoppingList.map(listItem => (
-        <Wrapper key={listItem.id}>
-          <Label>
-            <Checkbox 
-              checked={selectedCheckbox.includes(listItem.id)}
-              onChange={() => handleChange(listItem.id)}
-            />
-            <Text 
-              style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-            >
-              {listItem.item}
-            </Text>
-          </Label>
-          <SelectButton>{listItem.quantity}</SelectButton>
-        </Wrapper>
-      ))}
+      <MutedText>Fruit and vegetables</MutedText>
+      <Wrapper>
+
+        {shoppingListFruit.map(listItem => (
+          <Item key={listItem.id}>
+            <Label>
+              <Checkbox 
+                checked={selectedCheckbox.includes(listItem.id)}
+                onChange={() => handleChange(listItem.id)}
+              />
+              <Text 
+                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+              >
+                {listItem.item}
+              </Text>
+            </Label>
+            <SelectButton>{listItem.quantity}</SelectButton>
+          </Item>
+        ))}
+        <MutedText>Meat and Fish</MutedText>
+        {shoppingListProtein.map(listItem => (
+          <Item key={listItem.id}>
+            <Label>
+              <Checkbox 
+                checked={selectedCheckbox.includes(listItem.id)}
+                onChange={() => handleChange(listItem.id)}
+              />
+              <Text 
+                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+              >
+                {listItem.item}
+              </Text>
+            </Label>
+            <SelectButton>{listItem.quantity}</SelectButton>
+          </Item>
+        ))}
+        <MutedText>Beverages</MutedText>
+        {shoppingListBeverages.map(listItem => (
+          <Item key={listItem.id}>
+            <Label>
+              <Checkbox 
+                checked={selectedCheckbox.includes(listItem.id)}
+                onChange={() => handleChange(listItem.id)}
+              />
+              <Text 
+                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+              >
+                {listItem.item}
+              </Text>
+            </Label>
+            <SelectButton>{listItem.quantity}</SelectButton>
+          </Item>
+        ))}
+      </Wrapper>
     </Sidebar>
   )
 }
@@ -65,6 +89,7 @@ const EditItemSidebar = () => {
 const Label = styled.label`
   display: flex;
   align-items: baseline;
+
 `
 
 const Text = styled.span`
@@ -72,6 +97,10 @@ const Text = styled.span`
 `
 
 const Wrapper = styled.section`
+  overflow: scroll;
+`
+
+const Item = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: space-between;

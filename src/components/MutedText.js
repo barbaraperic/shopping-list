@@ -11,6 +11,7 @@ const Header = styled.h4`
   color: hsla(0, 0%, 51%, 1);
   font-size: 12px;
   margin-bottom: 30px;
+  margin-top: 10px;
 `
 
 export default MutedText

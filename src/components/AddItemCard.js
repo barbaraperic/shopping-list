@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   border-radius: 24px;
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 0px auto;
 `
 
 const Text = styled.p`
