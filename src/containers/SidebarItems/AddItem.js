@@ -17,7 +17,7 @@ const AddItemSidebar = () => {
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   margin: 50px;
 `

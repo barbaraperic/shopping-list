@@ -48,7 +48,7 @@ const SidebarList = () => {
   )
 }
 
-const SidebarWrapper = styled.div`
+const SidebarWrapper = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;

@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Checkbox from '../../components/Input'
+import Sidebar from '../Sidebar'
+import MutedText from '../../components/MutedText'
 
 const EditItemSidebar = () => {
   const [checked, setChecked] = useState(false)
   return (
-    <Wrapper>
+    <Sidebar>
+      <MutedText>Meat and Fish</MutedText>
       <Label>
         <Checkbox 
           checked={checked}
@@ -13,11 +16,9 @@ const EditItemSidebar = () => {
         />
         <Text style={{ textDecoration: checked ? 'line-through' : 'none'}}>Chicken</Text>
       </Label>
-    </Wrapper>
+    </Sidebar>
   )
 }
-
-const Wrapper = styled.section``
 
 const Label = styled.label`
   display: flex;
