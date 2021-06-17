@@ -18,23 +18,40 @@ const ProgressBar = ({ value, variant }) => {
   }
 
   return (
-    <Wrapper
-      role="progressbar"
-      aria-valuenow={value}
-      aria-valuemin="0"
-      aria-valuemax="100"
-    >
-      <BarWrapper>
-        <Bar 
-          style={{
-            "--width": value + '%',
-            "--background-color": styles.backgroundColor
-          }}
-        />
-      </BarWrapper>
-    </Wrapper>
+    <Container>
+      <Label>
+        <p>Banana</p>
+        <span>{value}%</span>
+      </Label>
+      <Wrapper
+        role="progressbar"
+        aria-valuenow={value}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <BarWrapper>
+          <Bar 
+            style={{
+              "--width": value + '%',
+              "--background-color": styles.backgroundColor
+            }}
+          />
+        </BarWrapper>
+      </Wrapper>
+    </Container>
   )
 }
+
+const Container = styled.div`
+
+`
+
+const Label = styled.label`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+`
 
 const Wrapper = styled.div`
   background-color: ${COLORS.lightGray};

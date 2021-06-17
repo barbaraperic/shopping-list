@@ -11,7 +11,7 @@ import ProgressBar from '../components/ProgressBar'
 const Home = () => {
   return (
     <Wrapper>
-      <ProgressBar value={60} variant="category"/>
+      <ProgressBar value={12} variant="category"/>
       {/* <EditItemSidebar /> */}
     </Wrapper>
   )
