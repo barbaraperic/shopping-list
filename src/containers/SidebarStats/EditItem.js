@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Checkbox from '../../components/Input'
-import Sidebar from '../Sidebar'
+import SidebarSection from '../SidebarSection'
 import MutedText from '../../components/MutedText'
+import Button from '../../components/Button'
 import SelectButton from '../../components/SelectButton'
 import { 
   shoppingListFruit, 
@@ -27,69 +28,77 @@ const EditItemSidebar = () => {
   }
   
   return (
-    <Sidebar>
-      <MutedText>Fruit and vegetables</MutedText>
-      <Wrapper>
-
-        {shoppingListFruit.map(listItem => (
-          <Item key={listItem.id}>
-            <Label>
-              <Checkbox 
-                checked={selectedCheckbox.includes(listItem.id)}
-                onChange={() => handleChange(listItem.id)}
-              />
-              <Text 
-                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-              >
-                {listItem.item}
-              </Text>
-            </Label>
-            <SelectButton>{listItem.quantity}</SelectButton>
-          </Item>
-        ))}
-        <MutedText>Meat and Fish</MutedText>
-        {shoppingListProtein.map(listItem => (
-          <Item key={listItem.id}>
-            <Label>
-              <Checkbox 
-                checked={selectedCheckbox.includes(listItem.id)}
-                onChange={() => handleChange(listItem.id)}
-              />
-              <Text 
-                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-              >
-                {listItem.item}
-              </Text>
-            </Label>
-            <SelectButton>{listItem.quantity}</SelectButton>
-          </Item>
-        ))}
-        <MutedText>Beverages</MutedText>
-        {shoppingListBeverages.map(listItem => (
-          <Item key={listItem.id}>
-            <Label>
-              <Checkbox 
-                checked={selectedCheckbox.includes(listItem.id)}
-                onChange={() => handleChange(listItem.id)}
-              />
-              <Text 
-                style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-              >
-                {listItem.item}
-              </Text>
-            </Label>
-            <SelectButton>{listItem.quantity}</SelectButton>
-          </Item>
-        ))}
-      </Wrapper>
-    </Sidebar>
+    <Aside>
+      <SidebarSection>
+        <MutedText>Fruit and vegetables</MutedText>
+        <Wrapper>
+          {shoppingListFruit.map(listItem => (
+            <Item key={listItem.id}>
+              <Label>
+                <Checkbox 
+                  checked={selectedCheckbox.includes(listItem.id)}
+                  onChange={() => handleChange(listItem.id)}
+                />
+                <Text 
+                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+                >
+                  {listItem.item}
+                </Text>
+              </Label>
+              <SelectButton>{listItem.quantity}</SelectButton>
+            </Item>
+          ))}
+          <MutedText>Meat and Fish</MutedText>
+          {shoppingListProtein.map(listItem => (
+            <Item key={listItem.id}>
+              <Label>
+                <Checkbox 
+                  checked={selectedCheckbox.includes(listItem.id)}
+                  onChange={() => handleChange(listItem.id)}
+                />
+                <Text 
+                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+                >
+                  {listItem.item}
+                </Text>
+              </Label>
+              <SelectButton>{listItem.quantity}</SelectButton>
+            </Item>
+          ))}
+          <MutedText>Beverages</MutedText>
+          {shoppingListBeverages.map(listItem => (
+            <Item key={listItem.id}>
+              <Label>
+                <Checkbox 
+                  checked={selectedCheckbox.includes(listItem.id)}
+                  onChange={() => handleChange(listItem.id)}
+                />
+                <Text 
+                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
+                >
+                  {listItem.item}
+                </Text>
+              </Label>
+              <SelectButton>{listItem.quantity}</SelectButton>
+            </Item>
+          ))}
+        </Wrapper>
+      </SidebarSection>
+      <ButtonWrapper>
+        <Button >cancel</Button>
+        <Button variant="secondary">Complete</Button>
+      </ButtonWrapper>
+    </Aside>
   )
 }
+
+const Aside = styled.aside`
+
+`
 
 const Label = styled.label`
   display: flex;
   align-items: baseline;
-
 `
 
 const Text = styled.span`
@@ -98,6 +107,7 @@ const Text = styled.span`
 
 const Wrapper = styled.section`
   overflow: scroll;
+  padding: 3px;
 `
 
 const Item = styled.div`
@@ -105,6 +115,14 @@ const Item = styled.div`
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 16px;
+`
+
+const ButtonWrapper = styled.div`
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 130px;
 `
 
 export default EditItemSidebar

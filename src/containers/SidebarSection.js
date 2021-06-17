@@ -3,20 +3,20 @@ import { COLORS } from '../style/constants'
 import AddItemCard from '../components/AddItemCard'
 import { Icon } from '../assets'
 
-const Sidebar = ({ children }) => {
+const SidebarSection = ({ children }) => {
   return (
-    <Wrapper>
+    <Section>
       <AddItemCard />
       <TextWrapper>
         <Title>Shopping List</Title>
         <Icon id="edit" size={16}/>
       </TextWrapper>
       {children}
-    </Wrapper>
+    </Section>
   )
 }
 
-const Wrapper = styled.aside`
+const Section = styled.section`
   height: 100vh;
   width: 380px;
   padding: 40px;
@@ -37,4 +37,4 @@ const TextWrapper = styled.div`
   margin: 40px 0;
 `
 
-export default Sidebar
+export default SidebarSection
