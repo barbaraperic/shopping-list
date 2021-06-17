@@ -1,30 +1,57 @@
 import styled from 'styled-components';
+import { COLORS } from '../style/constants';
 
-const ProgressBar = ({ value }) => {
+const STYLES = {
+  items: {
+    backgroundColor: `${COLORS.primary}`
+  },
+  category: {
+    backgroundColor: `${COLORS.blue}`
+  }
+}
+
+const ProgressBar = ({ value, variant }) => {
+  const styles = STYLES[variant]
+
+  if (!styles) {
+    throw new Error(`Unknown variant passed to ProgressBar: ${variant}`);
+  }
+
   return (
-    <Wrapper>
-      <Label for="file">
-        <p>Downloading progress</p>
-        <span>{value}%</span>
-      </Label>
-      <Progress id="file" value={value} max="100"> {value}% </Progress>
+    <Wrapper
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <BarWrapper>
+        <Bar 
+          style={{
+            "--width": value + '%',
+            "--background-color": styles.backgroundColor
+          }}
+        />
+      </BarWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const Label = styled.label`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-`
-
-const Progress = styled.progress`
+  background-color: ${COLORS.lightGray};
+  border-radius: 4px;
   width: 332px;
+`
+
+const Bar = styled.div`
+  height: 6px;
+  width: var(--width);
+  background-color: var(--background-color);
+  border-radius: 4px;
+`
+
+const BarWrapper = styled.div`
+  /* border-radius: 4px;  */
+  overflow: hidden;
 `
 
 export default ProgressBar
