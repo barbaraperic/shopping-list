@@ -4,13 +4,15 @@ import styled from 'styled-components';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
 // import SaveInput from '../components/SaveInput'
-import EditItemSidebar from '../containers/SidebarStats'
+// import EditItemSidebar from '../containers/SidebarStats'
+import ProgressBar from '../components/ProgressBar'
 
 
 const Home = () => {
   return (
     <Wrapper>
-      <EditItemSidebar />
+      <ProgressBar value={99.2}/>
+      {/* <EditItemSidebar /> */}
     </Wrapper>
   )
 }
