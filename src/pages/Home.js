@@ -3,16 +3,13 @@ import styled from 'styled-components';
 // import Main from '../containers/Main';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
-// import SaveInput from '../components/SaveInput'
-// import EditItemSidebar from '../containers/SidebarStats'
-import ProgressBar from '../components/ProgressBar'
+import Status from '../components/Status'
 
 
 const Home = () => {
   return (
     <Wrapper>
-      <ProgressBar value={12} variant="category"/>
-      {/* <EditItemSidebar /> */}
+      <Status type="canceled" >Canceled</Status>
     </Wrapper>
   )
 }

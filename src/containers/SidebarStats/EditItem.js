@@ -85,7 +85,7 @@ const EditItemSidebar = () => {
         </Wrapper>
       </SidebarSection>
       <ButtonWrapper>
-        <Button >cancel</Button>
+        <Button variant="tertiary">cancel</Button>
         <Button variant="secondary">Complete</Button>
       </ButtonWrapper>
     </Aside>

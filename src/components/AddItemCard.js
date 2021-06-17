@@ -7,7 +7,7 @@ const AddItemCard = () => {
     <Wrapper>
       <TextWrapper>
         <Text>Didn't find what you need?</Text>
-        <StyledButton variant="ghost">Add item</StyledButton>
+        <StyledButton variant="tertiary">Add item</StyledButton>
       </TextWrapper>
     </Wrapper>
   )
