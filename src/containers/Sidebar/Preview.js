@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { COLORS } from '../../style/constants';
 import { Icon } from '../../assets/index'
-import AddItemCard from '../../components/AddItemCard'
-import SaveInput from '../components/SaveInput'
-import SelectButton from '../../components/SelectButton'
+import { AddItemCard } from '../../components/Card'
+import { SaveInput } from '../../components/Input'
+import { QuantityButton } from '../../components/Button'
 
-const SidebarList = () => {
+const PreviewSidebar = () => {
   return (
     <SidebarWrapper>
     <Wrapper>
@@ -19,24 +19,24 @@ const SidebarList = () => {
           <Header>Fruit and vegetables</Header>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton id="edit">3 pcs</SelectButton>
+            <QuantityButton id="edit">3 pcs</QuantityButton>
           </TextWrapper>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton>3 pcs</SelectButton>
+            <QuantityButton>3 pcs</QuantityButton>
           </TextWrapper>
           <Header>Meat and fish</Header>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton>3 pcs</SelectButton>
+            <QuantityButton>3 pcs</QuantityButton>
           </TextWrapper>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton>3 pcs</SelectButton>
+            <QuantityButton>3 pcs</QuantityButton>
           </TextWrapper>
           <TextWrapper>
             <p>Avocado</p>
-            <SelectButton>3 pcs</SelectButton>
+            <QuantityButton>3 pcs</QuantityButton>
           </TextWrapper>
         </FoodSection>
       </Section>
@@ -98,4 +98,4 @@ const Header = styled.h4`
   margin-bottom: 30px;
 `
 
-export default SidebarList;
+export default PreviewSidebar;

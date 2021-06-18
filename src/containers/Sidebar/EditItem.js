@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import React, { useState} from 'react';
 import styled from 'styled-components';
-import Checkbox from '../../components/Input'
-import SidebarSection from '../SidebarSection'
-import MutedText from '../../components/MutedText'
-import Button from '../../components/Button'
-import SelectButton from '../../components/SelectButton'
+import { Checkbox } from '../../components/Input'
+import { MutedText } from '../../components/Header'
+import { Button, QuantityButton } from '../../components/Button'
+import SidebarTop from './SidebarTop'
 import { 
   shoppingListFruit, 
   shoppingListProtein, 
   shoppingListBeverages 
-} from '../../mock-api/shoppingList'
+} from '../../mock-api'
 
 const EditItemSidebar = () => {
   const [selectedCheckbox, setSelectedCheckbox] = useState([])
@@ -29,7 +28,7 @@ const EditItemSidebar = () => {
   
   return (
     <Aside>
-      <SidebarSection>
+      <SidebarTop>
         <MutedText>Fruit and vegetables</MutedText>
         <Wrapper>
           {shoppingListFruit.map(listItem => (
@@ -45,7 +44,7 @@ const EditItemSidebar = () => {
                   {listItem.item}
                 </Text>
               </Label>
-              <SelectButton>{listItem.quantity}</SelectButton>
+              <QuantityButton>{listItem.quantity}</QuantityButton>
             </Item>
           ))}
           <MutedText>Meat and Fish</MutedText>
@@ -62,7 +61,7 @@ const EditItemSidebar = () => {
                   {listItem.item}
                 </Text>
               </Label>
-              <SelectButton>{listItem.quantity}</SelectButton>
+              <QuantityButton>{listItem.quantity}</QuantityButton>
             </Item>
           ))}
           <MutedText>Beverages</MutedText>
@@ -79,11 +78,11 @@ const EditItemSidebar = () => {
                   {listItem.item}
                 </Text>
               </Label>
-              <SelectButton>{listItem.quantity}</SelectButton>
+              <QuantityButton>{listItem.quantity}</QuantityButton>
             </Item>
           ))}
         </Wrapper>
-      </SidebarSection>
+      </SidebarTop>
       <ButtonWrapper>
         <Button variant="tertiary">cancel</Button>
         <Button variant="secondary">Complete</Button>
@@ -125,4 +124,4 @@ const ButtonWrapper = styled.div`
   min-height: 130px;
 `
 
-export default EditItemSidebar
+export default EditItemSidebar;

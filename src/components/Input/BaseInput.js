@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BaseInput = ({ label, placeholder }) => {
+const BaseInput = ({ label, placeholder }) => {
   return (
     <Wrapper>
       <Label>{label}</Label>
@@ -31,3 +31,5 @@ const InputText = styled.input`
     font-size: 14px;
   }
 `
+
+export default BaseInput

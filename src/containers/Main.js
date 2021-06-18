@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { COLORS } from '../style/constants'
 import Cards from '../containers/Cards';
-import SearchInput from '../components/SearchInput'
+import { SearchInput } from '../components/Input'
 
 const fruits = ["Avocado", "Banana", "Bunch of carrots", "Watermelon"]
 

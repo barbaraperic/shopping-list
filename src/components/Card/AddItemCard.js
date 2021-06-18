@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Button from '../components/Button';
-import { COLORS } from '../style/constants'
+import Button from '../Button/DefaultButton';
+import { COLORS } from '../../style/constants'
 
 const AddItemCard = () => {
   return (

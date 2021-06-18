@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import styled from 'styled-components';
-import Select from '../../components/Select';
+import Select from '../Select';
 
 const options = ["Fruit and vegetables", "Meat and fish", "Beverages"]
 
-const AddItemSidebar = () => {
+const Dropdown = () => {
   const [valueState, setValueState] = useState("Fruit and vegetables")
   return (
     <Wrapper>
@@ -22,4 +22,4 @@ const Wrapper = styled.section`
   margin: 50px;
 `
 
-export default AddItemSidebar
+export default Dropdown;

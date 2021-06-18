@@ -1,14 +1,10 @@
-import { useState } from 'react'
 import styled from 'styled-components';
-// import Main from '../containers/Main';
-// import SidebarLeft from '../containers/SidebarLeft'
-// import SidebarRight from '../containers/SidebarRight'
-import CardDescription from '../components/Card/CardDescription'
+import Tabs from '../containers/Tabs';
 
 const Home = () => {
   return (
     <Wrapper>
-      <CardDescription />
+      < Tabs/>
     </Wrapper>
   )
 }

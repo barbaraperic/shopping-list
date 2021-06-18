@@ -1,21 +1,7 @@
 import styled from 'styled-components';
-import { COLORS } from '../style/constants'
+import { COLORS } from '../../style/constants';
 
-const STYLES = {
-  completed: {
-    color: `${COLORS.blue}`
-  },
-  canceled: {
-    color: `${COLORS.red}`
-  }
-}
-
-const Button = ({ children, variant, className, type }) => {
-  // const styles = STYLES[type]
-
-  // if (!styles) {
-  //   throw new Error(`Unknown type prop: ${type}`)
-  // }
+const Button = ({ children, variant, className }) => {
 
   let Component;
   if (variant === 'primary') {
@@ -28,13 +14,12 @@ const Button = ({ children, variant, className, type }) => {
     Component = WarningButton
   } else if (variant === 'ghost') {
     Component = GhostButton
+  } else {
+    Component = PrimaryButton
   }
   return (
     <Component 
       className={className}
-      // style={{
-      //   '--color': styles.color
-      // }}
     >
       {children}
     </Component>

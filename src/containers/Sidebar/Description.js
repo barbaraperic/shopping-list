@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Button from '../Button';
+import { Button } from '../../components/Button';
 
-const CardDescription = () => {
+const DescriptionSidebar = () => {
   return (
     <Section>
       <Link>&larr; back</Link>
@@ -51,6 +51,7 @@ const Header = styled.h4`
 
 const LongText = styled.p`
   line-height: 1.3;
+  margin-bottom: 16px;
 `
 
 const Footer = styled.div`
@@ -61,4 +62,4 @@ const Footer = styled.div`
   justify-content: space-evenly;
 `
 
-export default CardDescription
+export default DescriptionSidebar

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { COLORS } from '../style/constants'
-import AddItemCard from '../components/AddItemCard'
-import { Icon } from '../assets'
+import { COLORS } from '../../style/constants'
+import { AddItemCard } from '../../components/Card'
+import { Icon } from '../../assets'
 
-const SidebarSection = ({ children }) => {
+const SidebarTop = ({ children }) => {
   return (
     <Section>
       <AddItemCard />
@@ -37,4 +37,4 @@ const TextWrapper = styled.div`
   margin: 40px 0;
 `
 
-export default SidebarSection
+export default SidebarTop

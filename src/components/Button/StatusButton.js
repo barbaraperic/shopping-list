@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../style/constants'
+import { COLORS } from '../../style/constants';
 
 const STYLES = {
   completed: {
@@ -10,7 +10,7 @@ const STYLES = {
   }
 }
 
-const Status = ({ children, className, type }) => {
+const StatusButton = ({ children, className, type }) => {
   const styles = STYLES[type]
 
   if (!styles) {
@@ -43,4 +43,4 @@ const Button = styled.a`
   cursor: pointer;
 `
 
-export default Status;
+export default StatusButton;

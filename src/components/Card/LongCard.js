@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Icon } from '../assets';
-import Status from '../components/Status';
-import { formatDate } from '../helpers/timestamp'
+import { Icon } from '../../assets';
+import { StatusButton } from '../../components/Button';
+import { formatDate } from '../../helpers/timestamp'
 
 const LongCard = () => {
   return (
@@ -10,7 +10,7 @@ const LongCard = () => {
       <Wrapper>
         <StyledIcon id="calendar" size={18} />
         <DateText>{formatDate(new Date())}</DateText>
-        <Status type="completed">Completed</Status>
+        <StatusButton type="completed">Completed</StatusButton>
         <Arrow>&gt;</Arrow>
       </Wrapper>
     </CardWrapper>

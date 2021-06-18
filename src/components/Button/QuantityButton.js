@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Icon } from '../assets'
+import { Icon } from '../../assets'
  
-const SelectButton = ({ children, id }) => {
+const QuantityButton = ({ children, id }) => {
   return (
     <>
       { id === "edit" 
@@ -62,4 +62,4 @@ const StyledIcon = styled(Icon)`
   cursor: pointer;
 `
 
-export default SelectButton;
+export default QuantityButton;

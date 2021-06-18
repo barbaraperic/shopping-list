@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../style/constants';
+import { COLORS } from '../../style/constants';
 
 const STYLES = {
   items: {
@@ -70,5 +70,9 @@ const BarWrapper = styled.div`
   /* border-radius: 4px;  */
   overflow: hidden;
 `
+
+ProgressBar.defaultProps = {
+  variant: 'items'
+}
 
 export default ProgressBar

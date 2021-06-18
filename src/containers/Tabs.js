@@ -62,7 +62,6 @@ const TooltipWrapper = styled.span`
     margin-top: -20px;
     margin-left: -5px;
   }
-
 `
 
 const StyledIcon = styled(NavIcon)`
@@ -76,7 +75,5 @@ const StyledIcon = styled(NavIcon)`
 const Spacer = styled.div`
   height: 45px;
 `
-
-
 
 export default Tabs;

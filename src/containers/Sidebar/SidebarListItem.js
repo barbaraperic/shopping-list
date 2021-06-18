@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import MutedText from '../components/MutedText'
+import { MutedText } from '../components/Header'
+import { QuantityButton } from '../../components/Button';
 
 const Section = ({ title, children, item, edit, quantity }) => {
   return (
@@ -8,7 +9,7 @@ const Section = ({ title, children, item, edit, quantity }) => {
       <Wrapper>
         {children}
         <p>{item}</p>
-        <SelectButton edit={edit}>{quantity}</SelectButton>
+        <QuantityButton edit={edit}>{quantity}</QuantityButton>
       </Wrapper>
     </SectionWrapper>
   )

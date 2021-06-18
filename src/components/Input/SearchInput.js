@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Icon } from '../../assets'
 
-export const SearchInput = () => {
+const SearchInput = () => {
   return (
     <Wrapper>
       <IconWrapper>
@@ -36,3 +36,5 @@ const Input = styled.input`
     color: hsla(0, 0%, 74%, 1);
   }
 `
+
+export default SearchInput

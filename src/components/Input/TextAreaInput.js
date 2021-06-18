@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TextAreaInput = ({ id, label, placeholder }) => {
+const TextAreaInput = ({ id, label, placeholder }) => {
   return (
     <Wrapper>
       <Label htmlFor={id}>{label}</Label>
@@ -30,3 +30,5 @@ const TextArea = styled.textarea`
     font-size: 14px;
   }
 `
+
+export default TextAreaInput
