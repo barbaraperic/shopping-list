@@ -11,11 +11,11 @@ const STYLES = {
 }
 
 const Button = ({ children, variant, className, type }) => {
-  const styles = STYLES[type]
+  // const styles = STYLES[type]
 
-  if (!styles) {
-    throw new Error(`Unknown type prop: ${type}`)
-  }
+  // if (!styles) {
+  //   throw new Error(`Unknown type prop: ${type}`)
+  // }
 
   let Component;
   if (variant === 'primary') {
@@ -32,9 +32,9 @@ const Button = ({ children, variant, className, type }) => {
   return (
     <Component 
       className={className}
-      style={{
-        '--color': styles.color
-      }}
+      // style={{
+      //   '--color': styles.color
+      // }}
     >
       {children}
     </Component>

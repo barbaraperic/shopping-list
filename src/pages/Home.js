@@ -3,12 +3,12 @@ import styled from 'styled-components';
 // import Main from '../containers/Main';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
-import LongCard from '../components/LongCard';
+import CardDescription from '../components/Card/CardDescription'
 
 const Home = () => {
   return (
     <Wrapper>
-      <LongCard />
+      <CardDescription />
     </Wrapper>
   )
 }
