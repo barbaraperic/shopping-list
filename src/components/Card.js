@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { Icon } from '../assets';
 
-const Card = ({ text }) => {
+const Card = ({ text, children }) => {
   return (
     <Wrapper>
       <Text>{text}</Text>
-      <StyledIcon id="plus" size={16}/>
+      {children}
     </Wrapper>
   )
 }
@@ -26,10 +25,6 @@ const Wrapper = styled.div`
 
 const Text = styled.p`
   line-height: 1.4;
-`
-
-const StyledIcon = styled(Icon)`
-  color: hsla(240, 2%, 76%, 1);
 `
 
 export default Card

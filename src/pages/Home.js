@@ -3,13 +3,12 @@ import styled from 'styled-components';
 // import Main from '../containers/Main';
 // import SidebarLeft from '../containers/SidebarLeft'
 // import SidebarRight from '../containers/SidebarRight'
-import Status from '../components/Status'
-
+import LongCard from '../components/LongCard';
 
 const Home = () => {
   return (
     <Wrapper>
-      <Status type="canceled" >Canceled</Status>
+      <LongCard />
     </Wrapper>
   )
 }

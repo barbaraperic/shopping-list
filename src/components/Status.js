@@ -40,6 +40,7 @@ const Button = styled.a`
   color: var(--color);
   background-color: transparent;
   border: 1px solid var(--color);
+  cursor: pointer;
 `
 
 export default Status;

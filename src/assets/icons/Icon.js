@@ -1,4 +1,12 @@
-import { Search, Plus, Minus, Trash, Edit3, X, Check } from 'react-feather';
+import { 
+  Search, 
+  Plus, 
+  Minus, 
+  Trash, 
+  Edit3, 
+  X, 
+  Check, 
+  Calendar } from 'react-feather';
 import styled from 'styled-components';
 
 const icons = {
@@ -8,7 +16,8 @@ const icons = {
   trash: Trash,
   edit: Edit3,
   remove: X,
-  check: Check
+  check: Check,
+  calendar: Calendar
 }
 
 export const Icon = ({ id, size, className, onClick }) => {
