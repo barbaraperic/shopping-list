@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { AddItemCard } from '../../components/Card'
+import { SaveInput } from '../../components/Input'
 import shoppingIllustration from '../../assets/illustrations/shopping.svg';
 import { COLORS } from '../../style/constants'
 
 const NoItemSidebar = () => {
   return (
+    <AsideWrapper>
     <Aside>
       <AddItemCard />
       <Wrapper>
@@ -12,8 +14,18 @@ const NoItemSidebar = () => {
       </Wrapper>
       <Image src={shoppingIllustration}/>
     </Aside>
+      <SectionBottom>
+        <SaveInput />
+      </SectionBottom>
+    </AsideWrapper>
   )
 }
+
+const AsideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 
 const Aside = styled.aside`
   display: flex;
@@ -47,6 +59,14 @@ const Image = styled.img`
   left: 0;
   right: 0;
   text-align: center;
+`
+
+const SectionBottom = styled.section`
+  height: 130px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default NoItemSidebar;
