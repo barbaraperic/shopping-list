@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Tabs from '../containers/Tabs';
+import { NoItemSidebar } from '../containers/Sidebar'
 
 const Home = () => {
   return (
     <Wrapper>
-      < Tabs/>
+      < NoItemSidebar/>
     </Wrapper>
   )
 }

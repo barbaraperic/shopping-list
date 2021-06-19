@@ -5,18 +5,18 @@ import { Icon } from '../../assets'
 
 const SidebarTop = ({ children }) => {
   return (
-    <Section>
+    <SectionWrapper>
       <AddItemCard />
       <TextWrapper>
         <Title>Shopping List</Title>
         <Icon id="edit" size={16}/>
       </TextWrapper>
       {children}
-    </Section>
+    </SectionWrapper>
   )
 }
 
-const Section = styled.section`
+const SectionWrapper = styled.section`
   height: 100vh;
   width: 380px;
   padding: 40px;

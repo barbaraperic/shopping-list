@@ -3,7 +3,7 @@ import { Button } from '../../components/Button';
 
 const DescriptionSidebar = () => {
   return (
-    <Section>
+    <Aside>
       <Link>&larr; back</Link>
       <Image src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="avocado"/>
       <Header>name</Header>
@@ -16,11 +16,11 @@ const DescriptionSidebar = () => {
         <Button variant="tertiary">delete</Button>
         <Button variant="primary">Add to list</Button>
       </Footer>
-    </Section>
+    </Aside>
   )
 }
 
-const Section = styled.section`
+const Aside = styled.aside`
   padding: 20px 40px;
   height: 100vh;
   width: 389px;

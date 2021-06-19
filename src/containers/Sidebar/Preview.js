@@ -7,7 +7,7 @@ import { QuantityButton } from '../../components/Button'
 
 const PreviewSidebar = () => {
   return (
-    <SidebarWrapper>
+    <Aside>
     <Wrapper>
       <AddItemCard />
       <Section>
@@ -44,11 +44,11 @@ const PreviewSidebar = () => {
     <SectionBottom>
       <SaveInput />
     </SectionBottom>
-    </SidebarWrapper>
+    </Aside>
   )
 }
 
-const SidebarWrapper = styled.section`
+const Aside = styled.aside`
   height: 100vh;
   display: flex;
   flex-direction: column;
