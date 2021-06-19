@@ -23,6 +23,7 @@ const Aside = styled.aside`
   padding: 20px 40px;
   height: 100vh;
   width: 389px;
+  position: relative;
 `
 
 const Wrapper = styled.div`
@@ -39,6 +40,13 @@ const Text = styled.p`
 
 const Image = styled.img`
   height: 200px;
+  position: absolute;
+  bottom: -16px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 `
 
 export default NoItemSidebar;
