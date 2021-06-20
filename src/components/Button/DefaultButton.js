@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { COLORS } from '../../style/constants';
 
-const Button = ({ children, variant, className }) => {
+const Button = ({ children, variant, className, ...props }) => {
 
   let Component;
   if (variant === 'primary') {
@@ -14,12 +14,13 @@ const Button = ({ children, variant, className }) => {
     Component = WarningButton
   } else if (variant === 'ghost') {
     Component = GhostButton
-  } else {
-    Component = PrimaryButton
+  } else if (variant === 'disabled') {
+    Component = DisabledButton
   }
   return (
     <Component 
       className={className}
+      {...props}
     >
       {children}
     </Component>
@@ -43,14 +44,20 @@ const SecondaryButton = styled(ButtonBase)`
   background-color: ${COLORS.blue};
 `
 
-const WarningButton = styled(ButtonBase)`
-  background-color: ${COLORS.red};
-`
-
 const TertiaryButton = styled(ButtonBase)`
   color: black;
   background-color: transparent;
 `
+
+const WarningButton = styled(ButtonBase)`
+  background-color: ${COLORS.red};
+`
+
+const DisabledButton = styled(ButtonBase)`
+  background-color: ${COLORS.gray700};
+`
+
+
 
 const GhostButton = styled(ButtonBase)`
   width: 76px;

@@ -54,7 +54,7 @@ const Label = styled.label`
 `
 
 const Wrapper = styled.div`
-  background-color: ${COLORS.lightGray};
+  background-color: ${COLORS.gray800};
   border-radius: 4px;
   width: 332px;
 `

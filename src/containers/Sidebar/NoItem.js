@@ -15,7 +15,7 @@ const NoItemSidebar = () => {
       <Image src={shoppingIllustration}/>
     </Aside>
       <SectionBottom>
-        <SaveInput />
+        <SaveInput type="disabled"/>
       </SectionBottom>
     </AsideWrapper>
   )

@@ -1,11 +1,21 @@
 import styled from 'styled-components';
+import { COLORS } from '../../style/constants'
 import { Button } from '../Button';
 
-const SaveInput = () => {
+const SaveInput = ({ type }) => {
   return (
     <Wrapper>
-      <Input placeholder="Enter a name"/>
-      <StyledButton variant="primary">Save</StyledButton>
+      {type === 'disabled' ? 
+      <>
+        <DisabledInput placeholder="Enter a name"/>
+        <StyledButton variant="disabled">Save</StyledButton>
+      </>
+      :
+      <>
+        <Input placeholder="Enter a name"/>
+        <StyledButton variant="primary">Save</StyledButton>
+      </>
+      }
     </Wrapper>
   )
 }
@@ -15,11 +25,10 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const Input = styled.input`
-  min-width: 227px;
+const BaseInput = styled.input`
+  min-width: 300px;
   height: 52px;
   border-radius: 12px;
-  border: 2px solid #F9A109;
   padding-left: 18px;
   outline-offset: 4px;
 
@@ -29,10 +38,22 @@ const Input = styled.input`
   }
 `
 
+const DisabledInput = styled(BaseInput)`
+  border: 2px solid ${COLORS.gray700};
+`
+
+const Input = styled(BaseInput)`
+  border: 2px solid ${COLORS.primary};
+`
+
 const StyledButton = styled(Button)`
   position: absolute;
   right: 0;
   margin: auto 0;
 `
+
+SaveInput.defaultProps = {
+  type: ''
+}
 
 export default SaveInput
