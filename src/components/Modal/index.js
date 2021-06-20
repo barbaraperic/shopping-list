@@ -1,14 +1,22 @@
 import styled from 'styled-components';
+import {
+  DialogOverlay,
+  DialogContent
+} from "@reach/dialog";
 import { Icon } from '../../assets'
 import { COLORS } from '../../style/constants'
 
-const Modal = ({ title, children }) => {
+
+const Modal = ({ title, isOpen, handleDismiss, children }) => {
   return (
-    <Overlay>
-      <Content>
+    <Overlay
+      isOpen={isOpen}
+      onDismiss={handleDismiss}
+    >
+      <Content aria-label={title}>
         <Header>
           <Title>{title}</Title>
-          <CloseButton>
+          <CloseButton onClick={handleDismiss}>
             <StyledIcon id="remove" size={14}/>
             <VisuallyHidden>
               Dismiss modal
@@ -23,7 +31,7 @@ const Modal = ({ title, children }) => {
   )
 }
 
-const Overlay = styled.div`
+const Overlay = styled(DialogOverlay)`
   position: fixed;
   left: 0;
   right: 0;
@@ -35,7 +43,7 @@ const Overlay = styled.div`
   justify-content: center;
 `
 
-const Content = styled.div`
+const Content = styled(DialogContent)`
   background-color: white;
   width: 350px;
   padding: 30px;
