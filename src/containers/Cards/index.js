@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Card }from '../components/Card';
-import { Icon } from '../assets'
+import { Card }from '../../components/Card';
+import { Icon } from '../../assets'
 
 const Cards = ({ items }) => {
   return (

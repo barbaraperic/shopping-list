@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavIcon } from '../assets';
+import { NavIcon } from '../../assets';
 
 const Tabs = () => {
   return (

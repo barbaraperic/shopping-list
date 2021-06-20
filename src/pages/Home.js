@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { NoItemSidebar } from '../containers/Sidebar'
+import Modal from '../components/Modal'
 
 const Home = () => {
   return (
     <Wrapper>
-      < NoItemSidebar/>
+      <Modal title="Are you sure you want to cancel this list?"/>
     </Wrapper>
   )
 }
