@@ -79,6 +79,11 @@ const CloseButton = styled.button`
   position: absolute;
   right: 0;
   top: -10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const VisuallyHidden = styled.span`
