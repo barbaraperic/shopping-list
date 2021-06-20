@@ -9,16 +9,16 @@ const Modal = ({ title, children }) => {
         <Header>
           <Title>{title}</Title>
           <CloseButton>
-            <Icon id="remove" size={14}/>
+            <StyledIcon id="remove" size={14}/>
             <VisuallyHidden>
               Dismiss modal
             </VisuallyHidden>
           </CloseButton>
         </Header>
-      </Content>
       <ChildWrapper>
         {children}
       </ChildWrapper>
+      </Content>
     </Overlay>
   )
 }
@@ -39,6 +39,7 @@ const Content = styled.div`
   background-color: white;
   width: 350px;
   padding: 30px;
+  padding-bottom: 10px;
   border-radius: 24px;
 `
 
@@ -47,6 +48,15 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+`
+
+const StyledIcon = styled(Icon)`
+  cursor: pointer;
+  color: ${COLORS.gray500};
+
+  &:hover {
+    color: black;
+  }
 `
 
 const Title = styled.h3`
@@ -75,7 +85,15 @@ const VisuallyHidden = styled.span`
 `
 
 const ChildWrapper = styled.div`
-  padding: 30px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+
+  > * {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
 `
 
 export default Modal

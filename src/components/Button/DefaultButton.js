@@ -57,13 +57,10 @@ const DisabledButton = styled(ButtonBase)`
   background-color: ${COLORS.gray700};
 `
 
-
-
 const GhostButton = styled(ButtonBase)`
   width: 76px;
   padding: 4px 8px;
   border-radius: 8px;
-  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
