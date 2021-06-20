@@ -10,7 +10,7 @@ const NoItemSidebar = () => {
     <Aside>
       <AddItemCard />
       <Wrapper>
-        <Text>No item</Text>
+        <Text>No items</Text>
       </Wrapper>
       <Image src={shoppingIllustration}/>
     </Aside>
@@ -47,7 +47,8 @@ const Wrapper = styled.div`
 `
 
 const Text = styled.p`
-
+  font-weight: bold;
+  margin-bottom: 100px;
 `
 
 const Image = styled.img`
