@@ -21,7 +21,7 @@ const Chart = () => {
     const min = d3.min(data, d => d.date)
     const max = d3.max(data, d => d.date)
 
-    const extent = d3.extent(data, d => d.temp);
+    const extent = d3.extent(data, d => d.quantity);
 
     const xScale = d3.scaleTime()
       .domain([min, max])
@@ -38,7 +38,8 @@ const Chart = () => {
 
     const highLine = d3.line()
       .x(d => xScale(d.date))
-      .y(d => yScale(d.temp))
+      .y(d => yScale(d.quantity))
+      .curve(d3.curveNatural);
 
     
     svg.append("path")
