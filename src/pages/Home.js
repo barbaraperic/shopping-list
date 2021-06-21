@@ -1,24 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import Modal from '../components/Modal'
-import { Button } from '../components/Button'
+import Chart from '../components/Chart'
 
 const Home = () => {
-  const [ modal, setModal ] = useState(false)
 
   return (
     <Wrapper>
-      <button onClick={() => setModal(true)}>open modal</button>
-      <Modal 
-        title="Are you sure you want to cancel this list?"
-        isOpen={modal}
-        handleDismiss={() => setModal(false)}
-      >
-        <>
-          <Button variant="ghost">cancel</Button>
-          <Button variant="warning">Yes</Button>
-        </>
-      </Modal>
+      <Chart />
     </Wrapper>
   )
 }
