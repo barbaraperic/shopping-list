@@ -5,13 +5,18 @@ import { data } from '../../mock-api/chartData';
 const Chart = () => {
   
   const drawChart = () => {
+    
     const width = 400;
-    const height = 100;
+    const height = 200;
+    const margin = {top: 10, right: 30, bottom: 30, left: 60};
 
-    const svg = d3.select("body")
+    const svg = d3.select("#my_dataviz")
                   .append("svg")
-                  .attr("width", width)
-                  .attr("height", height);
+                    .attr("width", 400)
+                    .attr("height", 600)
+                  .append("g")
+                    .attr("transform",
+                        "translate(" + margin.left + "," + margin.top + ")");
 
     const min = d3.min(data, d => d.date)
     const max = d3.max(data, d => d.date)
@@ -22,14 +27,14 @@ const Chart = () => {
       .domain([min, max])
       .range([0, width])
     svg.append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(xScale));
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(xScale));
 
     const yScale = d3.scaleLinear()
       .domain(extent)
       .range([height, 0])
     svg.append("g")
-    .call(d3.axisLeft(yScale));
+      .call(d3.axisLeft(yScale));
 
     const highLine = d3.line()
       .x(d => xScale(d.date))
