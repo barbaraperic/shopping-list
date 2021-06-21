@@ -27,9 +27,10 @@
 
 
 export const data = [
-  {"month": "Apr 1, 1970", "quantity": "A"},
-  {"month": "Jun 15, 1971", "quantity": "B"},
-  {"month": "Mar 30, 1972", "quantity": "C"},
-  {"month": "Jan 1, 1973", "quantity": "D"},
-  {"month": "Jun 15, 1973", "quantity": "E"}
+  { date: new Date('01-01-2015'), temp: 0},
+  { date: new Date('01-01-2016'), temp: 3},
+  { date: new Date('01-01-2017'), temp: 6},
+  { date: new Date('01-01-2018'), temp: 3},
+  { date: new Date('01-01-2019'), temp: 2},
+  { date: new Date('01-01-2020'), temp: 1}
 ];
