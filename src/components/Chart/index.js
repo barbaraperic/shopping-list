@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import * as d3 from "d3";
 import { data } from '../../mock-api/chartData';
+import { COLORS } from '../../style/constants';
 
 const Chart = () => {
   
@@ -21,20 +22,27 @@ const Chart = () => {
     const min = d3.min(data, d => d.date)
     const max = d3.max(data, d => d.date)
 
+    const xExtent = d3.extent(data, d => d.date)
     const extent = d3.extent(data, d => d.quantity);
 
-    const xScale = d3.scaleTime()
-      .domain([min, max])
+    console.log(xExtent)
+
+    const xScale = d3.scaleBand()
+      .domain(data.map(function(d) { 
+        return d.date
+      }))
       .range([0, width])
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(xScale));
+      .call(d3.axisBottom(xScale))
 
     const yScale = d3.scaleLinear()
-      .domain(extent)
-      .range([height, 0])
+      .domain([0, d3.max(data, function(d) { 
+        return d.quantity 
+      })])
+      .rangeRound([height, 0])
     svg.append("g")
-      .call(d3.axisLeft(yScale));
+      .call(d3.axisLeft(yScale).ticks(5));
 
     const highLine = d3.line()
       .x(d => xScale(d.date))
@@ -46,7 +54,7 @@ const Chart = () => {
         .datum(data)
         .attr("class", "line")
         .attr("fill", "none")
-        .attr("stroke", "steelblue")
+        .attr("stroke", `${COLORS.primary}`)
         .attr("stroke-width", 1.5)
         .attr("d", highLine);
   }
