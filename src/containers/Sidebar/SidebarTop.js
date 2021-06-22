@@ -11,14 +11,16 @@ const SidebarTop = ({ children }) => {
         <Title>Shopping List</Title>
         <Icon id="edit" size={16}/>
       </TextWrapper>
+      <Scrollbar>
       {children}
+      </Scrollbar>
     </SectionWrapper>
   )
 }
 
 const SectionWrapper = styled.section`
-  height: 100vh;
   width: 380px;
+  max-height: calc(100vh - 130px);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -35,6 +37,11 @@ const TextWrapper = styled.div`
   align-items: baseline;
   justify-content: space-between;
   margin: 40px 0;
+`
+
+const Scrollbar = styled.div`
+  overflow: scroll;
+  padding: 3px;
 `
 
 export default SidebarTop

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { NotificationIcon } from '../../assets';
 import Tabs from '../Tabs'
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 
 const Navigation = () => {
   return (

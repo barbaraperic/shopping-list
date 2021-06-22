@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { ProgressBar } from '../../components/Input'
+import { SubHeader } from '../../components/Header'
 
 const ProgressBarCards = ({ text, variant, data }) => {
   return (
     <Wrapper>
-      <Title>{text}</Title>
+      <SubHeader>{text}</SubHeader>
       { data ? 
         data.map(item => (
         <ProgressBar
@@ -19,15 +20,8 @@ const ProgressBarCards = ({ text, variant, data }) => {
   )
 }
 
-const Title = styled.h3`
-  font-size: 24px;
-  font-weight: lighter;
-  margin-bottom: 40px;
-`
 
 const Wrapper = styled.section`
-
-
 `
 
 export default ProgressBarCards

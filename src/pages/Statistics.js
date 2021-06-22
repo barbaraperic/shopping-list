@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import Modal from '../components/Modal'
-import { Button } from '../components/Button'
+// import Modal from '../components/Modal'
+// import { Button } from '../components/Button'
 import ProgressBarCards from '../containers/ProgressBarCards'
+import Chart from '../components/Chart'
+import Navigation from '../containers/Navigation'
+import { EditItemSidebar } from '../containers/Sidebar'
+import { SubHeader } from '../components/Header'
 import { topItems, topCategories } from '../mock-api'
 
 const Statistics = () => {
@@ -10,18 +14,24 @@ const Statistics = () => {
 
   return (
     <Wrapper>
-      <CardWrapper>
-        <ProgressBarCards 
-          text="Top items"
-          data={topItems}
-          variant="items"
-        />
-        <ProgressBarCards 
-          text="Top categories"
-          data={topCategories}
-          variant="category"
-        />
-      </CardWrapper>
+      <Navigation />
+      <Main>
+        <CardWrapper>
+          <ProgressBarCards 
+            text="Top items"
+            data={topItems}
+            variant="items"
+          />
+          <ProgressBarCards 
+            text="Top categories"
+            data={topCategories}
+            variant="category"
+          />
+        </CardWrapper>
+        <SubHeader>Monthly Summary</SubHeader>
+        <Chart />
+      </Main>
+      <EditItemSidebar />
       {/* <button onClick={() => setModal(true)}>open modal</button>
       <Modal 
         title="Are you sure you want to cancel this list?"
@@ -38,14 +48,25 @@ const Statistics = () => {
 }
 
 const Wrapper = styled.div`
-  /* display: flex; */
-  margin: 50px;
+  display: flex;
+  /* margin: 50px; */
+`
+
+const Main = styled.main`
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 const CardWrapper = styled.div`
+  width: 700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 65px;
 `
 
 // const StyledMain = styled(Main)`

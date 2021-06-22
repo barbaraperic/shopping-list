@@ -30,7 +30,6 @@ const EditItemSidebar = () => {
     <Aside>
       <SidebarTop>
         <MutedText>Fruit and vegetables</MutedText>
-        <Wrapper>
           {shoppingListFruit.map(listItem => (
             <Item key={listItem.id}>
               <Label>
@@ -81,7 +80,6 @@ const EditItemSidebar = () => {
               <QuantityButton>{listItem.quantity}</QuantityButton>
             </Item>
           ))}
-        </Wrapper>
       </SidebarTop>
       <ButtonWrapper>
         <Button variant="tertiary">cancel</Button>
@@ -92,7 +90,7 @@ const EditItemSidebar = () => {
 }
 
 const Aside = styled.aside`
-
+  max-height: 100vh;
 `
 
 const Label = styled.label`
@@ -102,11 +100,6 @@ const Label = styled.label`
 
 const Text = styled.span`
   margin-left: 14px;
-`
-
-const Wrapper = styled.section`
-  overflow: scroll;
-  padding: 3px;
 `
 
 const Item = styled.div`

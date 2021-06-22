@@ -7,13 +7,13 @@ const Chart = () => {
   
   const drawChart = () => {
     
-    const width = 400;
+    const width = 700;
     const height = 200;
     const margin = {top: 10, right: 29, bottom: 30, left: 60};
 
     const svg = d3.select("#my_dataviz")
                   .append("svg")
-                    .attr("width", 500)
+                    .attr("width", 700)
                     .attr("height", 300)
                   .append("g")
                     .attr("transform",
@@ -48,7 +48,7 @@ const Chart = () => {
         .attr("fill", "none")
         .attr("stroke", `${COLORS.primary}`)
         .attr("stroke-width", 1.5)
-        .attr("transform", "translate(67, 0)")
+        .attr("transform", "translate(116, 0)")
         .attr("d", highLine);
   }
   
