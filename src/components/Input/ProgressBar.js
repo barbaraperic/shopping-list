@@ -10,7 +10,7 @@ const STYLES = {
   }
 }
 
-const ProgressBar = ({ value, variant }) => {
+const ProgressBar = ({ text, value, variant }) => {
   const styles = STYLES[variant]
 
   if (!styles) {
@@ -20,7 +20,7 @@ const ProgressBar = ({ value, variant }) => {
   return (
     <Container>
       <Label>
-        <p>Banana</p>
+        <p>{text}</p>
         <span>{value}%</span>
       </Label>
       <Wrapper
@@ -43,7 +43,7 @@ const ProgressBar = ({ value, variant }) => {
 }
 
 const Container = styled.div`
-
+  margin-bottom: 30px;
 `
 
 const Label = styled.label`

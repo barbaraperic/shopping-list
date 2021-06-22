@@ -1,10 +1,10 @@
-import Home from './pages/Home'
+import Statistics from './pages/Statistics'
 import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <Statistics />
     </div>
   )
 }
