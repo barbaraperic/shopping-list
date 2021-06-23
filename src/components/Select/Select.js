@@ -22,8 +22,7 @@ const Select = ({ label, value, onChange, children, onClick }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  width: 309px;
-  
+  width: 300px; 
 `;
 
 const NativeSelect = styled.select`
@@ -36,7 +35,6 @@ const NativeSelect = styled.select`
 `;
 
 const PresentationalBit = styled.div`
-  
   border: 2px solid hsla(0, 0%, 74%, 1);
   font-size: 14px;
   padding: 12px 16px;
