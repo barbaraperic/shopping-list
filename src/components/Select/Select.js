@@ -36,10 +36,9 @@ const NativeSelect = styled.select`
 `;
 
 const PresentationalBit = styled.div`
-  color: #212121;
+  
   border: 2px solid hsla(0, 0%, 74%, 1);
-  /* background-color: #212121; */
-  font-size: ${16 / 16}rem;
+  font-size: 14px;
   padding: 12px 16px;
   padding-right: 52px;
   border-radius: 8px;
@@ -49,6 +48,10 @@ const PresentationalBit = styled.div`
   }
   ${NativeSelect}:hover + & {
     color: black;
+  }
+
+  &::placeholder {
+    color: hsla(0, 0%, 74%, 1);
   }
 `;
 

@@ -1,23 +1,26 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import Chart from '../components/Chart'
+import Navigation from '../containers/Navigation'
+import Main from '../containers/Main'
+import { AddItemSidebar } from '../containers/Sidebar'
+
 
 const Home = () => {
-
   return (
     <Wrapper>
-      <Chart />
+      {/* <Navigation /> */}
+      {/* <StyledMain /> */}
+      <AddItemSidebar />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   display: flex;
-  margin: 50px;
 `
 
-// const StyledMain = styled(Main)`
-//   flex: 1;
-// `
+const StyledMain = styled(Main)`
+  flex: 1;
+`
 
 export default Home

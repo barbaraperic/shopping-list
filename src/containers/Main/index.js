@@ -24,7 +24,6 @@ const Main = ({ className }) => {
         <Header>Meat and fish</Header>
         <Cards items={meatAndFish} />
       </Wrapper>
-    
     </MainWrapper>
   )
 }
@@ -56,4 +55,4 @@ const Header = styled.h3`
   margin-top: 50px;
 `
 
-export default Main
+export default Main;

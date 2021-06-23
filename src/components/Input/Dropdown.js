@@ -2,13 +2,14 @@ import { useState } from 'react'
 import styled from 'styled-components';
 import Select from '../Select';
 
-const options = ["Fruit and vegetables", "Meat and fish", "Beverages"]
+const options = ["Enter a category", "Fruit and vegetables", "Meat and fish", "Beverages"]
 
-const Dropdown = () => {
-  const [valueState, setValueState] = useState("Fruit and vegetables")
+const Dropdown = ({ label }) => {
+  const [valueState, setValueState] = useState("Enter a category")
   return (
     <Wrapper>
-      <Select label="Hello" value={valueState} onChange={(e) => setValueState(e.target.value)}>
+      <Label>{label}</Label>
+      <Select label={label} value={valueState} onChange={(e) => setValueState(e.target.value)}>
         {options.map(option => (
           <option key={option}>{option}</option>
           ))}
@@ -18,8 +19,13 @@ const Dropdown = () => {
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  margin: 50px;
+  /* display: flex; */
+`
+
+const Label = styled.label`
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: inline-block;
 `
 
 export default Dropdown;

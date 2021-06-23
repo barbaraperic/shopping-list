@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const BaseInput = ({ label, placeholder }) => {
+const BaseInput = ({ label, placeholder, ...props }) => {
   return (
     <Wrapper>
       <Label>{label}</Label>
-      <InputText placeholder={placeholder} />
+      <InputText placeholder={placeholder} {...props}/>
     </Wrapper>
   )
 }
@@ -12,6 +12,7 @@ const BaseInput = ({ label, placeholder }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 `
 
 const Label = styled.label`
@@ -25,6 +26,7 @@ const InputText = styled.input`
   padding-left: 18px;
   border-radius: 12px;
   border: 2px solid hsla(0, 0%, 74%, 1);
+  background-color: transparent;
 
   &::placeholder {
     color: hsla(0, 0%, 74%, 1);

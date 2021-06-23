@@ -4,4 +4,4 @@ export { default as Dropdown } from './Dropdown';
 export { default as ProgressBar } from './ProgressBar';
 export { default as SaveInput } from './SaveInput';
 export { default as SearchInput } from './SearchInput';
-export { default as TextAreaInput } from './TextAreaInput';
+export { default as TextArea } from './TextAreaInput';
