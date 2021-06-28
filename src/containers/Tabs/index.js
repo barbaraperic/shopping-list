@@ -49,7 +49,7 @@ const TooltipWrapper = styled.span`
   left: 102px;
   border-radius: 4px;
 
-  &::after {
+  &:hover::after {
     content: '';
     position: absolute;
     left: 0;

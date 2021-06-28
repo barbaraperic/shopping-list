@@ -41,4 +41,18 @@ const Fiddle = styled.div`
   background-color: #F9A109;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+  visibility: hidden;
+
+  ${Wrapper}:hover & {
+    visibility: visible
+  }
+
 `
+
+
+
+
+
+
+
+

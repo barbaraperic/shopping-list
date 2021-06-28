@@ -1,10 +1,10 @@
-import Home from './pages/Home'
+import Navigation from './containers/Navigation'
 import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <Navigation />
     </div>
   )
 }
