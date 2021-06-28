@@ -8,8 +8,8 @@ import { AddItemSidebar } from '../containers/Sidebar'
 const Home = () => {
   return (
     <Wrapper>
-      {/* <Navigation /> */}
-      {/* <StyledMain /> */}
+      <Navigation />
+      <StyledMain />
       <AddItemSidebar />
     </Wrapper>
   )

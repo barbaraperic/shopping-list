@@ -1,21 +1,28 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 import { NavIcon } from '../../assets';
 
 const Tabs = () => {
   return (
     <List>
       <ListItem>
-        <StyledIcon id="list" />
+        <StyledLink to="/">
+          <StyledIcon id="list" />
+        </StyledLink>
         <Tooltip text="items" />
       </ListItem>
       <Spacer />
       <ListItem>
-        <StyledIcon id="rotate"/>
+        <Link to="/history">
+          <StyledIcon id="rotate"/>
+        </Link>
         <Tooltip text="history" />
       </ListItem>
       <Spacer />
       <ListItem>
-        <StyledIcon id="bar"/>
+        <Link to="/statistics">
+          <StyledIcon id="bar"/>
+        </Link>
         <Tooltip text="statistics" />
       </ListItem>
     </List>
@@ -37,6 +44,10 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+const StyledLink = styled(Link)`
+  position: relative;
 `
 
 const TooltipWrapper = styled.span`

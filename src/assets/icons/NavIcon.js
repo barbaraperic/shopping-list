@@ -37,7 +37,7 @@ const Fiddle = styled.div`
   height: 100%;
   width: 4px;
   position: absolute;
-  left: 0;
+  left: -35px;
   background-color: #F9A109;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
