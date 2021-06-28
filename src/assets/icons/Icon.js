@@ -6,7 +6,9 @@ import {
   Edit3, 
   X, 
   Check, 
-  Calendar } from 'react-feather';
+  Calendar,
+  ChevronDown
+} from 'react-feather';
 import styled from 'styled-components';
 
 const icons = {
@@ -17,7 +19,8 @@ const icons = {
   edit: Edit3,
   remove: X,
   check: Check,
-  calendar: Calendar
+  calendar: Calendar,
+  down: ChevronDown
 }
 
 export const Icon = ({ id, size, className, onClick }) => {

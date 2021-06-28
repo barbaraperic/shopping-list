@@ -4,6 +4,7 @@ import { getDisplayedValue } from './Select.helpers';
 
 const Select = ({ label, value, onChange, children, onClick }) => {
   const displayedValue = getDisplayedValue(value, children);
+  console.log(displayedValue)
 
   return (
     <Wrapper>
@@ -13,7 +14,7 @@ const Select = ({ label, value, onChange, children, onClick }) => {
       <PresentationalBit>
         {displayedValue}
         <IconWrapper>
-          <Icon id="remove" size={16} onClick={onClick}/>
+          <Icon id="down" size={16} onClick={onClick}/>
         </IconWrapper>
       </PresentationalBit>
     </Wrapper>
@@ -32,6 +33,7 @@ const NativeSelect = styled.select`
   width: 100%;
   height: 100%;
   opacity: 0;
+
 `;
 
 const PresentationalBit = styled.div`
