@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import Navigation from '../containers/Navigation'
-import MainHistory from '../containers/MainHistory';
-import { PreviewSidebar } from '../containers/Sidebar'
+import Main from '../containers/Main'
+import { DescriptionSidebar } from '../containers/Sidebar'
 
-const Home = () => {
+const HomeDescription = () => {
   return (
     <Wrapper>
       <Navigation />
-      <MainHistory />
-      <PreviewSidebar />
+      <StyledMain />
+      <DescriptionSidebar />
     </Wrapper>
   )
 }
@@ -18,8 +18,8 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const StyledMain = styled(MainHistory)`
+const StyledMain = styled(Main)`
   flex: 1;
 `
 
-export default Home
+export default HomeDescription

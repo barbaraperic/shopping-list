@@ -8,6 +8,7 @@ import {
 import History from './pages/History';
 import Home from './pages/Home';
 import Statistics from './pages/Statistics';
+import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
   {
     path: '/statistics',
     component: Statistics,
+  },
+  {
+    path: '/:item',
+    exact: true,
+    component: HomeDescription
   },
 ]
 

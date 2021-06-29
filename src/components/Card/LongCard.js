@@ -18,14 +18,15 @@ const LongCard = () => {
 }
 
 const CardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 800px;
   color: white;
   box-shadow: 0 2px 12px hsla(0, 0%, 0%, 0.05);
   border-radius: 12px;
   padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: 40px;
 `
 
 const Text = styled.span`

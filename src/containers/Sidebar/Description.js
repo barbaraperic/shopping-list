@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Button } from '../../components/Button';
 
 const DescriptionSidebar = () => {
   return (
     <Aside>
-      <Link>&larr; back</Link>
+      <StyledLink to="/">&larr; back</StyledLink>
       <Image src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="avocado"/>
       <Header>name</Header>
       <h3>Avocado</h3>
@@ -30,7 +31,7 @@ const Aside = styled.aside`
   justify-content: space-between;
 `
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   color: hsla(38, 95%, 51%, 1);
   font-size: 14px;
   margin: 10px 0 20px 0;
