@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Navigation from '../containers/Navigation'
 import Main from '../containers/Main'
-import { AddItemSidebar } from '../containers/Sidebar'
+import { PreviewSidebar } from '../containers/Sidebar'
 
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
     <Wrapper>
       <Navigation />
       <StyledMain />
-      <AddItemSidebar />
+      <PreviewSidebar />
     </Wrapper>
   )
 }

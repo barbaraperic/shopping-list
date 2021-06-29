@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Icon } from '../../assets'
+import { Icon } from '../../assets';
+import { COLORS } from '../../style/constants'; 
 
 const SearchInput = () => {
   return (
@@ -34,6 +35,11 @@ const Input = styled.input`
   &::placeholder {
     font-size: 16px;
     color: hsla(0, 0%, 74%, 1);
+  }
+
+  &:focus {
+    border: 2px solid ${COLORS.primary};
+    outline-offset: 4px;
   }
 `
 

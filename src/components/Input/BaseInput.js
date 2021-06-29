@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from '../../style/constants';
 
 const BaseInput = ({ label, placeholder, ...props }) => {
   return (
@@ -15,11 +16,6 @@ const Wrapper = styled.div`
   margin-bottom: 20px;
 `
 
-const Label = styled.label`
-  margin-bottom: 6px;
-  font-size: 14px;
-`
-
 const InputText = styled.input`
   width: 300px;
   padding: 20px 0;
@@ -32,6 +28,16 @@ const InputText = styled.input`
     color: hsla(0, 0%, 74%, 1);
     font-size: 14px;
   }
+
+  &:focus {
+    border: 2px solid ${COLORS.primary};
+    outline-offset: 4px;
+  }
+`
+
+const Label = styled.label`
+  margin-bottom: 6px;
+  font-size: 14px;
 `
 
 export default BaseInput

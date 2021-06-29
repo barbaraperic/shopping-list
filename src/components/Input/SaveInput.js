@@ -23,6 +23,7 @@ const SaveInput = ({ type }) => {
 const Wrapper = styled.div`
   position: relative;
   display: flex;
+  padding: 0 16px;
 `
 
 const BaseInput = styled.input`
@@ -48,7 +49,7 @@ const Input = styled(BaseInput)`
 
 const StyledButton = styled(Button)`
   position: absolute;
-  right: 0;
+  right: 15px;
   margin: auto 0;
 `
 

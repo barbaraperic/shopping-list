@@ -4,7 +4,6 @@ import { getDisplayedValue } from './Select.helpers';
 
 const Select = ({ label, value, onChange, children, onClick }) => {
   const displayedValue = getDisplayedValue(value, children);
-  console.log(displayedValue)
 
   return (
     <Wrapper>

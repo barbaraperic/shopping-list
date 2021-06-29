@@ -39,11 +39,6 @@ const TextArea = styled.textarea`
 const Label = styled.label`
   margin-bottom: 6px;
   font-size: 14px;
-
-  ${TextArea}:active ~ & {
-    color: ${COLORS.primary};
-  }
-
 `
 
 
