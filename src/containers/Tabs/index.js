@@ -13,16 +13,16 @@ const Tabs = () => {
       </ListItem>
       <Spacer />
       <ListItem>
-        <Link to="/history">
+        <StyledLink to="/history">
           <StyledIcon id="rotate"/>
-        </Link>
+        </StyledLink>
         <Tooltip text="history" />
       </ListItem>
       <Spacer />
       <ListItem>
-        <Link to="/statistics">
+        <StyledLink to="/statistics">
           <StyledIcon id="bar"/>
-        </Link>
+        </StyledLink>
         <Tooltip text="statistics" />
       </ListItem>
     </List>
@@ -44,10 +44,6 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-const StyledLink = styled(Link)`
-  position: relative;
 `
 
 const TooltipWrapper = styled.span`
@@ -72,15 +68,22 @@ const TooltipWrapper = styled.span`
     border-left: 0;
     margin-top: -20px;
     margin-left: -5px;
+    z-index: 9999999;
+
+  }
+`
+
+const StyledLink = styled(Link)`
+  position: relative;
+
+  &:hover + ${TooltipWrapper} {
+    visibility: visible;
   }
 `
 
 const StyledIcon = styled(NavIcon)`
   /* position: relative; */
 
-  &:hover + ${TooltipWrapper} {
-    visibility: visible;
-  }
 `
 
 const Spacer = styled.div`

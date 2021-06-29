@@ -30,7 +30,7 @@ const Main = ({ className }) => {
 
 const MainWrapper = styled.main`
   margin-top: 40px;
-  padding: 0 30px;
+  padding: 0 50px;
 `
 
 const Wrapper = styled.div`
