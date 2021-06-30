@@ -1,18 +1,12 @@
 import styled from 'styled-components'
 import { LongCard } from '../../components/Card';
-import { SubHeader, MutedText } from '../../components/Header'
+import { LinkBack, MutedText } from '../../components/Header'
 
-const fruits = ["Avocado", "Banana", "Bunch of carrots", "Watermelon"]
-
-const meatAndFish = ["Chicken", "Pork", "Salmon"]
-
-const beverages = ["Water", "Wine"]
-
-const MainHistoryDetails = ({ className }) => {
+const MainDetails = ({ className }) => {
   return (
     <MainWrapper className={className}>
       <TopWrapper>
-        <SubHeader>Shopping History</SubHeader>
+        <LinkBack to="/history" />
       </TopWrapper>
       <Wrapper>
         <MutedText>August 2019</MutedText>
@@ -40,4 +34,4 @@ const TopWrapper = styled.div`
   justify-content: space-between;
 `
 
-export default MainHistoryDetails;
+export default MainDetails;

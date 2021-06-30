@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/Button';
+import { LinkBack } from '../../components/Header'
 
 const DescriptionSidebar = () => {
   return (
     <Aside>
-      <StyledLink to="/">&larr; back</StyledLink>
+      <LinkBack to="/"/>
       <Image src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="avocado"/>
       <Header>name</Header>
       <h3>Avocado</h3>

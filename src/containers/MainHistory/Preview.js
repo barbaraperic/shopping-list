@@ -2,12 +2,6 @@ import styled from 'styled-components'
 import { LongCard } from '../../components/Card';
 import { SubHeader, MutedText } from '../../components/Header'
 
-const fruits = ["Avocado", "Banana", "Bunch of carrots", "Watermelon"]
-
-const meatAndFish = ["Chicken", "Pork", "Salmon"]
-
-const beverages = ["Water", "Wine"]
-
 const MainPreview = ({ className }) => {
   return (
     <MainWrapper className={className}>

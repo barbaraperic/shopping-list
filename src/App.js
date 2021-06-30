@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 // import Navigation from './containers/Navigation'
 import History from './pages/History';
+import HistoryDetails from './pages/HistoryDetails';
 import Home from './pages/Home';
 import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
@@ -19,7 +20,12 @@ const routes = [
   },
   {
     path: '/history',
+    exact: true,
     component: History,
+  },
+  {
+    path: '/history/:id',
+    component: HistoryDetails,
   },
   {
     path: '/statistics',
