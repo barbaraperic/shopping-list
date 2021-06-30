@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { Icon } from '../../assets';
 import { StatusButton } from '../../components/Button';
-import { formatDate } from '../../helpers/timestamp'
+import { DateText } from '../Header'
 
 const LongCard = () => {
   return (
     <CardWrapper>
       <Text>Grocery List</Text>
       <Wrapper>
-        <StyledIcon id="calendar" size={18} />
-        <DateText>{formatDate(new Date())}</DateText>
+        {/* <StyledIcon id="calendar" size={18} />
+        <DateText>{formatDate(new Date())}</DateText> */}
+        <DateText />
         <StatusButton type="completed">Completed</StatusButton>
         <Arrow>&gt;</Arrow>
       </Wrapper>
@@ -41,11 +42,11 @@ const Wrapper = styled.div`
   flex: 1;
 `
 
-const DateText = styled.small`
-  font-size: 12px;
-  color: hsla(240, 2%, 76%, 1);
-  margin-right: 34px;
-`
+// const DateText = styled.small`
+//   font-size: 12px;
+//   color: hsla(240, 2%, 76%, 1);
+//   margin-right: 34px;
+// `
 
 const Arrow = styled.a`
  color: #F9A109;

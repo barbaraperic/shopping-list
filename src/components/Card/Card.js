@@ -25,6 +25,7 @@ const Wrapper = styled.div`
 
 const Text = styled.p`
   line-height: 1.4;
+  font-size: 16px;
 `
 
 export default Card
