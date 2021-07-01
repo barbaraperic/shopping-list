@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Input, TextArea, Dropdown } from '../../components/Input'
 import { Button } from '../../components/Button'
-import { SubHeader } from '../../components/Header'
+import { SubHeader } from '../../components/Text'
 
 const AddItemSidebar = () => {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Cards from '../Cards';
-import { LinkBack, SubHeader, DateText } from '../../components/Header';
+import { LinkBack, SubHeader, DateText } from '../../components/Text';
 import { COLORS } from '../../style/constants';
 
 const cookies = ["Doris Truffle", "Chocolate Cookie"];

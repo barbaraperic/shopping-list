@@ -6,7 +6,7 @@ import ProgressBarCards from '../containers/ProgressBarCards'
 import Chart from '../components/Chart'
 import Navigation from '../containers/Navigation'
 import { EditItemSidebar } from '../containers/Sidebar'
-import { SubHeader } from '../components/Header'
+import { SubHeader } from '../components/Text'
 import { topItems, topCategories } from '../mock-api'
 
 const Statistics = () => {

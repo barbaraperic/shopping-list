@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import styled from 'styled-components';
 import { Checkbox } from '../../components/Input'
-import { MutedText } from '../../components/Header'
+import { MutedText } from '../../components/Text'
 import { Button, QuantityButton } from '../../components/Button'
 import SidebarTop from './SidebarTop'
 import { 

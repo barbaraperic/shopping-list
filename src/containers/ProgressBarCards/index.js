@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ProgressBar } from '../../components/Input'
-import { SubHeader } from '../../components/Header'
+import { SubHeader } from '../../components/Text'
 
 const ProgressBarCards = ({ text, variant, data }) => {
   return (

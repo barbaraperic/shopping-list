@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MutedText } from '../components/Header'
+import { MutedText } from '../components/Text'
 import { QuantityButton } from '../../components/Button';
 
 const Section = ({ title, children, item, edit, quantity }) => {

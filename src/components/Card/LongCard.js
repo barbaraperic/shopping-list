@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Icon } from '../../assets';
 import { StatusButton } from '../../components/Button';
-import { DateText } from '../Header'
+import { DateText } from '../Text'
 
 const LongCard = () => {
   return (

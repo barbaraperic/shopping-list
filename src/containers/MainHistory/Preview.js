@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { LongCard } from '../../components/Card';
-import { SubHeader, MutedText } from '../../components/Header'
+import { SubHeader, MutedText } from '../../components/Text'
 
 const MainPreview = ({ className }) => {
   return (

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/Button';
-import { LinkBack } from '../../components/Header'
+import { LinkBack } from '../../components/Text'
 
 const DescriptionSidebar = () => {
   return (
