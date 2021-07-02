@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 import { useParams, useRouteMatch } from 'react-router-dom';
+import slugify from 'slugify'
 import { LongCard } from '../../components/Card';
 import { SubHeader, MutedText } from '../../components/Text'
 
 const MainPreview = ({ className }) => {
+
+  const { url } = useRouteMatch();
+
+  const articles = ["Grocery List", "Board game week 2", "Farewell party"]
 
   console.log(useParams())
   console.log(useRouteMatch())
@@ -14,23 +19,14 @@ const MainPreview = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <MutedText>August 2019</MutedText>
-        <LongCard 
-          text="Grocery List"
-          type="completed"
-          to="/"
-        />
-        <MutedText>August 2019</MutedText>
-        <LongCard 
-          text="Grocery List"
-          type="canceled"
-          to="/"
-        />
-        <MutedText>August 2019</MutedText>
-        <LongCard 
-          text="Grocery List"
-          type="canceled"
-          to="/"
-        />
+        {articles.map(article => (
+          <LongCard 
+            key={article}
+            text={article}
+            type="completed"
+            to={`${url}/${slugify(article)}`}
+          />
+        ))}
       </Wrapper>
     </MainWrapper>
   )

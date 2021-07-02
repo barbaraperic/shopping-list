@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { useParams, useRouteMatch } from 'react-router-dom';
+
 import Cards from '../Cards';
 import { LinkBack, SubHeader, DateText } from '../../components/Text';
 import { COLORS } from '../../style/constants';
@@ -7,11 +9,19 @@ const cookies = ["Doris Truffle", "Chocolate Cookie"];
 const beverages = ["Beer", "Wine"];
 
 const MainDetails = ({ className }) => {
+  const { id } = useParams()
+  console.log(useParams())
+
+  const styleTitle = (string) => {
+    const arr = string.split("-")
+    return arr.join(' ')
+  }
+
   return (
     <MainWrapper className={className}>
       <LinkBack to="/history" />
       <TopWrapper>
-        <SubHeader>Eero's farwell party</SubHeader>
+        <SubHeader>{styleTitle(id)}</SubHeader>
         <DateText />
       </TopWrapper>
       <Wrapper>
