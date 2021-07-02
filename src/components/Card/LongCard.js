@@ -1,18 +1,17 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Icon } from '../../assets';
 import { StatusButton } from '../../components/Button';
 import { DateText } from '../Text'
 
-const LongCard = () => {
+const LongCard = ({text, type, to}) => {
   return (
     <CardWrapper>
-      <Text>Grocery List</Text>
+      <Text>{text}</Text>
       <Wrapper>
-        {/* <StyledIcon id="calendar" size={18} />
-        <DateText>{formatDate(new Date())}</DateText> */}
         <DateText />
-        <StatusButton type="completed">Completed</StatusButton>
-        <Arrow>&gt;</Arrow>
+        <StatusButton type={type}>{type}</StatusButton>
+        <Arrow to={to}>&gt;</Arrow>
       </Wrapper>
     </CardWrapper>
   )
@@ -48,7 +47,7 @@ const Wrapper = styled.div`
 //   margin-right: 34px;
 // `
 
-const Arrow = styled.a`
+const Arrow = styled(Link)`
  color: #F9A109;
  font-size: 18px;
  font-weight: bold;

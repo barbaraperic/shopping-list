@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import { useParams, useRouteMatch } from 'react-router-dom';
 import { LongCard } from '../../components/Card';
 import { SubHeader, MutedText } from '../../components/Text'
 
 const MainPreview = ({ className }) => {
+
+  console.log(useParams())
+  console.log(useRouteMatch())
   return (
     <MainWrapper className={className}>
       <TopWrapper>
@@ -10,11 +14,23 @@ const MainPreview = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <MutedText>August 2019</MutedText>
-        <LongCard />
+        <LongCard 
+          text="Grocery List"
+          type="completed"
+          to="/"
+        />
         <MutedText>August 2019</MutedText>
-        <LongCard />
+        <LongCard 
+          text="Grocery List"
+          type="canceled"
+          to="/"
+        />
         <MutedText>August 2019</MutedText>
-        <LongCard />
+        <LongCard 
+          text="Grocery List"
+          type="canceled"
+          to="/"
+        />
       </Wrapper>
     </MainWrapper>
   )
