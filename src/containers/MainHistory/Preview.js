@@ -1,17 +1,13 @@
 import styled from 'styled-components'
-import { useParams, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import slugify from 'slugify'
 import { LongCard } from '../../components/Card';
 import { SubHeader, MutedText } from '../../components/Text'
+import { shoppingHistory } from '../../mock-api'
 
 const MainPreview = ({ className }) => {
-
   const { url } = useRouteMatch();
 
-  const articles = ["Grocery List", "Board game week 2", "Farewell party"]
-
-  console.log(useParams())
-  console.log(useRouteMatch())
   return (
     <MainWrapper className={className}>
       <TopWrapper>
@@ -19,12 +15,12 @@ const MainPreview = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <MutedText>August 2019</MutedText>
-        {articles.map(article => (
-          <LongCard 
-            key={article}
-            text={article}
-            type="completed"
-            to={`${url}/${slugify(article)}`}
+        {shoppingHistory.map(article => (
+          <LongCard
+            key={article.title}
+            text={article.title}
+            type={article.type}
+            to={`${url}/${slugify(article.title)}`}
           />
         ))}
       </Wrapper>
