@@ -4,7 +4,7 @@ import Cards from '../Cards';
 import { LinkBack, SubHeader, DateText } from '../../components/Text';
 import { COLORS } from '../../style/constants';
 
-const cookies = ["Doris Truffle", "Chocolate Cookie"];
+const cookies = ["Doris Truffle", "Chocolate Cookie", "Chocolate Cookie", "Chocolate Cookie"];
 const beverages = ["Beer", "Wine"];
 
 const MainDetails = ({ className }) => {
@@ -24,9 +24,13 @@ const MainDetails = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <Text>Cookies</Text>
-        <Cards items={cookies} />
+        <Cards items={cookies}>
+          <QuantityText>3pcs</QuantityText>
+        </Cards>
         <Text>Beverages</Text>
-        <Cards items={beverages} />
+        <Cards items={beverages}>
+          <QuantityText>3pcs</QuantityText>
+        </Cards>
       </Wrapper>
     </MainWrapper>
   )

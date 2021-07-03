@@ -18,11 +18,11 @@ const Main = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={fruits} />
+        <Cards items={fruits}><StyledIcon id="plus" size={16}/></Cards>
         <Header>Beverages</Header>
-        <Cards items={beverages} />
+        <Cards items={beverages}><StyledIcon id="plus" size={16}/></Cards>
         <Header>Meat and fish</Header>
-        <Cards items={meatAndFish} />
+        <Cards items={meatAndFish}><StyledIcon id="plus" size={16}/></Cards>
       </Wrapper>
     </MainWrapper>
   )
