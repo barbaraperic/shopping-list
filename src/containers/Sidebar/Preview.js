@@ -49,6 +49,8 @@ const PreviewSidebar = () => {
 }
 
 const Aside = styled.aside`
+  position: sticky;
+  top: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;

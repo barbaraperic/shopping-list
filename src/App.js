@@ -41,19 +41,17 @@ const routes = [
 const App = () => {
   return (
   <Router>
-    <div id="root">
-      <Switch>
-        {routes.map(route => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-          >
-            <route.component />
-          </Route>
-        ))}
-      </Switch>
-    </div>
+    <Switch>
+      {routes.map(route => (
+        <Route
+          key={route.path}
+          path={route.path}
+          exact={route.exact}
+        >
+          <route.component />
+        </Route>
+      ))}
+    </Switch>
   </Router>
   )
 }

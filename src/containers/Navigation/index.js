@@ -20,6 +20,8 @@ const Navigation = () => {
 }
 
 const Wrapper = styled.nav`
+  position: sticky;
+  top: 0;
   background-color: white;
   height: 100vh;
   width: 93px;

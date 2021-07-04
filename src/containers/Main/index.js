@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { COLORS } from '../../style/constants'
 import Cards from '../Cards';
+import { Icon } from '../../assets';
 import { SearchInput } from '../../components/Input'
 
 const fruits = ["Avocado", "Banana", "Bunch of carrots", "Watermelon"]
@@ -18,11 +19,11 @@ const Main = ({ className }) => {
       </TopWrapper>
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={fruits}><StyledIcon id="plus" size={16}/></Cards>
+        <Cards items={fruits}><Icon id="plus" size={16}/></Cards>
         <Header>Beverages</Header>
-        <Cards items={beverages}><StyledIcon id="plus" size={16}/></Cards>
+        <Cards items={beverages}><Icon id="plus" size={16}/></Cards>
         <Header>Meat and fish</Header>
-        <Cards items={meatAndFish}><StyledIcon id="plus" size={16}/></Cards>
+        <Cards items={meatAndFish}><Icon id="plus" size={16}/></Cards>
       </Wrapper>
     </MainWrapper>
   )
