@@ -8,13 +8,13 @@ import SidebarWrapper from './SidebarWrapper';
 const NoItemSidebar = () => {
   return (
     <StyledSidebarWrapper>
-    <Header>
-      <Wrapper>
-        <AddItemCard />
-        <Text>No items</Text>
-      </Wrapper>
-      <Image src={shoppingIllustration}/>
-    </Header>
+      <Header>
+        <Wrapper>
+          <AddItemCard />
+          <Text>No items</Text>
+        </Wrapper>
+        <Image src={shoppingIllustration}/>
+      </Header>
       <SectionBottom>
         <SaveInput type="disabled"/>
       </SectionBottom>

@@ -8,16 +8,16 @@ import { QuantityButton } from '../../components/Button'
 
 const PreviewSidebar = () => {
   return (
-    <SidebarWrapper>
-      <Wrapper>
+    <StyledSidebarWrapper>
+      <Header>
         <AddItemCard />
         <Section>
           <TextWrapper>
-            <Title>Shopping List</Title>
+            <MainTitle>Shopping List</MainTitle>
             <Icon id="edit" size={16}/>
           </TextWrapper>
           <FoodSection>
-            <Header>Fruit and vegetables</Header>
+            <Title>Fruit and vegetables</Title>
             <TextWrapper>
               <p>Avocado</p>
               <QuantityButton id="edit">3 pcs</QuantityButton>
@@ -26,7 +26,7 @@ const PreviewSidebar = () => {
               <p>Avocado</p>
               <QuantityButton>3 pcs</QuantityButton>
             </TextWrapper>
-            <Header>Meat and fish</Header>
+            <Title>Meat and fish</Title>
             <TextWrapper>
               <p>Avocado</p>
               <QuantityButton>3 pcs</QuantityButton>
@@ -41,18 +41,22 @@ const PreviewSidebar = () => {
             </TextWrapper>
           </FoodSection>
         </Section>
-      </Wrapper>
-      <SectionBottom>
+      </Header>
+      <Footer>
         <SaveInput />
-      </SectionBottom>
-    </SidebarWrapper>
+      </Footer>
+    </StyledSidebarWrapper>
   )
 }
 
-const Wrapper = styled.div`
-  background-color: ${COLORS.lightPrimary};
-  padding: 20px;
+const StyledSidebarWrapper = styled(SidebarWrapper)`
+  padding: 0;
+`
+
+const Header = styled.div`
   flex: 1;
+  padding: 40px;
+  background-color: ${COLORS.lightPrimary};
 `
 
 const TextWrapper = styled.div`
@@ -71,20 +75,21 @@ const FoodSection = styled.div`
   max-height: 350px;
 `
 
-const SectionBottom = styled.section`
+const Footer = styled.section`
   height: 130px;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 `
 
-const Title = styled.h3`
+const MainTitle = styled.h3`
   font-weight: normal;
   font-size: 24px;
 `
 
-const Header = styled.h4`
+const Title = styled.h4`
   font-weight: normal;
   color: hsla(0, 0%, 51%, 1);
   font-size: 12px;

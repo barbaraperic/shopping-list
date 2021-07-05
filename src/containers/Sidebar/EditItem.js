@@ -81,10 +81,10 @@ const EditItemSidebar = () => {
             </Item>
           ))}
       </SidebarTop>
-      <ButtonWrapper>
+      <Footer>
         <Button variant="tertiary">cancel</Button>
         <Button variant="secondary">Complete</Button>
-      </ButtonWrapper>
+      </Footer>
     </Aside>
   )
 }
@@ -109,12 +109,12 @@ const Item = styled.div`
   margin-bottom: 16px;
 `
 
-const ButtonWrapper = styled.div`
+const Footer = styled.div`
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  min-height: 130px;
+  height: 130px;
 `
 
 export default EditItemSidebar;
