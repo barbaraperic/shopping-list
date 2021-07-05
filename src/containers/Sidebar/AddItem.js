@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { Input, TextArea, Dropdown } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { SubHeader } from '../../components/Text'
+import SidebarWrapper from './SidebarWrapper';
 
 const AddItemSidebar = () => {
   return (
-    <Aside>
+    <SidebarWrapper>
       <SubHeader>Add a new item</SubHeader>
       <Form>
         <Input label="Name" placeholder="Enter a name" type="text"/>
@@ -17,17 +18,9 @@ const AddItemSidebar = () => {
         <Button variant="primary">Save</Button>
       </ButtonWrapper>
       </Form>
-    </Aside>
+    </SidebarWrapper>
   )
 }
-
-const Aside = styled.aside`
-  height: 100vh;
-  width: 380px;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-`
 
 const Form = styled.form`
   flex: 1;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from '../../style/constants';
+import SidebarWrapper from './SidebarWrapper';
 import { Icon } from '../../assets/index'
 import { AddItemCard } from '../../components/Card'
 import { SaveInput } from '../../components/Input'
@@ -7,55 +8,46 @@ import { QuantityButton } from '../../components/Button'
 
 const PreviewSidebar = () => {
   return (
-    <Aside>
-    <Wrapper>
-      <AddItemCard />
-      <Section>
-        <TextWrapper>
-          <Title>Shopping List</Title>
-          <Icon id="edit" size={16}/>
-        </TextWrapper>
-        <FoodSection>
-          <Header>Fruit and vegetables</Header>
+    <SidebarWrapper>
+      <Wrapper>
+        <AddItemCard />
+        <Section>
           <TextWrapper>
-            <p>Avocado</p>
-            <QuantityButton id="edit">3 pcs</QuantityButton>
+            <Title>Shopping List</Title>
+            <Icon id="edit" size={16}/>
           </TextWrapper>
-          <TextWrapper>
-            <p>Avocado</p>
-            <QuantityButton>3 pcs</QuantityButton>
-          </TextWrapper>
-          <Header>Meat and fish</Header>
-          <TextWrapper>
-            <p>Avocado</p>
-            <QuantityButton>3 pcs</QuantityButton>
-          </TextWrapper>
-          <TextWrapper>
-            <p>Avocado</p>
-            <QuantityButton>3 pcs</QuantityButton>
-          </TextWrapper>
-          <TextWrapper>
-            <p>Avocado</p>
-            <QuantityButton>3 pcs</QuantityButton>
-          </TextWrapper>
-        </FoodSection>
-      </Section>
-    </Wrapper>
-    <SectionBottom>
-      <SaveInput />
-    </SectionBottom>
-    </Aside>
+          <FoodSection>
+            <Header>Fruit and vegetables</Header>
+            <TextWrapper>
+              <p>Avocado</p>
+              <QuantityButton id="edit">3 pcs</QuantityButton>
+            </TextWrapper>
+            <TextWrapper>
+              <p>Avocado</p>
+              <QuantityButton>3 pcs</QuantityButton>
+            </TextWrapper>
+            <Header>Meat and fish</Header>
+            <TextWrapper>
+              <p>Avocado</p>
+              <QuantityButton>3 pcs</QuantityButton>
+            </TextWrapper>
+            <TextWrapper>
+              <p>Avocado</p>
+              <QuantityButton>3 pcs</QuantityButton>
+            </TextWrapper>
+            <TextWrapper>
+              <p>Avocado</p>
+              <QuantityButton>3 pcs</QuantityButton>
+            </TextWrapper>
+          </FoodSection>
+        </Section>
+      </Wrapper>
+      <SectionBottom>
+        <SaveInput />
+      </SectionBottom>
+    </SidebarWrapper>
   )
 }
-
-const Aside = styled.aside`
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`
 
 const Wrapper = styled.div`
   background-color: ${COLORS.lightPrimary};

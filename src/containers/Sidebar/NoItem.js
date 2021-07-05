@@ -2,53 +2,51 @@ import styled from 'styled-components';
 import { AddItemCard } from '../../components/Card'
 import { SaveInput } from '../../components/Input'
 import shoppingIllustration from '../../assets/illustrations/shopping.svg';
-import { COLORS } from '../../style/constants'
+import { COLORS } from '../../style/constants';
+import SidebarWrapper from './SidebarWrapper';
 
 const NoItemSidebar = () => {
   return (
-    <AsideWrapper>
-    <Aside>
-      <AddItemCard />
+    <StyledSidebarWrapper>
+    <Header>
       <Wrapper>
+        <AddItemCard />
         <Text>No items</Text>
       </Wrapper>
       <Image src={shoppingIllustration}/>
-    </Aside>
+    </Header>
       <SectionBottom>
         <SaveInput type="disabled"/>
       </SectionBottom>
-    </AsideWrapper>
-  )
-}
+    </StyledSidebarWrapper>
+  );
+};
 
-const AsideWrapper = styled.div`
+const StyledSidebarWrapper = styled(SidebarWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0;
 `
 
-const Aside = styled.aside`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+const Header = styled.div`
+  position: relative; 
   background-color: ${COLORS.lightPrimary};
-  padding: 20px 40px;
-  height: 100vh;
-  width: 389px;
-  position: relative;
+  flex: 1;
 `
 
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
 `
 
 const Text = styled.p`
   font-weight: bold;
-  margin-bottom: 100px;
+  margin-top: 120px;
 `
 
 const Image = styled.img`
