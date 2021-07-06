@@ -4,11 +4,11 @@ import { Button } from '../../components/Button'
 import { SubHeader } from '../../components/Text'
 import SidebarWrapper from './SidebarWrapper';
 
-const AddItemSidebar = () => {
+const AddItemSidebar = ({ handleSubmit }) => {
   return (
     <SidebarWrapper>
       <SubHeader>Add a new item</SubHeader>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Input label="Name" placeholder="Enter a name" type="text"/>
         <TextArea label="Note (optional)" placeholder="Enter a note"/>
         <Input label="Image (optional)" placeholder="Enter a url" text="url"/>

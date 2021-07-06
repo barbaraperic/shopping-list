@@ -2,15 +2,23 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Navigation from '../containers/Navigation'
 import Main from '../containers/Main'
-import { PreviewSidebar } from '../containers/Sidebar'
+import { AddItemSidebar, PreviewSidebar } from '../containers/Sidebar'
 
 
 const Home = () => {
+  const [ toggleSidebar, setToggleSidebar ] = useState(false);
+
+  const handleClick = () => {
+    setToggleSidebar(!toggleSidebar);
+  }
   return (
     <Wrapper>
       <Navigation />
-      <StyledMain /> 
-      <PreviewSidebar />
+      <StyledMain />
+      {toggleSidebar 
+      ? <AddItemSidebar />
+      : <PreviewSidebar handleClick={handleClick} />
+      }
     </Wrapper>
   )
 }

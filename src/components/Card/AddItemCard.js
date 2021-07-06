@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import Button from '../Button/DefaultButton';
 import { COLORS } from '../../style/constants'
 
-const AddItemCard = () => {
+const AddItemCard = ({ handleClick }) => {
   return (
     <Wrapper>
       <TextWrapper>
         <Text>Didn't find what you need?</Text>
-        <StyledButton variant="tertiary">Add item</StyledButton>
+        <StyledButton variant="tertiary" onClick={handleClick}>Add item</StyledButton>
       </TextWrapper>
     </Wrapper>
   )

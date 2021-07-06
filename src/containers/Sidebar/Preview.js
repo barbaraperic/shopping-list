@@ -6,11 +6,11 @@ import { AddItemCard } from '../../components/Card'
 import { SaveInput } from '../../components/Input'
 import { QuantityButton } from '../../components/Button'
 
-const PreviewSidebar = () => {
+const PreviewSidebar = ({ handleClick }) => {
   return (
     <StyledSidebarWrapper>
       <Header>
-        <AddItemCard />
+        <AddItemCard handleClick={handleClick}/>
         <Section>
           <TextWrapper>
             <MainTitle>Shopping List</MainTitle>

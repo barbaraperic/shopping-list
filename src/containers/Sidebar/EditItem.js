@@ -107,7 +107,7 @@ const Item = styled.div`
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 16px;
-`
+`;
 
 const Footer = styled.div`
   background-color: white;
