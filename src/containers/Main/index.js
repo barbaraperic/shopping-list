@@ -13,12 +13,10 @@ const beverages = ["Water", "Wine"]
 const Main = ({ className }) => {
   return (
     <MainWrapper className={className}>
-      <TopWrapper>
-        <Title>
-          Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> <br />  whenever you go
-        </Title>
-        <SearchInput />
-      </TopWrapper>
+      <Title>
+        Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
+      </Title>
+      <SearchInput />
       <Wrapper>
         <Header>Fruits and vegetables</Header>
         <Cards items={fruits}>
@@ -46,16 +44,12 @@ const Wrapper = styled.div`
   margin-top: 60px;
 `
 
-const TopWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
 const Title = styled.h2`
   line-height: 1.3;
   font-weight: normal;
   font-size: 26px;
   flex: 1;
+  margin-bottom: 20px;
 `
 
 const Header = styled.h3`

@@ -1,30 +1,22 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 import { NavIcon } from '../../assets';
+import { navListItems } from '../../mock-api'
 
 const Tabs = () => {
   return (
     <List>
-      <ListItem>
-        <StyledLink to="/">
-          <StyledIcon id="list" />
-        </StyledLink>
-        <Tooltip text="items" />
-      </ListItem>
-      <Spacer />
-      <ListItem>
-        <StyledLink to="/history">
-          <StyledIcon id="rotate"/>
-        </StyledLink>
-        <Tooltip text="history" />
-      </ListItem>
-      <Spacer />
-      <ListItem>
-        <StyledLink to="/statistics">
-          <StyledIcon id="bar"/>
-        </StyledLink>
-        <Tooltip text="statistics" />
-      </ListItem>
+      {navListItems.map(item => (
+        <>
+          <ListItem key={item.text}>
+            <StyledLink to={item.to}>
+              <StyledIcon id={item.iconId} />
+            </StyledLink>
+            <Tooltip text={item.text}/>
+          </ListItem>
+          <Spacer />
+        </>
+      ))}
     </List>
   )
 }

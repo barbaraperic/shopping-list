@@ -49,16 +49,15 @@ const Statistics = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  /* margin: 50px; */
 `
 
 const Main = styled.main`
-  padding: 30px;
+  padding: 50px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: end;
+  justify-content: flex-start;
 `
 
 const CardWrapper = styled.div`
@@ -67,10 +66,10 @@ const CardWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 65px;
-`
 
-// const StyledMain = styled(Main)`
-//   flex: 1;
-// `
+  > * {
+    margin-right: 70px;
+  }
+`
 
 export default Statistics
