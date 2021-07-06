@@ -4,7 +4,7 @@ import Cards from '../Cards';
 import { Icon } from '../../assets';
 import { SearchInput } from '../../components/Input'
 
-const fruits = ["Avocado", "Banana", "Bunch of carrots", "Watermelon"]
+const fruits = ["Avocado", "Banana", "Carrots", "Watermelon"]
 
 const meatAndFish = ["Chicken", "Pork", "Salmon"]
 
@@ -14,16 +14,24 @@ const Main = ({ className }) => {
   return (
     <MainWrapper className={className}>
       <TopWrapper>
-        <Title><span style={{ color: `${COLORS.primary}`}}>Shoppingfy</span> allows you to take your <br /> shopping list whenever you go</Title>
+        <Title>
+          Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> <br />  whenever you go
+        </Title>
         <SearchInput />
       </TopWrapper>
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={fruits}><Icon id="plus" size={16}/></Cards>
+        <Cards items={fruits}>
+          <Icon id="plus" size={16}/>
+        </Cards>
         <Header>Beverages</Header>
-        <Cards items={beverages}><Icon id="plus" size={16}/></Cards>
+        <Cards items={beverages}>
+          <Icon id="plus" size={16}/>
+        </Cards>
         <Header>Meat and fish</Header>
-        <Cards items={meatAndFish}><Icon id="plus" size={16}/></Cards>
+        <Cards items={meatAndFish}>
+          <Icon id="plus" size={16}/>
+        </Cards>
       </Wrapper>
     </MainWrapper>
   )
