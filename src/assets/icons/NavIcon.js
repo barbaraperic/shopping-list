@@ -8,7 +8,7 @@ const icons = {
   cart: ShoppingCart
 };
 
-export const NavIcon = ({ id, className }) => {
+export const NavIcon = ({ id, className, children }) => {
   const Component = icons[id]
 
   if (!Component) {
@@ -17,7 +17,8 @@ export const NavIcon = ({ id, className }) => {
   
   return (
     <Wrapper className={className}>
-      <Fiddle />
+      {/* <Fiddle /> */}
+      {children}
       <Component />
     </Wrapper>
   )
@@ -31,22 +32,6 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
-`
-
-const Fiddle = styled.div`
-  height: 100%;
-  width: 4px;
-  position: absolute;
-  left: -35px;
-  background-color: #F9A109;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  visibility: hidden;
-
-  ${Wrapper}:hover & {
-    visibility: visible
-  }
-
 `
 
 

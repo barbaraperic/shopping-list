@@ -1,5 +1,6 @@
 export const COLORS = {
   primary: 'hsla(38, 95%, 51%, 1)',
+  primary100: 'hsla(38, 95%, 80%, 1)',
   lightPrimary: 'hsla(33, 100%, 94%, 1)',
   brown: 'hsla(340, 28%, 39%, 1)',
   grayTransparent: 'hsla(0, 0%, 0%, 0.1)',

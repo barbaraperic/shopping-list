@@ -1,23 +1,24 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { NavIcon } from '../../assets';
-import { navListItems } from '../../mock-api'
+import { navListItems } from '../../mock-api';
+import { COLORS } from '../../style/constants';
 
-const Tabs = () => {
+const TabItem = ({ item }) => {
+
   return (
-    <List>
-      {navListItems.map(item => (
-        <>
-          <ListItem key={item.text}>
-            <StyledLink to={item.to}>
-              <StyledIcon id={item.iconId} />
-            </StyledLink>
-            <Tooltip text={item.text}/>
-          </ListItem>
-          <Spacer />
-        </>
-      ))}
-    </List>
+    <Tab>
+      <StyledNavLink
+        exact={true}
+        to={item.to}
+        activeClassName="active"
+      >
+        <StyledIcon id={item.iconId} >
+          <Fiddle />
+        </StyledIcon>
+      </StyledNavLink>
+      <Tooltip text={item.text}/>
+    </Tab>
   )
 }
 
@@ -27,15 +28,22 @@ const Tooltip = ({ className, text }) => {
   )
 }
 
-const List = styled.ul`
-  width: 100%;
-`
+const Tabs = () => {
 
-const ListItem = styled.li`
+  return (
+    <TabButtons>
+      {navListItems.map((item, index) => (
+        <TabItem 
+          key={item.text}
+          item={item}
+        />
+      ))}
+    </TabButtons>
+  )
+}
+
+const TabButtons = styled.ul`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `
 
 const TooltipWrapper = styled.span`
@@ -61,15 +69,20 @@ const TooltipWrapper = styled.span`
     margin-top: -20px;
     margin-left: -5px;
     z-index: 9999999;
-
   }
 `
 
-const StyledLink = styled(Link)`
-  position: relative;
+const Tab = styled.button`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  margin-bottom: 45px;
 
-  &:hover + ${TooltipWrapper} {
-    visibility: visible;
+  &.active {
+    background-color: yellow;
   }
 `
 
@@ -78,8 +91,26 @@ const StyledIcon = styled(NavIcon)`
 
 `
 
-const Spacer = styled.div`
-  height: 45px;
+const StyledNavLink = styled(NavLink)``
+
+const Fiddle = styled.div`
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  left: -35px;
+  background-color: ${COLORS.primary100};
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  visibility: hidden;
+
+  ${Tab}:hover & {
+    visibility: visible;
+  }
+
+  ${StyledNavLink}.active & {
+    visibility: visible;
+    background-color: ${COLORS.primary};
+  }
 `
 
 export default Tabs;
