@@ -15,7 +15,7 @@ const Aside = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  width: 380px;
+  min-width: 380px;
   padding: 40px; 
 `
 

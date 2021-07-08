@@ -9,7 +9,6 @@ import { EditItemSidebar } from '../containers/Sidebar';
 import { SubHeader } from '../components/Text';
 import { topItems, topCategories } from '../mock-api';
 import { QUERIES } from '../style/constants';
-import Main from '../containers/Main'
 
 const Statistics = () => {
   // const [ modal, setModal ] = useState(false);
@@ -17,8 +16,7 @@ const Statistics = () => {
   return (
     <Wrapper>
       <Navigation />
-      <Main />
-      {/* <Main>
+      <Main>
         <CardWrapper>
           <ProgressBarCards 
             text="Top items"
@@ -33,7 +31,7 @@ const Statistics = () => {
         </CardWrapper>
         <SubHeader>Monthly Summary</SubHeader>
         <Chart />
-      </Main> */}
+      </Main>
       <EditItemSidebar />
       {/* <button onClick={() => setModal(true)}>open modal</button>
       <Modal 
@@ -54,30 +52,30 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-// const Main = styled.main`
-//   /* padding: 50px; */
-//   flex: 1;
-//   /* display: flex;
-//   flex-direction: column;
-//   align-items: end;
-//   justify-content: flex-start; */
-// `
+const Main = styled.main`
+  padding: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: flex-start;
+`
 
 const CardWrapper = styled.div`
-  width: 700px;
+  /* width: 700px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 65px;
 
   > * {
-    margin-right: 70px;
+    margin-right: 20px;
   }
-
+/* 
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
     align-items: end;
-  }
+  } */
 `
 
 export default Statistics

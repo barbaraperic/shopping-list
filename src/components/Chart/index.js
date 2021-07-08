@@ -61,8 +61,8 @@ const Chart = () => {
 }
 
 const Wrapper = styled.div`
-  width: 400px;
-  height: 200px;
+  width: 600px;
+  height: 400px;
 `
 
 export default Chart;

@@ -24,7 +24,7 @@ const Wrapper = styled.nav`
   top: 0;
   background-color: white;
   height: 100vh;
-  width: 93px;
+  min-width: 93px;
   display: flex;
   flex-direction: column;
 `

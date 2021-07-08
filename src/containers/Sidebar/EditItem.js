@@ -12,6 +12,7 @@ import {
 } from '../../mock-api';
 import SidebarWrapper from './SidebarWrapper';
 import { COLORS } from '../../style/constants';
+import CheckboxSection from './CheckboxSection';
 
 const EditItemSidebar = () => {
   const [selectedCheckbox, setSelectedCheckbox] = useState([])
@@ -38,57 +39,24 @@ const EditItemSidebar = () => {
         <Icon id="edit" size={16}/>
       </TextWrapper>
       <Scrollbar>
-        <MutedText>Fruit and vegetables</MutedText>
-          {shoppingListFruit.map(listItem => (
-            <Item key={listItem.id}>
-              <Label>
-                <Checkbox 
-                  checked={selectedCheckbox.includes(listItem.id)}
-                  onChange={() => handleChange(listItem.id)}
-                />
-                <Text 
-                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-                >
-                  {listItem.item}
-                </Text>
-              </Label>
-              <QuantityButton>{listItem.quantity}</QuantityButton>
-            </Item>
-          ))}
-          <MutedText>Meat and Fish</MutedText>
-          {shoppingListProtein.map(listItem => (
-            <Item key={listItem.id}>
-              <Label>
-                <Checkbox 
-                  checked={selectedCheckbox.includes(listItem.id)}
-                  onChange={() => handleChange(listItem.id)}
-                />
-                <Text 
-                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-                >
-                  {listItem.item}
-                </Text>
-              </Label>
-              <QuantityButton>{listItem.quantity}</QuantityButton>
-            </Item>
-          ))}
-          <MutedText>Beverages</MutedText>
-          {shoppingListBeverages.map(listItem => (
-            <Item key={listItem.id}>
-              <Label>
-                <Checkbox 
-                  checked={selectedCheckbox.includes(listItem.id)}
-                  onChange={() => handleChange(listItem.id)}
-                />
-                <Text 
-                  style={{ textDecoration: selectedCheckbox.includes(listItem.id) ? 'line-through' : 'none'}}
-                >
-                  {listItem.item}
-                </Text>
-              </Label>
-              <QuantityButton>{listItem.quantity}</QuantityButton>
-            </Item>
-          ))}
+        <CheckboxSection 
+          title="Fruit and vegetables"
+          apiData={shoppingListFruit}
+          selectedCheckbox={selectedCheckbox}
+          handleChange={handleChange}
+        />
+        <CheckboxSection 
+          title="Meat and fish"
+          apiData={shoppingListProtein}
+          selectedCheckbox={selectedCheckbox}
+          handleChange={handleChange}
+        />
+        <CheckboxSection 
+          title="Beverages"
+          apiData={shoppingListBeverages}
+          selectedCheckbox={selectedCheckbox}
+          handleChange={handleChange}
+        />
       </Scrollbar>
       </Header>
       <Footer>
@@ -108,22 +76,6 @@ const Header = styled.div`
   padding: 40px;
   background-color: ${COLORS.lightPrimary};
 `
-
-const Label = styled.label`
-  display: flex;
-  align-items: baseline;
-`
-
-const Text = styled.span`
-  margin-left: 14px;
-`
-
-const Item = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 16px;
-`;
 
 const Title = styled.h3`
   font-weight: normal;
