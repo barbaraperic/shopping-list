@@ -37,6 +37,7 @@ const EditItemSidebar = () => {
         <Title>Shopping List</Title>
         <Icon id="edit" size={16}/>
       </TextWrapper>
+      <Scrollbar>
         <MutedText>Fruit and vegetables</MutedText>
           {shoppingListFruit.map(listItem => (
             <Item key={listItem.id}>
@@ -88,6 +89,7 @@ const EditItemSidebar = () => {
               <QuantityButton>{listItem.quantity}</QuantityButton>
             </Item>
           ))}
+      </Scrollbar>
       </Header>
       <Footer>
         <Button variant="tertiary">cancel</Button>
@@ -106,10 +108,6 @@ const Header = styled.div`
   padding: 40px;
   background-color: ${COLORS.lightPrimary};
 `
-
-// const Aside = styled.aside`
-//   max-height: 100vh;
-// `
 
 const Label = styled.label`
   display: flex;
@@ -142,6 +140,7 @@ const TextWrapper = styled.div`
 const Scrollbar = styled.div`
   overflow: scroll;
   padding: 3px;
+  max-height: 350px;
 `
 
 const Footer = styled.div`
