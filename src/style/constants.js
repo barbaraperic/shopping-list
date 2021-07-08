@@ -10,3 +10,16 @@ export const COLORS = {
   blue: 'hsla(195, 86%, 64%, 1)',
   red: 'hsla(0, 79%, 63%, 1)'
 };
+
+
+const BREAKPOINTS = {
+  phoneMax: 37.5,
+  tabletMax: 59.375,
+  laptopMax: 81.25
+}
+
+export const QUERIES = {
+  'phoneAndDown': `(max-width: ${BREAKPOINTS.phoneMax}rem)`,
+  'tabletAndDown': `(max-width: ${BREAKPOINTS.tabletMax}rem)`,
+  'laptopAndDown': `(max-width: ${BREAKPOINTS.laptopMax}rem)`,
+}

@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components';
 // import Modal from '../components/Modal'
 // import { Button } from '../components/Button'
-import ProgressBarCards from '../containers/ProgressBarCards'
-import Chart from '../components/Chart'
-import Navigation from '../containers/Navigation'
-import { EditItemSidebar } from '../containers/Sidebar'
-import { SubHeader } from '../components/Text'
-import { topItems, topCategories } from '../mock-api'
+import ProgressBarCards from '../containers/ProgressBarCards';
+import Chart from '../components/Chart';
+import Navigation from '../containers/Navigation';
+import { EditItemSidebar } from '../containers/Sidebar';
+import { SubHeader } from '../components/Text';
+import { topItems, topCategories } from '../mock-api';
+import { QUERIES } from '../style/constants';
+import Main from '../containers/Main'
 
 const Statistics = () => {
-  const [ modal, setModal ] = useState(false)
+  // const [ modal, setModal ] = useState(false);
 
   return (
     <Wrapper>
       <Navigation />
-      <Main>
+      <Main />
+      {/* <Main>
         <CardWrapper>
           <ProgressBarCards 
             text="Top items"
@@ -30,7 +33,7 @@ const Statistics = () => {
         </CardWrapper>
         <SubHeader>Monthly Summary</SubHeader>
         <Chart />
-      </Main>
+      </Main> */}
       <EditItemSidebar />
       {/* <button onClick={() => setModal(true)}>open modal</button>
       <Modal 
@@ -51,14 +54,14 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const Main = styled.main`
-  padding: 50px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: flex-start;
-`
+// const Main = styled.main`
+//   /* padding: 50px; */
+//   flex: 1;
+//   /* display: flex;
+//   flex-direction: column;
+//   align-items: end;
+//   justify-content: flex-start; */
+// `
 
 const CardWrapper = styled.div`
   width: 700px;
@@ -69,6 +72,11 @@ const CardWrapper = styled.div`
 
   > * {
     margin-right: 70px;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: column;
+    align-items: end;
   }
 `
 

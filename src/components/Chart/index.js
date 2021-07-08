@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
 import * as d3 from "d3";
+import styled from 'styled-components';
 import { data } from '../../mock-api/chartData';
 import { COLORS } from '../../style/constants';
 
 const Chart = () => {
   
   const drawChart = () => {
-    
     const width = 700;
     const height = 200;
     const margin = {top: 10, right: 29, bottom: 30, left: 60};
 
     const svg = d3.select("#my_dataviz")
                   .append("svg")
-                    .attr("width", 700)
-                    .attr("height", 300)
+                    .attr("width", '100%')
+                    .attr("height", '100%')
                   .append("g")
                     .attr("transform",
                         "translate(" + margin.left + "," + margin.top + ")")
@@ -57,7 +57,12 @@ const Chart = () => {
     drawChart();
   }, [])
 
-  return <div id="my_dataviz"></div>
+  return <Wrapper id="my_dataviz"></Wrapper>
 }
+
+const Wrapper = styled.div`
+  width: 400px;
+  height: 200px;
+`
 
 export default Chart;

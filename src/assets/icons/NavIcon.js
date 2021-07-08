@@ -17,7 +17,6 @@ export const NavIcon = ({ id, className, children }) => {
   
   return (
     <Wrapper className={className}>
-      {/* <Fiddle /> */}
       {children}
       <Component />
     </Wrapper>

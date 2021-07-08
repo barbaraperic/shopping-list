@@ -24,7 +24,7 @@ const DescriptionSidebar = () => {
 }
 
 const StyledSidebarWrapper = styled(SidebarWrapper)`
- background: white;
+  background: white;
 `;
 
 // const StyledLink = styled(Link)`
