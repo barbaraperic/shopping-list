@@ -1,8 +1,13 @@
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom';
 import { Card }from '../../components/Card';
 import { Icon } from '../../assets'
 
-const Cards = ({ items, children }) => {
+const Cards = ({ items, children, url }) => {
+
+  const params = useParams()
+  console.log('p', params)
+
 
   const API_KEY = `${process.env.REACT_APP_API_KEY}`
   const API_ID = `${process.env.REACT_APP_API_ID}`
@@ -17,7 +22,12 @@ const Cards = ({ items, children }) => {
   return (
     <Wrapper>
       {items.map(item => (
-        <Card key={item} text={item} onClick={() => handleClick(item)}>
+        <Card
+          url={`${url}/${item}`}
+          key={item} 
+          text={item} 
+          onClick={() => handleClick(item)}
+        >
           {children}
         </Card>
       ))}

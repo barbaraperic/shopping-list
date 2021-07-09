@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { COLORS } from '../../style/constants'
 
-const Card = ({ text, children, onClick }) => {
+const Card = ({ text, url, children, onClick }) => {
   return (
     <Wrapper onClick={onClick}>
-      <Text>{text}</Text>
+      <StyledLink to={url}>{text}</StyledLink>
       {children}
     </Wrapper>
   )
@@ -27,7 +28,7 @@ const Wrapper = styled.button`
   cursor: pointer;
 `
 
-const Text = styled.p`
+const StyledLink = styled(Link)`
   line-height: 1.4;
   font-size: 16px;
 `

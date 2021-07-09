@@ -32,7 +32,7 @@ const routes = [
     component: Statistics,
   },
   {
-    path: '/:item',
+    path: '/:id',
     exact: true,
     component: HomeDescription
   },

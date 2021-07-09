@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useRouteMatch, useLocation } from 'react-router-dom'
 import { COLORS } from '../../style/constants'
 import Cards from '../Cards';
 import { Icon } from '../../assets';
@@ -11,6 +12,12 @@ const meatAndFish = ["Chicken", "Pork", "Salmon"]
 const beverages = ["Water", "Wine"]
 
 const Main = ({ className }) => {
+  const {url} = useRouteMatch();
+  let location = useLocation();
+
+  console.log(location)
+
+  
   return (
     <MainWrapper className={className}>
       <Title>
@@ -19,15 +26,15 @@ const Main = ({ className }) => {
       <SearchInput />
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={fruits}>
+        <Cards items={fruits} url={location.pathname}>
           <Icon id="plus" size={16}/>
         </Cards>
         <Header>Beverages</Header>
-        <Cards items={beverages}>
+        <Cards items={beverages} url={url}>
           <Icon id="plus" size={16}/>
         </Cards>
         <Header>Meat and fish</Header>
-        <Cards items={meatAndFish}>
+        <Cards items={meatAndFish} url={url}>
           <Icon id="plus" size={16}/>
         </Cards>
       </Wrapper>
