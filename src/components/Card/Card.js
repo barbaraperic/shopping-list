@@ -2,14 +2,27 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { COLORS } from '../../style/constants'
 
-const Card = ({ text, url, children, onClick }) => {
+const Card = ({ items }) => {
+
+  console.log(items)
   return (
-    <Wrapper onClick={onClick}>
-      <StyledLink to={url}>{text}</StyledLink>
-      {children}
+    <Wrapper>
+      <StyledLink>Text</StyledLink>
     </Wrapper>
   )
 }
+
+// const Card = ({ text, url, children, onClick }) => {
+
+//   const item = players.find(player => slug(player.name) === playerId)
+
+//   return (
+//     <Wrapper onClick={onClick}>
+//       <StyledLink to={url}>{text}</StyledLink>
+//       {children}
+//     </Wrapper>
+//   )
+// }
 
 const Wrapper = styled.button`
   min-height: 50px;

@@ -1,62 +1,60 @@
 import styled from 'styled-components'
-import { Switch, Route, useParams, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useLocation, useRouteMatch } from 'react-router-dom';
 import { Card }from '../../components/Card';
 import { Icon } from '../../assets';
 
-
-const Cards = ({ items, children }) => {
-
-  const params = useParams()
-  const { path } = useRouteMatch()
-  console.log('p', path)
-
-
-  const API_KEY = `${process.env.REACT_APP_API_KEY}`
-  const API_ID = `${process.env.REACT_APP_API_ID}`
-
-  const handleClick = (item) => {
-    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${item}&nutrition-type=cooking
-    `)
-    .then(response => response.json())
-    .then(data => console.log(data))
-  }
+const CustomLink = ({ to, children }) => {
+  const match = useRouteMatch(to.pathname)
 
   return (
-    <Wrapper>
-      {/* {items.map(item => (
-        <Card
-          // url={`${url}/item/${item}`}
-          key={item} 
-          text={item} 
-          onClick={() => handleClick(item)}
-        >
-          {children}
-        </Card>
-      ))} */}
-      <Switch>
-        <Route path={`${path}/:cardId`}>
-          <Card />
-        </Route>
-        {/* <Route path="*">
-          <div className="sidebar-instruction">Select a team</div>
-        </Route> */}
-      </Switch>
-    </Wrapper>
+    <li>
+      <Link to={to}>{children}</Link>
+    </li>
   )
 }
 
-{/* <div className='container two-column'>
-      <Sidebar 
-        title="Articles"
-        list={articles.map(article => article.title)}
-      />
-      <Switch>
-        <Route path={`${path}/:articleId`}>
-          <Article />
-        </Route>
-      </Switch>
-    </div> */}
 
+const Cards = (props) => {
+
+  // const params = useParams()
+  // const { path } = useRouteMatch()
+  // console.log('p', path)
+
+
+  // const API_KEY = `${process.env.REACT_APP_API_KEY}`
+  // const API_ID = `${process.env.REACT_APP_API_ID}`
+
+  // const handleClick = (item) => {
+  //   fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${item}&nutrition-type=cooking
+  //   `)
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  // }
+
+  const location = useLocation();
+  const { url } = useRouteMatch()
+  const { title, list } = props;
+
+  return (
+    <Wrapper>
+      <h3>{title}</h3>
+      <ul>
+        {list.map(item => (
+          <CustomLink
+            key={item}
+            to={{
+              pathname: `${url}/${slugify(item)}`,
+              search: location.search
+            }}
+          >
+            {item.toUpperCase()}
+          </CustomLink>
+        ))}
+      </ul>
+     
+    </Wrapper>
+  )
+}
 
 
 const Wrapper = styled.div`
