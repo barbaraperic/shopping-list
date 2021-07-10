@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Switch, Route, useRouteMatch, useLocation } from 'react-router-dom'
+import { Link, Route, useRouteMatch, useLocation } from 'react-router-dom'
 import { COLORS } from '../../style/constants'
 import Cards from '../Cards';
 import { Card } from '../../components/Card';
@@ -8,7 +8,7 @@ import { SearchInput } from '../../components/Input'
 
 const fruits = ["Avocado", "Banana", "Carrots", "Watermelon"]
 
-const meatAndFish = ["Chicken", "Pork", "Salmon"]
+const protein = ["Chicken", "Pork", "Salmon"]
 
 const beverages = ["Water", "Wine"]
 
@@ -26,23 +26,12 @@ const Main = ({ className }) => {
       </Title>
       <SearchInput />
       <Wrapper>
-        <Switch>
-          <Route path={`${url}/:cardId`}>
-            <Card items={fruits}/>
-          </Route>
-        </Switch>
-        {/* <Header>Fruits and vegetables</Header> */}
-        {/* <Cards items={fruits} url={location.pathname}>
-          <Icon id="plus" size={16}/>
-        </Cards>
-        <Header>Beverages</Header>
-        <Cards items={beverages} url={url}>
-          <Icon id="plus" size={16}/>
-        </Cards>
+        <Header>Fruits and vegetables</Header>
+        <Cards items={fruits} /> 
         <Header>Meat and fish</Header>
-        <Cards items={meatAndFish} url={url}>
-          <Icon id="plus" size={16}/>
-        </Cards> */}
+        <Cards items={protein} /> 
+        <Header>Beverages</Header>
+        <Cards items={beverages} /> 
       </Wrapper>
     </MainWrapper>
   )

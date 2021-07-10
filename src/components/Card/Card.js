@@ -1,30 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { COLORS } from '../../style/constants'
+import { COLORS } from '../../style/constants';
 
-const Card = ({ items }) => {
+const Card = ({ text, children }) => {
 
-  console.log(items)
   return (
     <Wrapper>
-      <StyledLink>Text</StyledLink>
+      <StyledLink to={`/${text}`}>{text}</StyledLink>
+      {children}
     </Wrapper>
   )
 }
 
-// const Card = ({ text, url, children, onClick }) => {
-
-//   const item = players.find(player => slug(player.name) === playerId)
-
-//   return (
-//     <Wrapper onClick={onClick}>
-//       <StyledLink to={url}>{text}</StyledLink>
-//       {children}
-//     </Wrapper>
-//   )
-// }
-
-const Wrapper = styled.button`
+const Wrapper = styled.div`
   min-height: 50px;
   width: 182px;
   background-color: white;
