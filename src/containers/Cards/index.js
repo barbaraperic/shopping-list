@@ -1,12 +1,14 @@
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom';
+import { Switch, Route, useParams, useRouteMatch } from 'react-router-dom';
 import { Card }from '../../components/Card';
-import { Icon } from '../../assets'
+import { Icon } from '../../assets';
 
-const Cards = ({ items, children, url }) => {
+
+const Cards = ({ items, children }) => {
 
   const params = useParams()
-  console.log('p', params)
+  const { path } = useRouteMatch()
+  console.log('p', path)
 
 
   const API_KEY = `${process.env.REACT_APP_API_KEY}`
@@ -21,19 +23,41 @@ const Cards = ({ items, children, url }) => {
 
   return (
     <Wrapper>
-      {items.map(item => (
+      {/* {items.map(item => (
         <Card
-          url={`${url}/${item}`}
+          // url={`${url}/item/${item}`}
           key={item} 
           text={item} 
           onClick={() => handleClick(item)}
         >
           {children}
         </Card>
-      ))}
+      ))} */}
+      <Switch>
+        <Route path={`${path}/:cardId`}>
+          <Card />
+        </Route>
+        {/* <Route path="*">
+          <div className="sidebar-instruction">Select a team</div>
+        </Route> */}
+      </Switch>
     </Wrapper>
   )
 }
+
+{/* <div className='container two-column'>
+      <Sidebar 
+        title="Articles"
+        list={articles.map(article => article.title)}
+      />
+      <Switch>
+        <Route path={`${path}/:articleId`}>
+          <Article />
+        </Route>
+      </Switch>
+    </div> */}
+
+
 
 const Wrapper = styled.div`
   display: flex;
