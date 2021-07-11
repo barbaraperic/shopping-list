@@ -57,6 +57,7 @@ const Header = styled.div`
   flex: 1;
   padding: 40px;
   background-color: ${COLORS.lightPrimary};
+  max-height: calc(100vh - 130px);
 `
 
 const TextWrapper = styled.div`
@@ -71,8 +72,8 @@ const Section = styled.div`
 `
 
 const FoodSection = styled.div`
-  overflow: scroll;
-  max-height: 350px;
+  overflow: auto; 
+  height: 200px;
 `
 
 const Footer = styled.section`

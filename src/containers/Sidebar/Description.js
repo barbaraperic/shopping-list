@@ -6,7 +6,8 @@ import { LinkBack } from '../../components/Text';
 import SidebarWrapper from './SidebarWrapper';
 
 const DescriptionSidebar = () => {
-  const [item, setItem] = useState({})
+  const [list, setList] = useState([])
+  const [loading, setLoading] = useState(true)
   const { cardId } = useParams()
 
   const API_KEY = `${process.env.REACT_APP_API_KEY}`
@@ -17,21 +18,32 @@ const DescriptionSidebar = () => {
     fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${cardId}&nutrition-type=cooking
       `)
       .then(response => response.json())
-      .then(data => setItem(data))
+      .then(data => {
+        setList(data.parsed)
+        setLoading(false)
+      })
   }, [])
-   
-  console.log('item', item)
+
+  if (loading === true) {
+    return <p>loading</p>
+  }
+
+  console.log(list.map(item => item))
 
   return (
     <StyledSidebarWrapper>
       <LinkBack to="/"/>
-      <Image src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="avocado"/>
-      <Title>name</Title>
-      <h3>Avocado</h3>
-      <Title>category</Title>
-      <p>Fruit and vegetables</p>
-      <Title>note</Title>
-      <LongText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</LongText> 
+        {list.map(item => (
+          <div key={item.food.label}>
+          <Image src={item.food.image} alt={`${item.food.label}`}/>
+          <Title>name</Title>
+          <h3>{item.food.label}</h3>
+          <Title>category</Title>
+          <p>{item.food.category}</p>
+          <Title>note</Title>
+          {/* <LongText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</LongText> */}
+          </div>
+        ))}
       <Footer>
         <Button variant="tertiary">delete</Button>
         <Button variant="primary">Add to list</Button>
@@ -76,4 +88,4 @@ const Footer = styled.div`
   justify-content: space-evenly;
 `
 
-export default DescriptionSidebar
+export default DescriptionSidebar;
