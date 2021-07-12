@@ -75,6 +75,7 @@ const Header = styled.div`
   flex: 1;
   padding: 40px;
   background-color: ${COLORS.lightPrimary};
+  max-height: calc(100vh - 130px);
 `
 
 const Title = styled.h3`
@@ -90,9 +91,8 @@ const TextWrapper = styled.div`
 `
 
 const Scrollbar = styled.div`
-  overflow: scroll;
-  padding: 3px;
-  max-height: 350px;
+  overflow: auto; 
+  height: 200px;
 `
 
 const Footer = styled.div`
