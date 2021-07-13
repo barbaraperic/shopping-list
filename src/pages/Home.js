@@ -5,28 +5,23 @@ import Navigation from '../containers/Navigation';
 import Main from '../containers/Main';
 import { addItem } from '../actions/items'
 import { AddItemSidebar, PreviewSidebar } from '../containers/Sidebar';
-import { dispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
   const [ toggleSidebar, setToggleSidebar ] = useState(false);
-  const [newItem, setNewItem] = useState({})
+
+  console.log(useSelector(state => state.items))
 
   const handleClick = () => {
     setToggleSidebar(!toggleSidebar);
   }
-  
-  console.log('>>>',newItem)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('>>',newItem)
-  }
 
   return (
     <Wrapper>
       <Navigation />
       <StyledMain />
-      <AddItemSidebar newItem={newItem} setNewItem={setNewItem} handleSubmit={handleSubmit}/>
+      <AddItemSidebar />
       {/* {toggleSidebar 
       ? <AddItemSidebar />
       : <PreviewSidebar handleClick={handleClick} />

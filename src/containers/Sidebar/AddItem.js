@@ -1,12 +1,29 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { Input, TextArea, Dropdown } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { SubHeader } from '../../components/Text'
 import SidebarWrapper from './SidebarWrapper';
+import { addItem } from '../../actions/items'
 
-const AddItemSidebar = (props) => {
-  const [newItem, setNewItem] = useState({})
+const AddItemSidebar = () => {
+  const [newItem, setNewItem] = useState({
+    name: '',
+    note: '',
+    imageUrl: ''
+  })
 
+  const dispatch = useDispatch();
+
+  const handleData = value => {
+    setNewItem(prevState => ({ ...prevState, ...value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addItem(newItem))
+  }
 
   return (
     <SidebarWrapper>
@@ -17,20 +34,20 @@ const AddItemSidebar = (props) => {
           placeholder="Enter a name" 
           type="text"
           value={newItem.name}
-          onChange={(e) => setNewItem({ name: e.target.value})}
+          onChange={(e) => handleData({ name: e.target.value})}
         />
         <TextArea 
           label="Note (optional)" 
           placeholder="Enter a note"
           value={newItem.note}
-          onChange={(e) => setNewItem({ note: e.target.value})}
+          onChange={(e) => handleData({ note: e.target.value})}
         />
         <Input 
           label="Image (optional)" 
           placeholder="Enter a url" 
           text="url"
           value={newItem.imageUrl}
-          onChange={(e) => setNewItem({ imageUrl: e.target.value})}
+          onChange={(e) => handleData({ imageUrl: e.target.value})}
         />
         {/* <Dropdown label="Category"/> */}
       <ButtonWrapper>
