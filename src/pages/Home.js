@@ -6,16 +6,17 @@ import Main from '../containers/Main';
 import { addItem } from '../actions/items'
 import { AddItemSidebar, PreviewSidebar } from '../containers/Sidebar';
 import { useSelector } from 'react-redux';
+import { getInitialData } from '../utils/api';
 
 const Home = () => {
   const [ toggleSidebar, setToggleSidebar ] = useState(false);
+  const { items } = useSelector(state => state)
 
-  console.log(useSelector(state => state.items))
+  console.log('>>', Object.keys(items))
 
   const handleClick = () => {
     setToggleSidebar(!toggleSidebar);
   }
-
 
   return (
     <Wrapper>

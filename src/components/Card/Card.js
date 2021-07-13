@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
 
-const Card = ({ text, children }) => {
+const Card = ({ text, children, id }) => {
 
   return (
     <Wrapper>

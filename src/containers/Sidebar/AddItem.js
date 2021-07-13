@@ -23,6 +23,11 @@ const AddItemSidebar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addItem(newItem))
+    setNewItem({
+      name: '',
+      note: '',
+      imageUrl: ''
+    })
   }
 
   return (
