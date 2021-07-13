@@ -1,11 +1,25 @@
 import styled from 'styled-components';
 import { COLORS } from '../../style/constants'; 
 
-const TextAreaInput = ({ id, label, placeholder }) => {
+const TextAreaInput = (props) => {
+  const { 
+    id,
+    label, 
+    placeholder,
+    value,
+    onChange,
+  } = props;
+  
   return (
     <Wrapper>
       <Label htmlFor={id}>{label}</Label>
-      <TextArea id={id} placeholder={placeholder}></TextArea>
+      <TextArea 
+        id={id}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      >
+      </TextArea>
     </Wrapper>
   )
 }

@@ -16,7 +16,7 @@ const Main = ({ className }) => {
   const { url } = useRouteMatch();
   let location = useLocation();
 
-  console.log(location)
+  // console.log(location)
 
   
   return (

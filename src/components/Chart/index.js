@@ -15,6 +15,7 @@ const Chart = () => {
                   .append("svg")
                     .attr("width", '100%')
                     .attr("height", '100%')
+                    .attr("viewBox", '0 0 400 600')
                   .append("g")
                     .attr("transform",
                         "translate(" + margin.left + "," + margin.top + ")")
@@ -51,18 +52,17 @@ const Chart = () => {
         .attr("transform", "translate(116, 0)")
         .attr("d", highLine);
   }
-  
 
   useEffect(() => {
     drawChart();
   }, [])
 
-  return <Wrapper id="my_dataviz"></Wrapper>
+  return <div id="my_dataviz"></div>
 }
 
-const Wrapper = styled.div`
-  width: 600px;
-  height: 400px;
-`
+// const Wrapper = styled.div`
+//   width: 600px;
+//   height: 400px;
+// `
 
 export default Chart;

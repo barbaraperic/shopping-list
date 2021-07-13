@@ -28,7 +28,7 @@ const DescriptionSidebar = () => {
     return <p>loading</p>
   }
 
-  console.log(list.map(item => item))
+  // console.log(list.map(item => item))
 
   return (
     <StyledSidebarWrapper>

@@ -16,7 +16,7 @@ const Statistics = () => {
   return (
     <Wrapper>
       <Navigation />
-      <Main>
+      {/* <Main>
         <CardWrapper>
           <ProgressBarCards 
             text="Top items"
@@ -31,7 +31,7 @@ const Statistics = () => {
         </CardWrapper>
         <SubHeader>Monthly Summary</SubHeader>
         <Chart />
-      </Main>
+      </Main> */}
       <EditItemSidebar />
       {/* <button onClick={() => setModal(true)}>open modal</button>
       <Modal 

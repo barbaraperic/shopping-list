@@ -11,7 +11,7 @@ const store = createStore(
   middleware
 )
 
-console.log(store)
+// console.log(store)
 
 ReactDOM.render(
   <Provider store={store}>
