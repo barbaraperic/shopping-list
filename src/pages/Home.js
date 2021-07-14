@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components';
 import Navigation from '../containers/Navigation';
@@ -10,6 +10,7 @@ import { _getItems } from '../utils/_DATA';
 
 const Home = () => {
   const [ toggleSidebar, setToggleSidebar ] = useState(false);
+  const [ list, setList ] = useState([]);
   const { items } = useSelector(state => state)
 
   console.log('>>', Object.keys(items))
@@ -18,13 +19,17 @@ const Home = () => {
     setToggleSidebar(!toggleSidebar);
   }
 
-  _getItems().then(value => console.log('v', value))
+  useEffect(() => {
+    _getItems().then(value => {
+      setList(value)
+    })
+  },[])
 
 
   return (
     <Wrapper>
       <Navigation />
-      <StyledMain />
+      <StyledMain list={list}/>
       <AddItemSidebar />
       {/* {toggleSidebar 
       ? <AddItemSidebar />

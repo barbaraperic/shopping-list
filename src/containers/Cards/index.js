@@ -16,10 +16,10 @@ import { Icon } from '../../assets';
 // }
 
 const Cards = ({ items }) => {
-
+  
   return (
     <Wrapper>
-      {items.map(item => (
+      {Object.keys(items).map(item => (
         <Card text={item} key={item}>
           <Icon id="plus" size={14} />
         </Card>

@@ -6,19 +6,18 @@ import { Card } from '../../components/Card';
 import { Icon } from '../../assets';
 import { SearchInput } from '../../components/Input'
 
-const fruits = ["Avocado", "Banana", "Carrots", "Watermelon"]
+// const fruits = ["Avocado", "Banana", "Carrots", "Watermelon"]
 
 const protein = ["Chicken", "Pork", "Salmon"]
 
 const beverages = ["Water", "Wine"]
 
-const Main = ({ className }) => {
+const Main = ({ className, list }) => {
   const { url } = useRouteMatch();
   let location = useLocation();
 
   // console.log(location)
 
-  
   return (
     <MainWrapper className={className}>
       <Title>
@@ -27,11 +26,11 @@ const Main = ({ className }) => {
       <SearchInput />
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={fruits} /> 
-        <Header>Meat and fish</Header>
+        <Cards items={list} /> 
+        {/* <Header>Meat and fish</Header>
         <Cards items={protein} /> 
         <Header>Beverages</Header>
-        <Cards items={beverages} /> 
+        <Cards items={beverages} />  */}
       </Wrapper>
     </MainWrapper>
   )
