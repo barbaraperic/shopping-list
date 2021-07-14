@@ -16,10 +16,12 @@ let items = {
   }
 }
 
+// const _getItems =  new Promise((res, rej) => {
+//   setTimeout(() => res({...test}), 1000)
+// })
 
 export function _getItems () {
   return new Promise((res, rej) => {
-    setTimeout((res) => res({...items}), 1000)
+    setTimeout(() => res({...items}), 1000)
   })
-
 }
