@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components'
-import { Switch, Link, Route, useRouteMatch, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, useRouteMatch, useLocation } from 'react-router-dom'
 import { COLORS } from '../../style/constants'
 // import Cards from '../Cards';
 // import { Card } from '../../components/Card';
@@ -11,48 +11,52 @@ import { _getItems } from '../../utils/_DATA';
 
 // const fruits = ["Avocado", "Banana", "Carrots", "Watermelon"]
 
-const protein = ["Chicken", "Pork", "Salmon"]
+// const Card = () => {
+//   // const { itemId } = useParams();
+//   console.log('itid', useParams())
+//   const { url, path } = useRouteMatch();
 
-const beverages = ["Water", "Wine"]
+//   // const content = list.find(({ name }) => name === itemId)
+
+//   // console.log('content', content)
+
+//   return (
+//     <h2>Hey</h2>
+//   )
+// }
 
 const Card = () => {
-  const { itemId } = useParams();
-  const { url, path } = useRouteMatch();
-
   return (
-    <h2>Hey</h2>
+    <h1>Card</h1>
   )
 }
 
+
 const Cards = () => {
-  const [ list, setList ] = useState([]);
+  const [list, setList] = useState([])
+  console.log('here')
+  const { url, path } = useRouteMatch();
 
   useEffect(() => {
-    _getItems().then((value) => {
+    _getItems().then(value => {
       setList(Object.values(value))
     })
-  },[])
-
-  const { url, path } = useRouteMatch()
+  }, [])
   return (
     <div>
-      <ul>
-        {list.map(({ name }) => (
-          <li key={name}><Link to={`${url}/${name}`}>{name}</Link></li>
-          
-        ))}
-      </ul>
-      <Route path={`${path}/:itemId`}>
-          <Card />
+      {list.map(item => (
+        <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
+      ))}
+      <Route path={`${path}/:id`}>
+        <Card />
       </Route>
-
     </div>
   )
 }
 
-const Main = ({ className, list }) => {
+
+const Main = ({ className }) => {
   const { url } = useRouteMatch();
-  let location = useLocation();
   console.log('url', url)
 
   // console.log(location)
@@ -69,8 +73,8 @@ const Main = ({ className, list }) => {
           //   <Icon id="plus" size={14} />
           // </Card> */}
       </Wrapper>
-        <Route path="/items">
-            <Cards />
+      <Route path='/items'>
+          <Cards />
         </Route>
     </MainWrapper>
   )
@@ -99,26 +103,26 @@ const Header = styled.h3`
   margin-top: 50px;
 `
 
-const CardWrapper = styled.div`
-  min-height: 50px;
-  width: 182px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px hsla(0,0%,0%,.05);
-  border: 1px solid ${COLORS.gray700};
-  padding: 15px 17px;
-  margin-right: 16px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 20px;
-  cursor: pointer;
-`
+// const CardWrapper = styled.div`
+//   min-height: 50px;
+//   width: 182px;
+//   background-color: white;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 12px hsla(0,0%,0%,.05);
+//   border: 1px solid ${COLORS.gray700};
+//   padding: 15px 17px;
+//   margin-right: 16px;
+//   margin-bottom: 16px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin-right: 20px;
+//   cursor: pointer;
+// `
 
-const StyledLink = styled(Link)`
-  line-height: 1.4;
-  font-size: 16px;
-`
+// const StyledLink = styled(Link)`
+//   line-height: 1.4;
+//   font-size: 16px;
+// `
 
 export default Main;

@@ -10,30 +10,23 @@ import { _getItems } from '../utils/_DATA';
 
 const Home = () => {
   const [ toggleSidebar, setToggleSidebar ] = useState(false);
-  const [ list, setList ] = useState([]);
   const { items } = useSelector(state => state)
 
   const handleClick = () => {
     setToggleSidebar(!toggleSidebar);
   }
 
-  useEffect(() => {
-    _getItems().then((value) => {
-      setList(Object.values(value))
-    })
-  },[])
-
-  console.log('list', list)
-
   return (
     <Wrapper>
-      <Navigation />
-      <StyledMain list={list}/>
-      <AddItemSidebar />
+      {/* <Navigation />
+      <StyledMain />
+      <AddItemSidebar /> */}
       {/* {toggleSidebar 
       ? <AddItemSidebar />
       : <PreviewSidebar handleClick={handleClick} />
       } */}
+
+      
     </Wrapper>
   )
 }

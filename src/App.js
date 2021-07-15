@@ -16,31 +16,31 @@ import Main from "./containers/Main";
 const routes = [
   {
     path: '/',
-    exact: true,
-    component: Home,
+    component: Main,
   },
-  {
-    path: '/history',
-    exact: true,
-    component: History,
-  },
-  {
-    path: '/history/:id',
-    component: HistoryDetails,
-  },
-  {
-    path: '/statistics',
-    component: Statistics,
-  },
-  {
-    path: '/:cardId',
-    exact: true,
-    component: HomeDescription
-  },
+  // {
+  //   path: '/items',
+  //   // exact: true,
+  //   component: History,
+  // },
+  // {
+  //   path: '/history/:id',
+  //   component: HistoryDetails,
+  // },
+  // {
+  //   path: '/statistics',
+  //   component: Statistics,
+  // },
+  // {
+  //   path: '/:cardId',
+  //   exact: true,
+  //   component: HomeDescription
+  // },
 ]
 
 const App = () => {
   return (
+
   <Router>
     <Switch>
       {routes.map(route => (
