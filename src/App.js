@@ -11,12 +11,13 @@ import Home from './pages/Home';
 import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
 import "./App.css";
+import Main from "./containers/Main";
 
 const routes = [
   {
     path: '/',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
     path: '/history',

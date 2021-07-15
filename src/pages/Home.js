@@ -13,18 +13,17 @@ const Home = () => {
   const [ list, setList ] = useState([]);
   const { items } = useSelector(state => state)
 
-  console.log('>>', Object.keys(items))
-
   const handleClick = () => {
     setToggleSidebar(!toggleSidebar);
   }
 
   useEffect(() => {
-    _getItems().then(value => {
-      setList(value)
+    _getItems().then((value) => {
+      setList(Object.values(value))
     })
   },[])
 
+  console.log('list', list)
 
   return (
     <Wrapper>

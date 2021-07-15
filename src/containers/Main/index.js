@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link, Route, useRouteMatch, useLocation } from 'react-router-dom'
+import { Switch, Link, Route, useRouteMatch, useLocation } from 'react-router-dom'
 import { COLORS } from '../../style/constants'
 import Cards from '../Cards';
 import { Card } from '../../components/Card';
@@ -17,7 +17,6 @@ const Main = ({ className, list }) => {
   let location = useLocation();
 
   // console.log(location)
-
   return (
     <MainWrapper className={className}>
       <Title>
@@ -26,12 +25,17 @@ const Main = ({ className, list }) => {
       <SearchInput />
       <Wrapper>
         <Header>Fruits and vegetables</Header>
-        <Cards items={list} /> 
-        {/* <Header>Meat and fish</Header>
-        <Cards items={protein} /> 
-        <Header>Beverages</Header>
-        <Cards items={beverages} />  */}
+        {list && list.map(item => (
+          <Card id={item} key={item.name}>
+            <Icon id="plus" size={14} />
+          </Card>
+        ))}
       </Wrapper>
+      <Switch>
+        <Route path="/:cardId">
+            <Card />
+        </Route>
+      </Switch>
     </MainWrapper>
   )
 }

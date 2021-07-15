@@ -1,12 +1,16 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
 
-const Card = ({ text, children, id }) => {
+const Card = ({ id, children }) => {
+
+  const { cardId } = useParams()
+
+  console.log('cardif', useParams())
 
   return (
     <Wrapper>
-      <StyledLink to={`/${text}`}>{text}</StyledLink>
+      <StyledLink to={`/${cardId}`}>{id.name}</StyledLink>
       {children}
     </Wrapper>
   )

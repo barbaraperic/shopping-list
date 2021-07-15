@@ -17,6 +17,9 @@ import { Icon } from '../../assets';
 
 const Cards = ({ items }) => {
   
+  const { url } = useRouteMatch()
+
+  console.log('url', url)
   return (
     <Wrapper>
       {Object.keys(items).map(item => (
@@ -24,6 +27,14 @@ const Cards = ({ items }) => {
           <Icon id="plus" size={14} />
         </Card>
       ))}
+       <Switch>
+      <Route path={`${url}/:cardId`}>
+        <Card />
+      </Route>
+      {/* <Route path="*">
+        <div className="sidebar-instruction">Select a team</div>
+      </Route> */}
+    </Switch>
     </Wrapper>
   )
 }
