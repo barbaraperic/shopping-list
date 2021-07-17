@@ -1,8 +1,27 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink, Route, useRouteMatch, useParams } from 'react-router-dom'
 import { NavIcon } from '../../assets';
 import { navListItems } from '../../mock-api';
 import { COLORS } from '../../style/constants';
+import { Cards } from '../../containers/Main';
+
+// export const navListItems = [
+//   {
+//     to: '/items',
+//     iconId: 'list',
+//     text: 'items'
+//   },
+//   { 
+//     to: '/history',
+//     iconId: 'rotate',
+//     text: 'history'
+//   },
+//   { 
+//     to: '/statistics',
+//     iconId: 'bar',
+//     text: 'statistics'
+//   }
+// ]
 
 const TabItem = ({ item }) => {
 

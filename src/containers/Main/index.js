@@ -10,6 +10,7 @@ import { _getItems } from '../../utils/_DATA';
 import { Button } from '../../components/Button';
 import { LinkBack } from '../../components/Text';
 import SidebarWrapper from '../Sidebar/SidebarWrapper';
+import Navigation from '../../containers/Navigation';
 
 
 const Sidebar = ({ list }) => {
@@ -45,7 +46,7 @@ const Sidebar = ({ list }) => {
 
 
 
-const Cards = () => {
+export const Cards = () => {
   const [list, setList] = useState([])
   console.log('here')
   const { url, path } = useRouteMatch();
@@ -76,20 +77,23 @@ const Main = ({ className }) => {
   // console.log(location)
   return (
     <MainWrapper className={className}>
-      <MainTitle>
-        Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
-      </MainTitle>
-      <SearchInput />
-      <Wrapper>
-        {/* <Header>Fruits and vegetables</Header> */}
-          <Link to="/items">Items</Link>
-          {/* // <Card id={item} key={item.name}>
-          //   <Icon id="plus" size={14} />
-          // </Card> */}
-      </Wrapper>
-      <Route path='/items'>
+      <Navigation />
+      <div>
+        <MainTitle>
+          Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
+        </MainTitle>
+        <SearchInput />
+        <Wrapper>
+          {/* <Header>Fruits and vegetables</Header> */}
+            
+            {/* // <Card id={item} key={item.name}>
+            //   <Icon id="plus" size={14} />
+            // </Card> */}
+        </Wrapper>
+        <Route path='/items'>
           <Cards />
         </Route>
+      </div>
     </MainWrapper>
   )
 }
@@ -97,6 +101,7 @@ const Main = ({ className }) => {
 const MainWrapper = styled.main`
   margin-top: 40px;
   padding: 0 50px;
+  display: flex;
 `
 
 const Wrapper = styled.div`

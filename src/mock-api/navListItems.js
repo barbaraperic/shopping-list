@@ -1,7 +1,7 @@
 
 export const navListItems = [
   {
-    to: '/',
+    to: '/items',
     iconId: 'list',
     text: 'items'
   },
