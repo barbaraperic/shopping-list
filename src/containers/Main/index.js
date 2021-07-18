@@ -15,15 +15,7 @@ import Navigation from '../../containers/Navigation';
 
 const Sidebar = ({ list }) => {
   const { id } = useParams();
-  console.log(list);
-
   const item = list.find(item => item.name === id);
-
-  console.log('item',item)
-
-  if (!list) {
-    return <p>loading</p>
-  }
 
   return (
     <StyledSidebarWrapper>
@@ -47,8 +39,22 @@ const Sidebar = ({ list }) => {
 
 
 export const Cards = () => {
+
+  return (
+    <div style={{ display: 'flex'}}>
+      <div>
+        {list.map(item => (
+          <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
+        ))}
+      </div>
+      
+    </div>
+  )
+}
+
+
+const Main = ({ className }) => {
   const [list, setList] = useState([])
-  console.log('here')
   const { url, path } = useRouteMatch();
 
   useEffect(() => {
@@ -56,23 +62,6 @@ export const Cards = () => {
       setList(Object.values(value))
     })
   }, [])
-
-  return (
-    <div>
-      {list.map(item => (
-        <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
-      ))}
-      <Route path={`${path}/:id`}>
-        {list.length > 0 && <Sidebar list={list}/>}
-      </Route>
-    </div>
-  )
-}
-
-
-const Main = ({ className }) => {
-  const { url } = useRouteMatch();
-  console.log('url', url)
 
   // console.log(location)
   return (
@@ -83,17 +72,15 @@ const Main = ({ className }) => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
-        <Wrapper>
-          {/* <Header>Fruits and vegetables</Header> */}
-            
-            {/* // <Card id={item} key={item.name}>
-            //   <Icon id="plus" size={14} />
-            // </Card> */}
-        </Wrapper>
         <Route path='/items'>
-          <Cards />
+          {list.map(item => (
+            <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
+          ))}
         </Route>
       </div>
+      <Route path={`${path}/:id`}>
+        {list.length > 0 && <Sidebar list={list}/>}
+      </Route>
     </MainWrapper>
   )
 }
