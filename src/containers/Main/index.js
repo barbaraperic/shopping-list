@@ -36,8 +36,6 @@ const Sidebar = ({ list }) => {
   )
 }
 
-
-
 export const Cards = () => {
 
   return (
