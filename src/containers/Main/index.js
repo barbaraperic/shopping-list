@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components'
-import { BrowserRouter as Router, Link, Route, useRouteMatch, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, useRouteMatch, useParams, useLocation } from 'react-router-dom'
 import { COLORS } from '../../style/constants'
 // import Cards from '../Cards';
 // import { Card } from '../../components/Card';
@@ -16,6 +16,8 @@ import Navigation from '../../containers/Navigation';
 const Sidebar = ({ list }) => {
   const { id } = useParams();
   const item = list.find(item => item.name === id);
+
+  console.log('item', item)
 
   return (
     <StyledSidebarWrapper>
@@ -55,13 +57,15 @@ const Main = ({ className }) => {
   const [list, setList] = useState([])
   const { url, path } = useRouteMatch();
 
+
   useEffect(() => {
     _getItems().then(value => {
       setList(Object.values(value))
     })
   }, [])
 
-  // console.log(location)
+  console.log('path', useLocation())
+
   return (
     <MainWrapper className={className}>
       <Navigation />
@@ -72,7 +76,7 @@ const Main = ({ className }) => {
         <SearchInput />
         <Route path='/items'>
           {list.map(item => (
-            <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
+            <Link key={item.name} to={`${location.pathname}/${item.name}`}>{item.name}</Link>
           ))}
         </Route>
       </div>
