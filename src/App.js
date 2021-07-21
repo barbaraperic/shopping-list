@@ -12,17 +12,18 @@ import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 import Main from "./containers/Main";
+import { Sidebar } from './containers/Main';
 
 const routes = [
   {
     path: '/',
+    exact: true,
     component: Main,
   },
-  // {
-  //   path: '/items',
-  //   // exact: true,
-  //   component: History,
-  // },
+  {
+    path: '/:id',
+    component: Sidebar,
+  },
   // {
   //   path: '/history/:id',
   //   component: HistoryDetails,

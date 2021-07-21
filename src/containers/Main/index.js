@@ -13,11 +13,28 @@ import SidebarWrapper from '../Sidebar/SidebarWrapper';
 import Navigation from '../../containers/Navigation';
 
 
-const Sidebar = ({ list }) => {
+export const Sidebar = () => {
   const { id } = useParams();
+  const [list, setList] = useState([])
+  const [loading, setLoading] = useState(true)
+
   const item = list.find(item => item.name === id);
 
   console.log('item', item)
+  console.log('par', useParams())
+
+  useEffect(() => {
+    _getItems().then(value => {
+      setList(Object.values(value))
+      setLoading(false)
+    })
+
+  }, [])
+
+  if (loading) {
+    return <p>loading</p>
+  }
+
 
   return (
     <StyledSidebarWrapper>
@@ -28,7 +45,7 @@ const Sidebar = ({ list }) => {
           <Title>category</Title>
           <p>Category</p>
           <Title>note</Title>
-          <p>{item.note}</p>
+          <p>{item.note}</p> 
           {/* <LongText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</LongText> */}
       <Footer>
         <Button variant="tertiary">delete</Button>
@@ -38,33 +55,29 @@ const Sidebar = ({ list }) => {
   )
 }
 
-export const Cards = () => {
+// export const Cards = () => {
 
-  return (
-    <div style={{ display: 'flex'}}>
-      <div>
-        {list.map(item => (
-          <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
-        ))}
-      </div>
+//   return (
+//     <div style={{ display: 'flex'}}>
+//       <div>
+//         {list.map(item => (
+//           <Link key={item.name} to={`${url}/${item.name}`}>{item.name}</Link>
+//         ))}
+//       </div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
 
 const Main = ({ className }) => {
-  const [list, setList] = useState([])
   const { url, path } = useRouteMatch();
+  const location = useLocation()
 
+  const list = ["banana", "mango", "avocado"]
 
-  useEffect(() => {
-    _getItems().then(value => {
-      setList(Object.values(value))
-    })
-  }, [])
-
-  console.log('path', useLocation())
+  console.log('route', useRouteMatch())
+  console.log('location', location)
 
   return (
     <MainWrapper className={className}>
@@ -74,15 +87,19 @@ const Main = ({ className }) => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
-        <Route path='/items'>
-          {list.map(item => (
-            <Link key={item.name} to={`${location.pathname}/${item.name}`}>{item.name}</Link>
-          ))}
-        </Route>
+        
+        {list.map(item => (
+          <Link
+          key={item}
+          to={`/${item}`}
+        >
+          {item.toUpperCase()}
+        </Link>
+        ))}
       </div>
-      <Route path={`${path}/:id`}>
+      {/* <Route path={`${location.pathname}`}>
         {list.length > 0 && <Sidebar list={list}/>}
-      </Route>
+      </Route> */}
     </MainWrapper>
   )
 }
