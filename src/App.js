@@ -13,12 +13,16 @@ import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 import Main from "./containers/Main";
 import { Sidebar } from './containers/Main';
+import Navigation from './containers/Navigation';
 
 const routes = [
   {
     path: '/',
-    exact: true,
-    component: Main,
+    component: Home,
+  },
+  {
+    path: '/items',
+    component: Main
   },
   {
     path: '/:id',

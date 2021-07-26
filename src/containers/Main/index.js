@@ -69,6 +69,8 @@ export const Sidebar = () => {
 //   )
 // }
 
+console.log('test')
+
 
 const Main = ({ className }) => {
   const { url, path } = useRouteMatch();
