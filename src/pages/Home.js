@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components'
+import { Route, useRouteMatch } from 'react-router-dom';
 import { SearchInput } from '../components/Input';
 import Navigation from '../containers/Navigation';
+import { PreviewSidebar } from '../containers/Sidebar'
 import { COLORS } from '../style/constants';
 
 const Home = ({ className }) => {
 
+  const { url } = useRouteMatch()
   return (
     <MainWrapper className={className}>
       <Navigation />
@@ -14,11 +16,12 @@ const Home = ({ className }) => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
-        
+
+        <Route path={`${url}/items`}>
+          <p>list</p>
+        </Route>
       </Wrapper>
-      {/* <Route path={`${location.pathname}`}>
-        {list.length > 0 && <Sidebar list={list}/>}
-      </Route> */}
+      <PreviewSidebar />
     </MainWrapper>
   )
 }
@@ -29,6 +32,7 @@ const MainWrapper = styled.main`
 
 const Wrapper = styled.div`
   padding: 30px;
+  flex: 1;
 `
 
 const MainTitle = styled.h2`
