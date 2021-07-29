@@ -19,9 +19,9 @@ import Navigation from './containers/Navigation';
 const routes = [
   { path: '/',
     exact: true,
-    navigation: Navigation,
-    main: Main,
-    sidebar: Test
+    navigation: () => <Navigation />,
+    main: () => <Main />,
+    sidebar: () => <Test />,
   }
 ]
 

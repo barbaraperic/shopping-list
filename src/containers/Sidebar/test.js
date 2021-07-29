@@ -6,15 +6,15 @@ import { Button } from '../../components/Button'
 import { SubHeader } from '../../components/Text'
 
 const Test = () => {
-  // const [newItem, setNewItem] = useState({
-  //   name: '',
-  //   note: '',
-  //   imageUrl: ''
-  // })
+  const [newItem, setNewItem] = useState({
+    name: '',
+    note: '',
+    imageUrl: ''
+  })
 
-  // const handleData = value => {
-  //   setNewItem(prevState => ({ ...prevState, ...value }));
-  // };
+  const handleData = value => {
+    setNewItem(prevState => ({ ...prevState, ...value }));
+  };
 
   return (
     <SidebarWrapper>
@@ -24,21 +24,21 @@ const Test = () => {
           label="Name" 
           placeholder="Enter a name" 
           type="text"
-          // value={newItem.name}
-          // onChange={(e) => handleData({ name: e.target.value})}
+          value={newItem.name}
+          onChange={(e) => handleData({ name: e.target.value})}
         />
         <TextArea 
           label="Note (optional)" 
           placeholder="Enter a note"
-          // value={newItem.note}
-          // onChange={(e) => handleData({ note: e.target.value})}
+          value={newItem.note}
+          onChange={(e) => handleData({ note: e.target.value})}
         />
         <Input 
           label="Image (optional)" 
           placeholder="Enter a url" 
           text="url"
-          // value={newItem.imageUrl}
-          // onChange={(e) => handleData({ imageUrl: e.target.value})}
+          value={newItem.imageUrl}
+          onChange={(e) => handleData({ imageUrl: e.target.value})}
         />
         {/* <Dropdown label="Category"/> */}
       <ButtonWrapper>
