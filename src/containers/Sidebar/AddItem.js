@@ -14,21 +14,21 @@ const AddItemSidebar = () => {
     imageUrl: ''
   })
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleData = value => {
     setNewItem(prevState => ({ ...prevState, ...value }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(addItem(newItem))
-  //   setNewItem({
-  //     name: '',
-  //     note: '',
-  //     imageUrl: ''
-  //   })
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addItem(newItem))
+    setNewItem({
+      name: '',
+      note: '',
+      imageUrl: ''
+    })
+  }
 
   return (
     <SidebarWrapper>

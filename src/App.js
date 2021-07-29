@@ -13,16 +13,26 @@ import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 import Main from "./containers/Main";
-import { Test } from './containers/Sidebar';
+import { PreviewSidebar, AddItemSidebar } from './containers/Sidebar';
 import Navigation from './containers/Navigation';
 
 const routes = [
-  { path: '/',
+  { 
+    path: '/',
     exact: true,
-    navigation: () => <Navigation />,
     main: () => <Main />,
-    sidebar: () => <Test />,
-  }
+    sidebar: () => <PreviewSidebar />,
+  },
+  { 
+    path: '/items',
+    main: () => <Main />,
+    sidebar: () => <AddItemSidebar />,
+  },
+  { 
+    path: '/history',
+    main: () => <p>hey</p>,
+    sidebar: () => <p>hey</p>,
+  },
 ]
 
 const App = () => {
@@ -30,15 +40,7 @@ const App = () => {
     <Router>
       <Switch>
         <Wrapper>
-          {routes.map((route) => (
-            <Route
-              key={route.path}
-              path={route.path}
-              exact={route.exact}
-            >
-              {route.navigation}
-            </Route>
-          ))}
+          <Navigation />
           <MainWrapper>
           {routes.map((route) => (
             <Route
@@ -46,7 +48,7 @@ const App = () => {
               path={route.path}
               exact={route.exact}
             >
-              {route.main}
+              <route.main />
             </Route>
           ))}
           </MainWrapper>
@@ -57,7 +59,7 @@ const App = () => {
                 path={route.path}
                 exact={route.exact}
               >
-                {route.sidebar}
+                <route.sidebar />
               </Route>
             ))}
           </div>
