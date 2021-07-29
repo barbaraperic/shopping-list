@@ -1,34 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { Input, TextArea, Dropdown } from '../../components/Input'
+import SidebarWrapper from './SidebarWrapper';
+import { Input, TextArea } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { SubHeader } from '../../components/Text'
-import SidebarWrapper from './SidebarWrapper';
-import { addItem } from '../../actions/items'
 
-const AddItemSidebar = () => {
-  const [newItem, setNewItem] = useState({
-    name: '',
-    note: '',
-    imageUrl: ''
-  })
+const Test = () => {
+  // const [newItem, setNewItem] = useState({
+  //   name: '',
+  //   note: '',
+  //   imageUrl: ''
+  // })
 
-  // const dispatch = useDispatch();
-
-  const handleData = value => {
-    setNewItem(prevState => ({ ...prevState, ...value }));
-  };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(addItem(newItem))
-  //   setNewItem({
-  //     name: '',
-  //     note: '',
-  //     imageUrl: ''
-  //   })
-  // }
+  // const handleData = value => {
+  //   setNewItem(prevState => ({ ...prevState, ...value }));
+  // };
 
   return (
     <SidebarWrapper>
@@ -38,21 +24,21 @@ const AddItemSidebar = () => {
           label="Name" 
           placeholder="Enter a name" 
           type="text"
-          value={newItem.name}
-          onChange={(e) => handleData({ name: e.target.value})}
+          // value={newItem.name}
+          // onChange={(e) => handleData({ name: e.target.value})}
         />
         <TextArea 
           label="Note (optional)" 
           placeholder="Enter a note"
-          value={newItem.note}
-          onChange={(e) => handleData({ note: e.target.value})}
+          // value={newItem.note}
+          // onChange={(e) => handleData({ note: e.target.value})}
         />
         <Input 
           label="Image (optional)" 
           placeholder="Enter a url" 
           text="url"
-          value={newItem.imageUrl}
-          onChange={(e) => handleData({ imageUrl: e.target.value})}
+          // value={newItem.imageUrl}
+          // onChange={(e) => handleData({ imageUrl: e.target.value})}
         />
         {/* <Dropdown label="Category"/> */}
       <ButtonWrapper>
@@ -61,8 +47,8 @@ const AddItemSidebar = () => {
       </ButtonWrapper>
       </Form>
     </SidebarWrapper>
-  )
-}
+  );
+};
 
 const Form = styled.form`
   flex: 1;
@@ -78,4 +64,4 @@ const ButtonWrapper = styled.div`
   flex: 1;
 `
 
-export default AddItemSidebar
+export default Test;

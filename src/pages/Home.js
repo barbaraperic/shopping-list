@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import { SearchInput } from '../components/Input';
 import Navigation from '../containers/Navigation';
 import { PreviewSidebar } from '../containers/Sidebar'
@@ -7,7 +7,7 @@ import { COLORS } from '../style/constants';
 
 const Home = ({ className }) => {
 
-  const { url } = useRouteMatch()
+  const { url, path } = useRouteMatch()
   return (
     <MainWrapper className={className}>
       <Navigation />
@@ -17,9 +17,14 @@ const Home = ({ className }) => {
         </MainTitle>
         <SearchInput />
 
-        <Route path={`${url}/items`}>
-          <p>list</p>
-        </Route>
+        <Switch>
+          <Route path={`${url}/items`}>
+            <p>items</p>
+          </Route>
+          <Route path="*">
+            <div>Select a team</div>
+          </Route>
+        </Switch>
       </Wrapper>
       <PreviewSidebar />
     </MainWrapper>

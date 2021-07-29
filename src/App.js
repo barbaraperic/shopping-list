@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import styled from 'styled-components';
 // import Navigation from './containers/Navigation'
 import History from './pages/History';
 import HistoryDetails from './pages/HistoryDetails';
@@ -12,54 +13,66 @@ import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 import Main from "./containers/Main";
-import { Sidebar } from './containers/Main';
+import { Test } from './containers/Sidebar';
 import Navigation from './containers/Navigation';
 
 const routes = [
-  {
-    path: '/',
-    component: Home,
-  },
-  {
-    path: '/items',
-    component: Main
-  },
-  {
-    path: '/:id',
-    component: Sidebar,
-  },
-  // {
-  //   path: '/history/:id',
-  //   component: HistoryDetails,
-  // },
-  // {
-  //   path: '/statistics',
-  //   component: Statistics,
-  // },
-  // {
-  //   path: '/:cardId',
-  //   exact: true,
-  //   component: HomeDescription
-  // },
+  { path: '/',
+    exact: true,
+    navigation: Navigation,
+    main: Main,
+    sidebar: Test
+  }
 ]
 
 const App = () => {
   return (
-
-  <Router>
-    <Switch>
-      {routes.map(route => (
-        <Route
-          key={route.path}
-          path={route.path}
-          exact={route.exact}
-        >
-          <route.component />
-        </Route>
-      ))}
-    </Switch>
-  </Router>
+    <Router>
+      <Switch>
+        <Wrapper>
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+            >
+              {route.navigation}
+            </Route>
+          ))}
+          <MainWrapper>
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+            >
+              {route.main}
+            </Route>
+          ))}
+          </MainWrapper>
+          <div>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+              >
+                {route.sidebar}
+              </Route>
+            ))}
+          </div>
+        </Wrapper>
+      </Switch>
+    </Router>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+`
+
+const MainWrapper = styled.div`
+  flex: 1;
+`
 
 export default App
