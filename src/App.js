@@ -21,7 +21,7 @@ const routes = [
     path: '/',
     exact: true,
     main: () => <Main />,
-    sidebar: () => <PreviewSidebar />,
+    // sidebar: () => <PreviewSidebar />,
   },
   { 
     path: '/items',
@@ -30,8 +30,13 @@ const routes = [
   },
   { 
     path: '/history',
-    main: () => <p>hey</p>,
-    sidebar: () => <p>hey</p>,
+    main: () => <History />,
+    sidebar: () => <AddItemSidebar />,
+  },
+  { 
+    path: '/statistics',
+    main: () => <Statistics />,
+    sidebar: () => <AddItemSidebar />,
   },
 ]
 

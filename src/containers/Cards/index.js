@@ -19,7 +19,6 @@ const Cards = ({ items }) => {
   
   const { url } = useRouteMatch()
 
-  console.log('url', url)
   return (
     <Wrapper>
       {Object.keys(items).map(item => (

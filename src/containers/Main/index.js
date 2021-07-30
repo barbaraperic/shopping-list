@@ -1,10 +1,17 @@
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
 import { SearchInput } from '../../components/Input';
 import { _getItems } from '../../utils/_DATA';
+import { Card } from '../../components/Card'
 
 const Main = () => {
+
+
+  useEffect(() => {
+
+  }, [])
 
   const list = ["banana", "mango", "avocado"]
   return (
@@ -14,15 +21,15 @@ const Main = () => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
+        <Card>Mango</Card>
         
-        {list.map(item => (
+        {/* {list.map(item => (
           <Link
           key={item}
           to={`/${item}`}
         >
           {item.toUpperCase()}
-        </Link>
-        ))}
+        </Link> */}
       </div>
     </MainWrapper>
   )

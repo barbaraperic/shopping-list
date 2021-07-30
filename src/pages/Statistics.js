@@ -14,25 +14,25 @@ const Statistics = () => {
   // const [ modal, setModal ] = useState(false);
 
   return (
-    <Wrapper>
-      <Navigation />
-      {/* <Main>
-        <CardWrapper>
-          <ProgressBarCards 
-            text="Top items"
-            data={topItems}
-            variant="items"
-          />
-          <ProgressBarCards 
-            text="Top categories"
-            data={topCategories}
-            variant="category"
-          />
-        </CardWrapper>
-        <SubHeader>Monthly Summary</SubHeader>
-        <Chart />
-      </Main> */}
-      <EditItemSidebar />
+    <Main>
+      <CardWrapper>
+        <ProgressBarCards 
+          text="Top items"
+          data={topItems}
+          variant="items"
+        />
+        <ProgressBarCards 
+          text="Top categories"
+          data={topCategories}
+          variant="category"
+        />
+      </CardWrapper>
+      <SubHeader>Monthly Summary</SubHeader>
+      <Chart />
+    </Main>
+  )
+}
+
       {/* <button onClick={() => setModal(true)}>open modal</button>
       <Modal 
         title="Are you sure you want to cancel this list?"
@@ -44,9 +44,6 @@ const Statistics = () => {
           <Button variant="warning">Yes</Button>
         </>
       </Modal> */}
-    </Wrapper>
-  )
-}
 
 const Wrapper = styled.div`
   display: flex;
