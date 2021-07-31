@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
+import { Icon } from '../../assets/index'
 
-const Card = ({ children }) => {
-
-  const { cardId } = useParams()
+const Card = ({ text }) => {
 
   return (
     <Wrapper>
-      <StyledLink to={`/${cardId}`}>
-       {children}
-      </StyledLink>
+      <p>{text}</p> 
+      <StyledIcon id="plus" size={16}/>
     </Wrapper>
   )
 }
@@ -32,9 +30,8 @@ const Wrapper = styled.div`
   cursor: pointer;
 `
 
-const StyledLink = styled(Link)`
-  line-height: 1.4;
-  font-size: 16px;
+const StyledIcon = styled(Icon)`
+  color: hsla(240, 2%, 76%, 1);
 `
 
 export default Card

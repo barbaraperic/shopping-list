@@ -26,17 +26,14 @@ const routes = [
   { 
     path: '/items',
     main: () => <Main />,
-    sidebar: () => <AddItemSidebar />,
   },
   { 
     path: '/history',
     main: () => <History />,
-    sidebar: () => <AddItemSidebar />,
   },
   { 
     path: '/statistics',
     main: () => <Statistics />,
-    sidebar: () => <AddItemSidebar />,
   },
 ]
 
@@ -58,15 +55,7 @@ const App = () => {
           ))}
           </MainWrapper>
           <div>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                exact={route.exact}
-              >
-                <route.sidebar />
-              </Route>
-            ))}
+            <PreviewSidebar />
           </div>
         </Wrapper>
       </Switch>

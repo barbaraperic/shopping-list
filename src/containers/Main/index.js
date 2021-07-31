@@ -21,8 +21,8 @@ const Main = () => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
-        <Card>Mango</Card>
-        
+        <Card text="Mango" />
+            
         {/* {list.map(item => (
           <Link
           key={item}
