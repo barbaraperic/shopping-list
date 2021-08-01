@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { Link, useParams } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
 import { Icon } from '../../assets/index'
 
-const Card = ({ text }) => {
+const Card = ({ text, handleClick }) => {
 
   return (
     <Wrapper>
       <p>{text}</p> 
-      <StyledIcon id="plus" size={16}/>
+        <StyledIcon id="plus" size={16} onClick={handleClick} />
     </Wrapper>
   )
 }

@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 import { COLORS } from '../../style/constants';
 import { SearchInput } from '../../components/Input';
 import { _getItems } from '../../utils/_DATA';
-import { Card } from '../../components/Card'
+import { Card } from '../../components/Card';
 
 const Main = () => {
-
+  const [description, setDescription] = useState(false)
 
   useEffect(() => {
 
   }, [])
 
-  const list = ["banana", "mango", "avocado"]
+  const list = ["banana", "mango", "avocado"];
+
   return (
     <MainWrapper >
       <div>
@@ -21,15 +22,12 @@ const Main = () => {
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
         <SearchInput />
-        <Card text="Mango" />
-            
-        {/* {list.map(item => (
-          <Link
-          key={item}
-          to={`/${item}`}
-        >
-          {item.toUpperCase()}
-        </Link> */}
+        <CardWrapper>
+          <div>
+            <Header>Fruits and vegetables</Header>
+            <Card text="Mango" handleClick={() => setDescription(true)}/>
+          </div>
+        </CardWrapper>
       </div>
     </MainWrapper>
   )
@@ -53,6 +51,11 @@ const Header = styled.h3`
   font-weight: normal;
   font-size: 18px;
   margin-top: 50px;
+  margin-bottom: 30px;
+`
+
+const CardWrapper = styled.div`
+  margin-top: 40px;
 `
 
 export default Main;
