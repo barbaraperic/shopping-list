@@ -7,12 +7,12 @@ const Card = ({ text, onClick }) => {
   return (
     <Wrapper>
       <p>{text}</p> 
-        <StyledIcon id="plus" size={16} onClick={onClick} />
+      <StyledIcon id="plus" size={16} onClick={onClick} />
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.button`
   min-height: 50px;
   width: 182px;
   background-color: white;

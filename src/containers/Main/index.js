@@ -17,7 +17,10 @@ const Main = () => {
 
   }, [])
 
-  const handleClick = () => {
+  const list = ["mango", "banana"]
+
+  const handleClick = (item) => {
+    console.log(item)
     dispatch(addStatus('description'))
   }
 
@@ -31,7 +34,9 @@ const Main = () => {
         <CardWrapper>
           <div>
             <Header>Fruits and vegetables</Header>
-            <Card text="Mango" onClick={handleClick} />
+            {list.map(item => (
+              <Card text={item} onClick={() => handleClick(item)} />
+            ))}
           </div>
         </CardWrapper>
       </div>
