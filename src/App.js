@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styled from 'styled-components';
 // import Navigation from './containers/Navigation'
 import History from './pages/History';
@@ -38,6 +39,10 @@ const routes = [
 ]
 
 const App = () => {
+  const { status } = useSelector(state => state.status)
+
+  console.log('>>', status)
+
   return (
     <Router>
       <Switch>
@@ -55,7 +60,8 @@ const App = () => {
           ))}
           </MainWrapper>
           <div>
-            <PreviewSidebar />
+            {status === 'preview' ?  <PreviewSidebar /> : null}
+            {status === 'description' ?  <DescriptionSidebar /> : null}
           </div>
         </Wrapper>
       </Switch>
