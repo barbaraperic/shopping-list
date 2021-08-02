@@ -6,15 +6,20 @@ import { SearchInput } from '../../components/Input';
 import { _getItems } from '../../utils/_DATA';
 import { Card } from '../../components/Card';
 import { DescriptionSidebar } from '../Sidebar';
+import { useDispatch } from 'react-redux';
+import { addStatus } from '../../actions/status';
 
 const Main = () => {
-  const [description, setDescription] = useState(false)
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
 
   }, [])
 
-  const list = ["banana", "mango", "avocado"];
+  const handleClick = () => {
+    dispatch(addStatus('description'))
+  }
 
   return (
     <MainWrapper >
@@ -26,12 +31,9 @@ const Main = () => {
         <CardWrapper>
           <div>
             <Header>Fruits and vegetables</Header>
-            <Card text="Mango" handleClick={() => setDescription(true)}/>
+            <Card text="Mango" onClick={handleClick} />
           </div>
         </CardWrapper>
-        {description 
-          ? <DescriptionSidebar />
-          : null}
       </div>
     </MainWrapper>
   )

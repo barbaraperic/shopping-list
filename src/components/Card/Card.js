@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { COLORS } from '../../style/constants';
 import { Icon } from '../../assets/index'
 
-const Card = ({ text, handleClick }) => {
+const Card = ({ text, onClick }) => {
 
   return (
     <Wrapper>
       <p>{text}</p> 
-        <StyledIcon id="plus" size={16} onClick={handleClick} />
+        <StyledIcon id="plus" size={16} onClick={onClick} />
     </Wrapper>
   )
 }

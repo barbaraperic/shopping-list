@@ -14,7 +14,7 @@ import Statistics from './pages/Statistics';
 import HomeDescription from './pages/HomeDescription';
 import "./App.css";
 import Main from "./containers/Main";
-import { PreviewSidebar, AddItemSidebar } from './containers/Sidebar';
+import { PreviewSidebar, DescriptionSidebar } from './containers/Sidebar';
 import Navigation from './containers/Navigation';
 
 const routes = [
