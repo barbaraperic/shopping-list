@@ -5,6 +5,7 @@ import { COLORS } from '../../style/constants';
 import { SearchInput } from '../../components/Input';
 import { _getItems } from '../../utils/_DATA';
 import { Card } from '../../components/Card';
+import { DescriptionSidebar } from '../Sidebar';
 
 const Main = () => {
   const [description, setDescription] = useState(false)
@@ -17,7 +18,7 @@ const Main = () => {
 
   return (
     <MainWrapper >
-      <div>
+      <div>np
         <MainTitle>
           Take your <span style={{ color: `${COLORS.primary}`}}>shopping list</span> whenever you go
         </MainTitle>
@@ -28,6 +29,9 @@ const Main = () => {
             <Card text="Mango" handleClick={() => setDescription(true)}/>
           </div>
         </CardWrapper>
+        {description 
+          ? <DescriptionSidebar />
+          : null}
       </div>
     </MainWrapper>
   )
