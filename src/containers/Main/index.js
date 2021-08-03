@@ -8,6 +8,7 @@ import { Card } from '../../components/Card';
 import { DescriptionSidebar } from '../Sidebar';
 import { useDispatch } from 'react-redux';
 import { addStatus } from '../../actions/status';
+import { addItem } from '../../actions/items';
 
 const Main = () => {
 
@@ -22,6 +23,7 @@ const Main = () => {
   const handleClick = (item) => {
     console.log(item)
     dispatch(addStatus('description'))
+    dispatch(addItem(item))
   }
 
   return (

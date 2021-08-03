@@ -10,28 +10,27 @@ const DescriptionSidebar = () => {
   const [ list, setList ] = useState([])
   const [ loading, setLoading ] = useState(true)
   const { cardId } = useParams()
-
-  // const API_KEY = `${process.env.REACT_APP_API_KEY}`
-  // const API_ID = `${process.env.REACT_APP_API_ID}`
-
-
-  // useEffect(() => {
-  //   fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${cardId}&nutrition-type=cooking
-  //     `)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setList(data.parsed)
-  //       setLoading(false)
-  //     })
-  // }, [])
-
-  // if (loading === true) {
-  //   return <p>loading</p>
-  // }
-
-  // console.log(list.map(item => item))
-
   const { items } = useSelector(state => state.items)
+
+
+  const API_KEY = `${process.env.REACT_APP_API_KEY}`
+  const API_ID = `${process.env.REACT_APP_API_ID}`
+
+
+  useEffect(() => {
+    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${items}&nutrition-type=cooking
+      `)
+      .then(response => response.json())
+      .then(data => {
+        setList(data.parsed)
+        setLoading(false)
+      })
+  }, [items])
+
+  if (loading === true) {
+    return <p>loading</p>
+  }
+
 
   console.log(items)
 
