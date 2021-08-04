@@ -37,7 +37,7 @@ const Main = () => {
           <div>
             <Header>Fruits and vegetables</Header>
             {list.map(item => (
-              <Card text={item} onClick={() => handleClick(item)} />
+              <Card key={item} text={item} onClick={() => handleClick(item)} />
             ))}
           </div>
         </CardWrapper>

@@ -18,6 +18,7 @@ const PreviewSidebar = ({ handleClick }) => {
           </TextWrapper>
           <FoodSection>
             <Title>Fruit and vegetables</Title>
+            <span>Hello</span>
             <TextWrapper>
               <p>Avocado</p>
               <QuantityButton id="edit">3 pcs</QuantityButton>

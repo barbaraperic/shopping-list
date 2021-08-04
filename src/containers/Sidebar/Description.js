@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { LinkBack } from '../../components/Text';
 import SidebarWrapper from './SidebarWrapper';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItemToList } from '../../actions/list';
 
 const DescriptionSidebar = () => {
   const [ list, setList ] = useState([])
   const [ loading, setLoading ] = useState(true)
-  const { cardId } = useParams()
   const { items } = useSelector(state => state.items)
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-
-  const API_KEY = `${process.env.REACT_APP_API_KEY}`
-  const API_ID = `${process.env.REACT_APP_API_ID}`
-
+  const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+  const API_ID = `${process.env.REACT_APP_API_ID}`;
 
   useEffect(() => {
     fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${API_ID}&app_key=${API_KEY}&ingr=${items}&nutrition-type=cooking
@@ -31,6 +31,11 @@ const DescriptionSidebar = () => {
     return <p>loading</p>
   }
 
+
+  const addItemToList = () => {
+    history.push('/');
+    dispatch(addItemToList(items))
+  }
 
   console.log(items)
 
@@ -50,7 +55,7 @@ const DescriptionSidebar = () => {
         ))}
       <Footer>
         <Button variant="tertiary">delete</Button>
-        <Button variant="primary">Add to list</Button>
+        <Button variant="primary" onClick={addItemToList}>Add to list</Button>
       </Footer>
     </StyledSidebarWrapper>
   )
